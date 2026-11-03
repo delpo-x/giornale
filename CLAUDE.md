@@ -67,7 +67,7 @@ File già in uso:
 - `dati/risultati.py`: i risultati in forma calcolabile. `python dati/risultati.py` stampa la classifica e confronta i numeri con le statistiche di Tuttocampo.
 - `dati/squadre.md`: l'anagrafica fissa delle squadre (staff, persone, note e curiosità). Ogni dato statico che Nicola manda va registrato qui, con la data, e si usa per arricchire gli articoli.
 
-Il primo numero della Gazzetta esce il 4 novembre e racconta la 6ª giornata. Le giornate dalla 1 alla 5 sono contesto: si citano per confronti, serie e precedenti, ma non hanno un'uscita propria. Da qui in avanti, numero N = giornata N + 5.
+Il primo numero della Gazzetta esce il 4 novembre e racconta la 6ª giornata. Le giornate dalla 1 alla 5 sono contesto: entrano nei totali, nelle serie e nei confronti visti da oggi, ma non si raccontano e non hanno un'uscita propria (vedi "Solo attualità", punto 5). Da qui in avanti, numero N = giornata N + 5.
 
 Ad ogni giornata: salvare i dati nuovi, aggiornare i file cumulativi e mantenere visibile lo storico, così gli articoli possono fare confronti con le giornate precedenti.
 
@@ -87,6 +87,7 @@ Gli articoli non devono essere la semplice cronaca "punteggio più marcatori". C
 - **Il confronto con la giornata scorsa**: cosa è cambiato, cosa si è confermato.
 
 Regole:
+- **Solo attualità (regola fissata da Nicola il 3 novembre).** Ogni articolo parla della giornata appena giocata e della situazione di oggi. Le partite vecchie non si raccontano: niente pezzi, capoversi o richiami costruiti su gare delle giornate precedenti. Statistiche, serie, medie e confronti si fanno, ma partono sempre dall'oggi (classifica attuale, totali aggiornati, la gara appena giocata). Un dato del passato entra solo come numero che spiega il presente ("terza vittoria di fila", "12 gol in sei gare"), mai come racconto di quella partita. Lo stesso vale per la partita della settimana: si guarda avanti, non ai precedenti.
 - Ogni numero contiene almeno un articolo di taglio analitico e uno narrativo.
 - Non ripetere lo stesso angolo di una giornata a quella dopo.
 - Gli articoli devono richiamarsi tra loro quando serve (un filo che attraversa le uscite).
@@ -118,7 +119,7 @@ Ogni uscita è fatta da più file HTML separati, per rendere l'esportazione semp
   - risultati della giornata, con sopra i conti dei segni (gol, 1, X, 2) e per ogni gara punteggio, marcatori e probabilità pre-partita;
   - marcatori e assist, affiancati, con il primo (o i primi a pari merito) nel box ciano e le posizioni a pari merito;
   - prossimo turno, con le probabilità pre-partita quando disponibili.
-  - **la partita della settimana** (decisa da Nicola il 3 novembre): un trafiletto di due o tre capoversi sulla gara più attesa del prossimo turno, con il blocco della gara e i numeri (posizione e punti delle due squadre, distanza in classifica, probabilità del pareggio se c'è). La gara la sceglie il generatore (`scegli_partita`): con le probabilità vince la più equilibrata (scarto più piccolo tra vittoria in casa e in trasferta); a parità o senza probabilità, la coppia più in alto in classifica, poi la più vicina in punti. La scelta si può forzare con `indice`. Il testo si scrive come gli altri (skill di giornalismo, poi humanizer) e non anticipa risultati: racconta perché la gara conta, con i precedenti e i numeri dello storico.
+  - **la partita della settimana** (decisa da Nicola il 3 novembre): un trafiletto di due o tre capoversi sulla gara più attesa del prossimo turno, con il blocco della gara e i numeri (posizione e punti delle due squadre, distanza in classifica, probabilità del pareggio se c'è). La gara la sceglie il generatore (`scegli_partita`): con le probabilità vince la più equilibrata (scarto più piccolo tra vittoria in casa e in trasferta); a parità o senza probabilità, la coppia più in alto in classifica, poi la più vicina in punti. La scelta si può forzare con `indice`. Il testo si scrive come gli altri (skill di giornalismo, poi humanizer) e non anticipa risultati: racconta perché la gara conta oggi, con la classifica e i numeri aggiornati (niente racconto dei precedenti).
   La nostra gara è segnata con la fascia ciano a sinistra e l'etichetta "La nostra gara".
 
 Regole comuni a tutti i file:

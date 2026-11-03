@@ -27,6 +27,8 @@ Non limitarsi a "punteggio più marcatori": costruire la storia del campionato g
 - la partita simbolo della giornata, raccontata con i protagonisti;
 - il confronto con la giornata scorsa e le promesse lasciate in sospeso.
 
+Solo attualità: si scrive della giornata appena giocata e della situazione di oggi. Le partite vecchie non si raccontano; i dati passati entrano solo come numeri che spiegano il presente (totali, serie, medie, classifica attuale).
+
 Ogni uscita: almeno un pezzo analitico e uno narrativo; non ripetere lo stesso angolo della giornata precedente; richiamare i pezzi precedenti quando serve.
 
 ## Titoli
