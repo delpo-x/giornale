@@ -121,9 +121,10 @@ Ad ogni uscita Claude fornisce il prompt per generare l'immagine di copertina co
 - Se qualcosa cambia nelle regole, aggiornare questo file e segnalarlo a Nicola.
 
 ## 10. Strumenti già pronti nel progetto
-- `template/genera_uscita.py`: genera le pagine HTML 9:16 (copertina, articoli, rubriche) con font incorporati, firma e filigrana in ogni pagina.
-- `contenuti/giornata_06.py`: i contenuti della giornata 6. Per una nuova giornata, copiarlo in `giornata_07.py` e cambiare dati e testi, poi lanciarlo.
-- `template/esporta.py uscite/giornata-XX`: esporta PNG 1080x1920 e PDF in `export/` e segnala testi che escono dalla pagina. Controllare sempre l'esito prima di consegnare.
+- `template/genera_uscita.py contenuti/giornata_XX.py`: genera le pagine HTML 9:16 (copertina, articoli, rubriche) con testata, firma, firma verticale sul bordo e filigrana del drago in ogni pagina, più `uscite/giornata-XX-articoli.md` per Humanizer. Font di sistema: Georgia per i testi, Franklin Gothic Demi per titoli e numeri (le cifre di Georgia sono "all'antica" e lo 0 sembra una o).
+- `contenuti/esempio.py`: modello dei contenuti con dati finti, commentato. Per una nuova giornata copiarlo in `contenuti/giornata_XX.py`, togliere `cartella` e mettere dati e testi veri.
+- `template/esporta.py uscite/giornata-XX`: esporta PNG 1080x1920 e PDF in `export/` con Chrome (o Edge) e segnala le pagine in cui il testo esce dall'area utile. Controllare sempre l'esito prima di consegnare.
+- `assets/logo/`: testata e logo (guida in `GUIDA-LOGO.md`). Le pagine prendono testata e drago da `assets/logo/genera_logo.py`.
 - `dati/giornata-XX.md`: dati trascritti, con i calcoli derivati. Ogni cifra citata in un articolo deve tornare qui.
 - Il filo grafico (palette, firma, filigrana, proporzioni) non va cambiato tra un'uscita e l'altra.
 
