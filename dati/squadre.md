@@ -135,6 +135,8 @@ Uso: volti reali solo con il consenso della persona (CLAUDE.md §7). Nelle pagin
 - Gv Barco
 
 ## Omonimie da chiarire con Nicola
+- Nicola Delpozzo (rosa del F.c. Calino) è un omonimo: non è Delpozzo Nicola, allenatore dell'Implast. Lo ha confermato Nicola il 3 novembre.
+
 Alcuni cognomi dello staff compaiono anche tra i giocatori delle Top 11 della stessa squadra:
 - Martinelli (Giaffa);
 - Xhaferi (Aston): Xhaferi J., che gioca, non è l'allenatore Emiljano. Lo ha confermato Nicola il 3 novembre;
