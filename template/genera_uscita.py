@@ -20,6 +20,8 @@ import genera_logo as logo  # noqa: E402
 
 NAVY = logo.NAVY
 CIANO = logo.CIANO
+# Rosa della maglia del portiere: colore della rubrica di Zanni, al posto del ciano.
+ROSA = "#EC78C0"
 FIRMA = "© Redazione La Gazzetta del Dragone, tutti i diritti riservati"
 COND = "'Franklin Gothic Demi Cond', 'Franklin Gothic Medium Cond', Impact, 'Arial Narrow', sans-serif"
 BAST = "'Franklin Gothic Demi', 'Franklin Gothic Medium', Arial, sans-serif"
@@ -165,6 +167,12 @@ table.dati tr.nostra td {{ background: {CIANO}; font-weight: 700; }}
 .capo .chi small {{ display: block; font-weight: 400; font-size: 24px; }}
 .due table.dati {{ font-size: 24px; }}
 .due table.dati td {{ padding: 10px 6px; }}
+/* Pagina di Zanni: i blocchi ciano diventano rosa (testatina, occhiello,
+   gioco di parole, nome della firma); testata e firma restano quelle di sempre */
+.zanni .folio .sez, .zanni .occhiello, .zanni .titolo .gioco, .zanni .byline .nome, .zanni .cit {{ background: {ROSA}; }}
+.zanni .cit {{ background: none; border-top-color: {ROSA}; }}
+.zanni .tab-int .mar {{ border-top-color: {ROSA}; }}
+.richiami .occ.zanni {{ background: {ROSA}; }}
 /* Loghi ufficiali delle squadre: piccoli, accanto al nome, mai al posto del nome */
 .stemma {{ display: inline-block; vertical-align: middle; object-fit: contain; width: 1.25em; height: 1.25em; margin: 0 .35em; }}
 table.dati td.sq .stemma, .mini .stemma {{ margin-left: 0; }}
@@ -257,7 +265,7 @@ def filigrana():
     return f'<svg class="filigrana" viewBox="0 0 256 256"><g fill="{NAVY}">{logo.DRAGO}</g></svg>'
 
 
-def pagina(u, titolo_doc, corpo, top, testata_grande=False):
+def pagina(u, titolo_doc, corpo, top, testata_grande=False, classe=""):
     numero = f"N° {u['numero']}"
     if testata_grande:
         testa = (
@@ -273,7 +281,7 @@ def pagina(u, titolo_doc, corpo, top, testata_grande=False):
 <meta name="viewport" content="width=1080">
 <title>{e(titolo_doc)} · La Gazzetta del Dragone {e(numero)}</title>
 <style>{CSS}</style></head>
-<body><div class="pagina">
+<body><div class="pagina {classe}">
 {filigrana()}
 <div class="lato">{e(FIRMA)} · {e(numero)}</div>
 {testa}
@@ -407,7 +415,7 @@ def copertina(u, base):
             continue  # già in prima pagina, nella spalla
         richiami.append(("Rubrica", nome, desc, prima, "Redazione"))
     taglio = "".join(
-        f'<div><span class="occ titoli">{e(o)}</span><h4>{e(t)}</h4>'
+        f'<div><span class="occ titoli{" zanni" if f == "Gianluca Zanni" else ""}">{e(o)}</span><h4>{e(t)}</h4>'
         + (f'<span class="di">di {e(f)}</span>' if f != "Redazione" else "")
         + f"{pag(n)}</div>"
         for o, t, s, n, f in richiami[:3]
@@ -506,7 +514,7 @@ def articolo(u, a, n, base, da=None, segue=None):
 {f'<div class="segue">continua a {pag(segue)}</div>' if segue else ""}
 {cifre(a.get("numeri", []))}
 </div>"""
-    return pagina(u, titolo_testo(a["titolo"]), corpo, top=TOP_INT)
+    return pagina(u, titolo_testo(a["titolo"]), corpo, top=TOP_INT, classe="zanni" if a.get("tipo") == "cronaca" else "")
 
 
 def gol(risultato):

@@ -9,9 +9,37 @@ Regole d'uso:
 
 Campionato: Amatori CSI, Calcio a 7 Serie C Open Brescia, Girone H (Lombardia), 14 squadre.
 
+## Schede società (da `dati/fonti/schede-societa.pdf`, schede Tuttocampo fornite da Nicola il 3 novembre)
+Telefoni ed email delle società non si trascrivono: non servono al giornale. I dati con i campi sfasati nel PDF li ha confermati Nicola il 3 novembre.
+
+| Squadra | Nome completo | Colori sociali | Campo | In casa | Sponsor tecnico | Instagram |
+|---|---|---|---|---|---|---|
+| Amici Di Renato | Amici Di Renato | granata | non indicato (sede a Timoline di Corte Franca) | venerdì 21:00 | — | — |
+| Aston 5 Perle | Aston 5 Perle | celeste | Aston Park, Adro | sabato 15:00 | — | @aston_cinque_perle |
+| Bombetta | Bombetta | rosso blu | Bombetta Stadium, Capriolo | venerdì 21:00 | — | @gso_bombetta |
+| Elettcristini | Elettcristini | blu-giallo | "Bruno Tolotti", Marone | sabato 17:30 | Acerbis | — |
+| F.c. Calino | F.C. Calino | verde bianco - giallo blu | Oratorio di Calino | venerdì 20:30 | — | @fc_calino |
+| F.c. Cazzaghese | F.c. Cazzaghese | bianco blu - nero | Comunale "Cbc Stadium", Bornato | venerdì 20:45 | — | @cazzagobornato_calcio |
+| Giaffa Clusan | G.S.O. Giaffa Clusan | blu-giallo | Oratorio San Giovanni Bosco, Clusane | sabato 15:00 | Erreà | @giaffa_clusane_openc |
+| Gso Monte | G.S.O. Gso Monte | giallo blu | Oratorio Monterotondo | venerdì 20:00 | — | — |
+| Gv Barco | GV Gv Barco | arancione nero - blu | "Barco dei Principi", Costa-Barco | venerdì 21:00 | — | @gvbarco |
+| Ieci Passirano | Ieci Passirano | blu giallo | Oratorio Passirano | giovedì 20:30 | — | — |
+| Implast | A.S.D. Implast | blu-bianco, azzurro | "Tana del Drago", Adro | sabato 15:30 | Macron | @implast_csi |
+| Nigoline | Nigoline | nero | "Polverùn", Colombaro | venerdì 20:30 | Joma | @csinigoline |
+| U.s. Pilzone | U.s. Pilzone | verde bianco | "Ali Sami Yen di Pilzone" (campo dell'oratorio) | giovedì 20:45 | — | @uspilzone |
+| Uso Borgonato | U.S.O. Uso Borgonato | verde granata - nero verde | San Vitale, Borgonato | venerdì 21:00 | Erreà | @uso_borgonato |
+
+Spunti per gli articoli: il campo dell'Implast si chiama "Tana del Drago" (il drago della testata); il Pilzone ha battezzato il campo dell'oratorio "Ali Sami Yen", come il vecchio stadio del Galatasaray. Gli orari di casa sono quelli abituali dichiarati: per le singole gare vale il calendario.
+
 ## Loghi ufficiali (forniti da Nicola il 3 novembre)
 Cartella `logo/`, un PNG per squadra, tutte e 14: Amici Di Renato (`amici renato.png`), Aston 5 Perle (`aston.png`), Bombetta (`bombetta.png`), Uso Borgonato (`Borgonato.png`), F.c. Calino (`Calino.png`), F.c. Cazzaghese (`Cazzaghese.png`), Elettcristini (`Elettcristini.png`), Giaffa Clusan (`Giaffa Clusan.png`), Gso Monte (`Gso Monte.png`), Gv Barco (`Gv Barco.png`), Implast (`Implast.png`), Nigoline (`Nigoline.png`), Ieci Passirano (`Passirano.png`), U.s. Pilzone (`Pilzone.png`).
 Sono i riferimenti da allegare per le immagini di copertina (CLAUDE.md §7). Non vanno ridisegnati né imitati.
+
+## Foto di squadra (fornite da Nicola il 3 novembre)
+Cartella `Foto squadra/`, solo per 6 squadre: Gv Barco (`Barco.png`), Bombetta (`Bombetta.png`), Implast (`Implast.png`), Gso Monte (`Monte.png`), Nigoline (`Nigoline.png`), Amici Di Renato (`Renato.png`).
+- Si usano come foto d'apertura o nelle pagine interne, con didascalia ("La rosa dell'Implast"). Non si ritagliano singoli volti per farne il protagonista di un pezzo.
+- Come riferimento per le immagini di copertina su Gemini servono per maglie, colori e campo; i volti vanno resi non riconoscibili o lasciati fuori (CLAUDE.md §7: volti reali solo con consenso).
+- Le altre 8 squadre non hanno ancora una foto.
 
 ## Staff (schede squadra di Tuttocampo, 3 novembre)
 
