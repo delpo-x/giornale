@@ -2,7 +2,7 @@
 
 Fonte: `dati/fonti/rose.pdf` (schede rosa di Tuttocampo, fornite da Nicola il 3 novembre). Colonne: numero di maglia tra parentesi, data di nascita, ruolo, gol, presenze, ammonizioni, espulsioni.
 
-Il PDF non scrive il nome della squadra: le rose sono separate dall'ordine alfabetico che riparte, e ogni rosa è attribuita grazie a giocatori già noti (motivo indicato sotto ogni squadra). **Mancano le rose di Implast e Nigoline.**
+Il PDF non scrive il nome della squadra: le rose sono separate dall'ordine alfabetico che riparte, e ogni rosa è attribuita grazie a giocatori già noti (motivo indicato sotto ogni squadra). Le rose di Implast e Nigoline sono in fondo, dagli screenshot dell'app Tuttocampo (3 novembre): solo nomi e reparti, senza numeri né statistiche.
 
 Cautele:
 - Gol e presenze sono quelli di Tuttocampo alla data del PDF: per gli articoli valgono solo se tornano con lo storico (CLAUDE.md §11). In alcune rose le presenze sono tutte a 0, quindi la colonna non è affidabile.
@@ -276,3 +276,17 @@ Attribuzione: Bontempi, Gatti, Musati, Valentino (Top 11 col Borgonato) e Di Mai
 - Regenzi Gabriel · nascita non indicata · CEN · gol 0 · pres 0 · amm 0 · esp 0
 - Savoldi Gabriele · nascita non indicata · DIF · gol 0 · pres 0 · amm 0 · esp 0
 - Valentino Mattia (9) · 13-09-2006 · ATT · gol 8 · pres 0 · amm 0 · esp 0
+
+## Implast (screenshot `screenshot/rose/implast-1..3.png`, 3 novembre)
+- Attaccanti: Facchi Lorenzo, Iore Stefano, Mingotti Davide, Vavassori Emilio.
+- Centrocampisti: Alvarez Arnaldo, Fra Nicholas, Franzoni Alessandro, Menassi Giorgio, Santinelli Alessandro, Vezzoli Emanuele.
+- Difensori: Bardi Federico, Brescianini Matteo, Faccoli Alessandro, Notari Mattia (capitano), Turla Lorenzo.
+- Portieri: Paderno Marco, Regazzoni Lorenzo, Simoni Nicola.
+
+## Nigoline (screenshot `screenshot/rose/nigoline-1..4.png`, 3 novembre)
+- Attaccanti: Archetti Simone, Bolis Nicola, Bontempi Alberto, Parzani Marco, Pezzotti Andrea, Riva Zanotti Michele, Turelli Andrea.
+- Centrocampisti: Alghisi Marco, Boni Davide, Corsini Alberto, Corsini Matteo, Mandelli Mirko, Santoro Antonio, Scolari Davide, Tota Giordano.
+- Difensori: Bettoni Davide, Bolis Alessio, Ghezzi Matteo, Martinelli Marco, Mingotti Luca, Riva Martino, Rossi Samuele.
+- Portieri: Colonna Giordano.
+
+Omonimie e cognomi ripetuti da non collegare senza conferma: Parzani Marco è in rosa e risulta anche allenatore del Nigoline (stesso nome: probabile giocatore-allenatore, non scriverlo senza conferma); Bolis (presidente Valentino, giocatori Nicola e Alessio); Rossi Samuele e il vice Rossi Angelo; Mingotti Luca (Nigoline) e Mingotti Davide (Implast); Pezzotti Andrea e i Pezzotti del Pilzone; Martinelli Marco e i Martinelli della Giaffa; Bontempi Alberto e Bontempi Cristian (Borgonato).
