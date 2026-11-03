@@ -125,10 +125,15 @@ Facchi è entrato nella Top 11 tre volte (G1, G4, G5).
 ## Staff e anagrafica
 In `dati/squadre.md`.
 
+## Calendario
+Fonte ufficiale (link dato da Nicola il 3 novembre): https://www.tuttocampo.it/Lombardia/AmatoriCSI/GironeHCalcioa7OpenCBrescia/Calendario
+
+Trascritto per intero (13 giornate di andata, con le date del ritorno) in `dati/calendario.md` dal PDF ufficiale CSI. Accoppiamenti e campo delle giornate 1-6 controllati con i risultati: coincidono tutti.
+
 ## Mancano
 - Classifica ufficiale, che decide l'ordine a pari punti.
 - Marcatori per partita, classifica marcatori, assist.
 - Probabilità pre-partita.
-- Calendario della 7ª giornata.
+- Probabilità della 7ª giornata (il calendario c'è, in `calendario.md`).
 - Top 11 della 6ª giornata.
 - Esito di Nigoline-Uso Borgonato, in programma stasera.
