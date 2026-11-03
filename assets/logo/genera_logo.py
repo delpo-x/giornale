@@ -86,7 +86,7 @@ def compatta(inchiostro, blocco, drago_col, numero="N° 7"):
         f'<text x="252" y="64" font-family="{SERIF}" font-size="40" font-weight="700" '
         f'letter-spacing="1" fill="{inchiostro}">DRAGONE</text>',
         f'<text x="764" y="60" font-family="{BASTONI}" font-size="19" letter-spacing="1" '
-        f'text-anchor="end" fill="{inchiostro}">{numero} · GIRONE CSI</text>',
+        f'text-anchor="end" fill="{inchiostro}">{numero}</text>',
     ]
     return "".join(c)
 
