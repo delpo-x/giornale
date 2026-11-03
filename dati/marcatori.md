@@ -2,7 +2,7 @@
 
 Fonte: app Tuttocampo, screenshot di Nicola del 3 novembre alle 21:46 (`screenshot/giornata-06/classifiche/`). Le liste mostrano solo i primi 8: fuori lista non si deduce nulla.
 
-Da verificare: lo screenshot è stato fatto durante o dopo Nigoline-Borgonato (3 novembre, 20:30). I gol di Bontempi (12) e Valentino (8) sono uguali a quelli della rosa PDF, quindi la classifica sembra precedente a quella gara.
+Da verificare: lo screenshot è stato fatto durante o dopo Nigoline-Borgonato (3 novembre, 20:30). I gol di Bontempi (12) e Valentino (8) sono uguali a quelli della rosa PDF, quindi la classifica sembra precedente a quella gara. **Da fare:** quando arriva la scheda Marcatori di Nigoline-Borgonato, aggiungere i suoi gol e assist a queste liste (deciso da Nicola il 3 novembre) e rifare le letture.
 
 ## Marcatori (dopo la 6ª, Nigoline-Borgonato forse esclusa)
 1. Bontempi Cristian (Uso Borgonato) 12
