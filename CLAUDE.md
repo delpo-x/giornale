@@ -72,7 +72,15 @@ Regole:
 ## 6. Formato fisso delle pagine
 Ogni uscita è fatta da più file HTML separati, per rendere l'esportazione semplice: ogni file si esporta da solo (immagine o PDF) e si pubblica nelle storie.
 
-- **`00-copertina.html`, la prima pagina**: testata con nome del giornale, numero dell'uscita, data di uscita (il giorno dopo l'ultima partita) e giornata di campionato. Immagine di copertina, titolone principale, sommario con le storie dell'uscita, panoramica del girone (classifica sintetica, partita simbolo, dato della giornata).
+- **`00-copertina.html`, la prima pagina**, costruita come quella di un quotidiano sportivo (modelli in `Testate/`, solo locali), dall'alto in basso:
+  1. Testata con orecchiette, poi la riga con data di uscita (il giorno dopo l'ultima partita), giornata e girone.
+  2. Sopratitolo: etichetta ciano (`occhiello`) più una riga che dà il fatto e il suo dato (`sopratitolo`).
+  3. Titolone: una o due parole, in bastone stretto, a tutta riga. Il gioco di parole va sul blocco ciano. Il corpo si adatta da solo: se il titolo sta su una riga la riempie, altrimenti va su due.
+  4. Catenaccio: una o due righe in grassetto con grazie, con il rimando "pag. 01" all'apertura.
+  5. Apertura: foto con il punteggio della partita simbolo nel riquadro navy e la didascalia. Accanto c'è la spalla con il dato della giornata e la classifica sintetica (primi 5).
+  6. Tabellino: tutti i risultati della giornata su fascia navy.
+  7. Taglio basso: tre richiami alle pagine interne, ciascuno con occhiello, titolo, una riga e il numero di pagina. Contiene gli articoli dal secondo in poi; se gli articoli sono pochi, completano le rubriche.
+  L'apertura della prima pagina è sempre il primo articolo dell'uscita.
 - **Un file HTML per ogni articolo** (`01-...html`, `02-...html`, ...): ogni pagina contiene un solo pezzo, con testata ridotta, occhiello, titolo, sommario e testo. Deve essere leggibile e completa da sola, perché verrà pubblicata come storia.
 - **Rubriche fisse** (confermate), presenti in ogni uscita e ciascuna in un file proprio: classifica, risultati della giornata, marcatori e assist, prossimo turno (con le probabilità pre-partita quando disponibili).
 

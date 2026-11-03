@@ -46,20 +46,46 @@ body {{
 .contenuto {{ position: absolute; left: 40px; right: 56px; top: var(--top); bottom: 150px; overflow: hidden; }}
 .titoli {{ font-family: 'Franklin Gothic Demi', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; }}
 .gioco {{ background: {CIANO}; color: {NAVY}; padding: 0 14px; -webkit-box-decoration-break: clone; box-decoration-break: clone; }}
-.foto {{ width: 1000px; height: 500px; background: {CIANO}; display: flex; align-items: center; justify-content: center; overflow: hidden; }}
-.foto img {{ width: 100%; height: 100%; object-fit: cover; }}
-.foto span {{ font-size: 26px; letter-spacing: 3px; text-transform: uppercase; }}
-.titolone {{ font-size: 92px; line-height: 1.02; margin: 34px 0 20px; text-transform: uppercase; }}
-.catenaccio {{ font-size: 32px; line-height: 1.35; font-style: italic; margin-bottom: 28px; }}
-.sommario {{ list-style: none; border-top: 4px solid {NAVY}; }}
-.sommario li {{ display: flex; gap: 20px; align-items: baseline; padding: 14px 0; border-bottom: 1px solid {NAVY}; font-size: 28px; line-height: 1.25; }}
-.sommario b {{ font-family: 'Franklin Gothic Demi', Arial, sans-serif; font-size: 30px; min-width: 48px; }}
-.riquadri {{ display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; margin-top: 28px; }}
-.riquadro {{ border: 5px solid {CIANO}; padding: 18px; font-size: 23px; line-height: 1.3; }}
-.riquadro h3 {{ background: {CIANO}; margin: -18px -18px 14px; padding: 8px 18px; font-size: 22px; letter-spacing: 2px; text-transform: uppercase; }}
-.riquadro .grande {{ font-size: 54px; line-height: 1; display: block; margin: 6px 0; }}
-.mini td {{ padding: 3px 0; }} .mini td:last-child {{ text-align: right; font-weight: 700; }}
-.mini {{ width: 100%; border-collapse: collapse; }}
+/* Prima pagina: sopratitolo, titolone, catenaccio, apertura con foto e spalla,
+   tabellino dei risultati, taglio basso con i richiami alle pagine interne. */
+.cop {{ height: 100%; display: flex; flex-direction: column; }}
+.sopra {{ display: flex; align-items: stretch; border-top: 6px solid {NAVY}; border-bottom: 2px solid {NAVY}; margin-top: 14px; }}
+.sopra .kicker {{ background: {CIANO}; padding: 8px 16px; font-size: 26px; letter-spacing: 2px; text-transform: uppercase; white-space: nowrap; display: flex; align-items: center; }}
+.sopra .testo-sopra {{ padding: 8px 16px; font-size: 28px; line-height: 1.2; font-weight: 700; display: flex; align-items: center; }}
+.titolone {{
+  font-family: 'Franklin Gothic Demi Cond', 'Franklin Gothic Medium Cond', Impact, 'Arial Narrow', sans-serif;
+  font-weight: 400; font-size: 220px; line-height: 1; letter-spacing: -1px; text-transform: uppercase;
+  margin: 28px 0 20px; white-space: normal; overflow-wrap: normal;
+}}
+.titolone .gioco {{ padding: 0 12px; line-height: 1; }}
+.catenaccio {{ font-size: 36px; line-height: 1.22; font-weight: 700; margin-bottom: 12px; }}
+.rimando {{ font-family: 'Franklin Gothic Demi', Arial, sans-serif; font-weight: 700; font-size: .7em; letter-spacing: 1px; text-transform: uppercase; white-space: nowrap; }}
+.rimando::before {{ content: "▸ "; }}
+.apertura {{ flex: 1 0 auto; min-height: 440px; display: grid; grid-template-columns: 1fr 300px; gap: 22px; border-top: 2px solid {NAVY}; padding-top: 16px; }}
+.foto {{ position: relative; background: {CIANO}; overflow: hidden; display: flex; align-items: center; justify-content: center; }}
+.foto img {{ position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }}
+.foto .segnaposto {{ font-size: 24px; letter-spacing: 3px; text-transform: uppercase; }}
+.foto figcaption {{ position: absolute; left: 0; right: 0; bottom: 0; background: rgba(255,255,255,.92); padding: 8px 14px; font-size: 20px; line-height: 1.3; font-style: italic; }}
+.punteggio {{ position: absolute; left: 0; top: 0; background: {NAVY}; color: #fff; padding: 10px 18px; display: flex; gap: 14px; align-items: center; font-size: 26px; text-transform: uppercase; letter-spacing: 1px; }}
+.punteggio b {{ font-family: 'Franklin Gothic Demi Cond', Impact, sans-serif; font-weight: 400; font-size: 64px; line-height: 1; letter-spacing: 0; }}
+.spalla {{ display: flex; flex-direction: column; gap: 18px; }}
+.blocco {{ border-top: 6px solid {CIANO}; font-size: 22px; line-height: 1.3; }}
+.blocco h3 {{ font-family: 'Franklin Gothic Demi', Arial, sans-serif; font-weight: 700; font-size: 22px; letter-spacing: 2px; text-transform: uppercase; padding: 8px 0 6px; }}
+.blocco .grande {{ font-family: 'Franklin Gothic Demi Cond', Impact, sans-serif; font-size: 84px; line-height: .95; display: block; }}
+.mini {{ width: 100%; border-collapse: collapse; font-size: 22px; }}
+.mini td {{ padding: 4px 0; border-bottom: 1px solid {NAVY}; }}
+.mini td:last-child {{ text-align: right; }}
+.mini tr.nostra td {{ background: {CIANO}; }}
+.tabellino {{ margin-top: 16px; background: {NAVY}; color: #fff; display: grid; grid-template-columns: 1fr 1fr; gap: 6px 30px; padding: 0 16px 12px; font-size: 23px; }}
+.tabellino .k {{ grid-column: 1 / -1; justify-self: start; background: {CIANO}; color: {NAVY}; padding: 4px 12px; margin-bottom: 4px; font-size: 18px; letter-spacing: 2px; text-transform: uppercase; }}
+.tabellino b {{ font-family: 'Franklin Gothic Demi', Arial, sans-serif; font-weight: 700; padding: 0 6px; }}
+.richiami {{ display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 16px; border-top: 6px solid {NAVY}; }}
+.richiami > div {{ padding: 12px 18px 0 0; }}
+.richiami > div + div {{ border-left: 1px solid {NAVY}; padding-left: 18px; }}
+.richiami .occ {{ display: inline-block; background: {CIANO}; padding: 3px 10px; font-size: 17px; letter-spacing: 2px; text-transform: uppercase; }}
+.richiami h4 {{ font-family: 'Franklin Gothic Demi', Arial, sans-serif; font-weight: 700; font-size: 30px; line-height: 1.08; margin: 8px 0 6px; }}
+.richiami p {{ font-size: 20px; line-height: 1.3; margin-bottom: 6px; }}
+.richiami .rimando {{ font-size: 17px; }}
 .occhiello {{ display: inline-block; background: {CIANO}; padding: 8px 18px; font-size: 24px; letter-spacing: 3px; text-transform: uppercase; margin: 36px 0 22px; }}
 .titolo {{ font-size: 76px; line-height: 1.04; margin-bottom: 22px; }}
 .sommario-art {{ font-size: 33px; line-height: 1.35; font-style: italic; padding-bottom: 26px; margin-bottom: 30px; border-bottom: 4px solid {NAVY}; }}
@@ -67,7 +93,7 @@ body {{
 .testo p:first-child::first-letter {{ font-family: 'Franklin Gothic Demi', Arial, sans-serif; float: left; font-size: 104px; line-height: .86; padding: 6px 12px 0 0; }}
 .parte {{ font-size: 22px; letter-spacing: 3px; text-transform: uppercase; margin-top: 10px; }}
 table.dati {{ width: 100%; border-collapse: collapse; font-size: 28px; }}
-table.dati th {{ font-family: 'Franklin Gothic Demi', Arial, sans-serif; font-weight: 400; text-align: center; padding: 10px 6px; border-bottom: 4px solid {NAVY}; font-size: 24px; letter-spacing: 1px; }}
+table.dati th {{ font-family: 'Franklin Gothic Demi', Arial, sans-serif; font-weight: 700; text-align: center; padding: 10px 6px; border-bottom: 4px solid {NAVY}; font-size: 24px; letter-spacing: 1px; }}
 table.dati td {{ text-align: center; padding: 13px 6px; border-bottom: 1px solid {NAVY}; }}
 table.dati td.sq, table.dati th.sq {{ text-align: left; }}
 /* Georgia ha numeri "all'antica" (lo 0 sembra una o): cifre in bastoni */
@@ -93,7 +119,30 @@ table.dati tr.nostra td {{ background: {CIANO}; font-weight: 700; }}
 
 CONTROLLO = """<script>
 window.addEventListener('load', function () {
+  // Il titolone si stringe finché sta in larghezza e in al massimo due righe.
+  // Il titolone parte grande e si stringe finché sta in larghezza, in al massimo
+  // due righe e senza spingere fuori pagina il resto della prima pagina.
   var c = document.querySelector('.contenuto');
+  var t = document.querySelector('.titolone');
+  // Come in edicola: se il titolo sta su una riga a corpo pieno, la riempie;
+  // altrimenti va su due righe.
+  if (t) {
+    var s = 300;
+    var pieno = function () { return c.scrollHeight > c.clientHeight + 1; };
+    t.style.whiteSpace = 'nowrap';
+    t.style.fontSize = s + 'px';
+    while (s > 150 && (t.scrollWidth > t.clientWidth || pieno())) { s -= 4; t.style.fontSize = s + 'px'; }
+    if (t.scrollWidth > t.clientWidth || pieno()) {
+      t.style.whiteSpace = 'normal';
+      s = 230;
+      var troppo = function () {
+        var righe = Math.round(t.getBoundingClientRect().height / s);
+        return t.scrollWidth > t.clientWidth || righe > 2 || pieno();
+      };
+      t.style.fontSize = s + 'px';
+      while (s > 80 && troppo()) { s -= 4; t.style.fontSize = s + 'px'; }
+    }
+  }
   var fuori = c && c.scrollHeight > c.clientHeight + 1;
   document.body.setAttribute('data-overflow', fuori ? 'si' : 'no');
 });
@@ -168,12 +217,12 @@ def pagina(u, titolo_doc, corpo, top, testata_grande=False):
 
 def immagine(percorso, base):
     if not percorso:
-        return '<div class="foto"><span>Immagine di copertina</span></div>'
+        return '<span class="segnaposto">Immagine di copertina</span>'
     p = percorso if os.path.isabs(percorso) else os.path.join(base, percorso)
     mime = mimetypes.guess_type(p)[0] or "image/jpeg"
     with open(p, "rb") as fh:
         dati = base64.b64encode(fh.read()).decode()
-    return f'<div class="foto"><img src="data:{mime};base64,{dati}" alt=""></div>'
+    return f'<img src="data:{mime};base64,{dati}" alt="">'
 
 
 def prob_html(prob, casa, ospite):
@@ -188,28 +237,71 @@ def prob_html(prob, casa, ospite):
     )
 
 
+RUBRICHE = [
+    ("classifica", "Classifica", "La classifica completa dopo la giornata"),
+    ("risultati", "Risultati", "Tutte le gare, con le probabilità della vigilia"),
+    ("marcatori-assist", "Marcatori e assist", "Chi segna e chi serve: le classifiche"),
+    ("prossimo-turno", "Prossimo turno", "Le partite che vengono, con le probabilità"),
+]
+
+
+def pag(n):
+    return f'<span class="rimando">pag. {n:02d}</span>'
+
+
 def copertina(u, base):
+    """Prima pagina sul modello dei quotidiani sportivi: l'apertura è il primo
+    articolo, la spalla porta il dato e la classifica, il taglio basso richiama
+    gli altri pezzi e le rubriche con il numero di pagina."""
     c = u["copertina"]
-    voci = "".join(
-        f"<li><b>{i:02d}</b><span>{e(titolo_testo(a['titolo']))}</span></li>"
-        for i, a in enumerate(u["articoli"], 1)
-    )
+    arts = u["articoli"]
+    p_classifica = len(arts) + 1
+
+    punteggio = ""
+    if c.get("punteggio"):
+        s = c["punteggio"]
+        punteggio = f'<div class="punteggio"><span>{e(s["casa"])}</span><b>{e(s["risultato"])}</b><span>{e(s["ospite"])}</span></div>'
+    didascalia = f'<figcaption>{e(c["didascalia"])}</figcaption>' if c.get("didascalia") else ""
+
+    nostra = u.get("squadra_nostra")
     top5 = "".join(
-        f'<tr><td>{r[0]}. {e(r[1])}</td><td>{r[2]}</td></tr>' for r in u["classifica"][:5]
+        f'<tr{" class=nostra" if r[1] == nostra else ""}><td>{r[0]}. {e(r[1])}</td><td><b>{r[2]}</b></td></tr>'
+        for r in u["classifica"][:5]
     )
-    simbolo = c["partita_simbolo"]
     dato = c["dato"]
+
+    risultati = "".join(
+        f'<div>{e(m["casa"])} <b>{e(m["risultato"])}</b> {e(m["ospite"])}</div>' for m in u["risultati"]
+    )
+
+    richiami = [
+        (a["occhiello"], titolo_testo(a["titolo"]), a["sommario"], i) for i, a in enumerate(arts[1:], 2)
+    ]
+    for k, (_, nome, desc) in enumerate(RUBRICHE):
+        if len(richiami) >= 3:
+            break
+        if nome in ("Classifica", "Risultati"):
+            continue  # già in prima pagina
+        richiami.append(("Rubrica", nome, desc, p_classifica + k))
+    taglio = "".join(
+        f'<div><span class="occ titoli">{e(o)}</span><h4>{e(t)}</h4><p>{e(s)}</p>{pag(n)}</div>'
+        for o, t, s, n in richiami[:3]
+    )
+
     corpo = f"""
-{immagine(c.get("immagine"), base)}
-<h1 class="titolone titoli">{titolo_html(c["titolo"])}</h1>
-<p class="catenaccio">{e(c["catenaccio"])}</p>
-<ol class="sommario">{voci}</ol>
-<div class="riquadri">
-  <div class="riquadro"><h3>Classifica</h3><table class="mini">{top5}</table></div>
-  <div class="riquadro"><h3>Partita simbolo</h3>{e(simbolo["partita"])}<span class="grande titoli">{e(simbolo["risultato"])}</span>{e(simbolo["nota"])}</div>
-  <div class="riquadro"><h3>Il dato</h3><span class="grande titoli">{e(dato["valore"])}</span>{e(dato["testo"])}</div>
-</div>"""
-    return pagina(u, "Prima pagina", corpo, top=410, testata_grande=True)
+<div class="sopra"><span class="kicker titoli">{e(c["occhiello"])}</span><span class="testo-sopra">{e(c["sopratitolo"])}</span></div>
+<h1 class="titolone">{titolo_html(c["titolo"])}</h1>
+<p class="catenaccio">{e(c["catenaccio"])} {pag(1)}</p>
+<div class="apertura">
+  <figure class="foto">{immagine(c.get("immagine"), base)}{punteggio}{didascalia}</figure>
+  <aside class="spalla">
+    <div class="blocco"><h3>Il dato</h3><span class="grande">{e(dato["valore"])}</span>{e(dato["testo"])}</div>
+    <div class="blocco"><h3>Classifica</h3><table class="mini">{top5}</table>{pag(p_classifica)}</div>
+  </aside>
+</div>
+<div class="tabellino"><span class="k titoli">{e(u["giornata"])}ª giornata</span>{risultati}</div>
+<div class="richiami">{taglio}</div>"""
+    return pagina(u, "Prima pagina", f'<div class="cop">{corpo}</div>', top=400, testata_grande=True)
 
 
 def articolo(u, a):

@@ -22,12 +22,17 @@ USCITA = {
     "girone": "Girone di prova",
     "data_uscita": "Data di prova",
     "squadra_nostra": "Squadra A",
+    # Prima pagina. L'apertura è il primo articolo (pag. 01); il taglio basso
+    # richiama gli altri articoli e le rubriche in automatico.
     "copertina": {
-        "immagine": None,
-        "titolo": ["Titolo ", ("di prova", True), " in copertina"],
+        "occhiello": "7ª giornata",
+        "sopratitolo": "Sopratitolo di prova: il fatto in una riga, con il dato che lo spiega",
+        "titolo": ["Titolo ", ("prova", True)],
         "catenaccio": "Catenaccio di prova: una o due righe che spiegano la storia principale.",
-        "partita_simbolo": {"partita": "Squadra A - Squadra B", "risultato": "0-0", "nota": "Nota di prova"},
-        "dato": {"valore": "00", "testo": "Il dato della giornata, di prova"},
+        "immagine": None,
+        "didascalia": "Didascalia di prova: chi c'è nella foto e in quale momento.",
+        "punteggio": {"casa": "Squadra A", "risultato": "0-0", "ospite": "Squadra B"},
+        "dato": {"valore": "00", "testo": "Il dato della giornata, di prova."},
     },
     "articoli": [
         {
