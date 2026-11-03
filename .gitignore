@@ -3,3 +3,6 @@ __pycache__/
 .DS_Store
 Thumbs.db
 desktop.ini
+
+# Immagini di riferimento, solo locali
+Testate/
