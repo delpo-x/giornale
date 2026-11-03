@@ -154,6 +154,8 @@ table.dati tr.nostra td {{ background: {CIANO}; font-weight: 700; }}
 .gara .ris.vs {{ background: #fff; color: {NAVY}; border: 3px solid {NAVY}; font-size: 36px; padding: 8px 0; text-transform: uppercase; }}
 .gara .mar {{ font-size: 24px; line-height: 1.3; margin-top: 6px; font-style: italic; }}
 .gara.nostra {{ border-left: 10px solid {CIANO}; padding-left: 20px; }}
+.spoiler {{ margin-top: 22px; padding-top: 16px; border-top: 2px solid {NAVY}; font-size: 30px; line-height: 1.4; }}
+.spoiler .occhiello {{ margin-right: 10px; font-family: {BAST}; font-size: 24px; font-weight: 700; padding: 4px 12px; }}
 .prob {{ display: flex; height: 38px; margin-top: 8px; border: 2px solid {NAVY}; font-size: 24px; }}
 .prob div {{ display: flex; align-items: center; justify-content: center; overflow: hidden; white-space: nowrap; }}
 .prob .p1 {{ background: {NAVY}; color: #fff; }} .prob .px {{ background: #fff; }} .prob .p2 {{ background: {CIANO}; }}
@@ -343,7 +345,7 @@ RUBRICHE = [
     ("risultati", "Risultati", "Tutte le gare, con le probabilità della vigilia"),
     ("marcatori-assist", "Marcatori e assist", "Chi segna e chi serve: le classifiche"),
     ("prossimo-turno", "Prossimo turno", "Le partite che vengono, con le probabilità"),
-    ("partita-settimana", "La partita della settimana", "La gara più attesa del prossimo turno"),
+    ("partita-settimana", "La partita della settimana", "La gara più combattuta della giornata"),
 ]
 
 
@@ -679,21 +681,24 @@ def posizioni(u):
     return {r[1]: (r[0], r[2]) for r in u["classifica"]}
 
 
-def scegli_partita(u):
-    """La partita della settimana: la gara del prossimo turno più equilibrata.
-    Con le probabilità vince la differenza più piccola tra vittoria in casa e
-    in trasferta; a parità, o senza probabilità, la coppia più in alto in
-    classifica (somma delle posizioni più bassa), poi quella più vicina in
-    punti. Restituisce (indice in prossimo_turno, motivo)."""
+def scegli_partita(u, chiave="risultati"):
+    """La partita della settimana: la gara più equilibrata di una lista
+    (di base i risultati della giornata appena giocata; con chiave
+    "prossimo_turno" lo spoiler della prossima). Con le probabilità vince la
+    differenza più piccola tra vittoria in casa e in trasferta; a parità, o
+    senza probabilità, la coppia più in alto in classifica (somma delle
+    posizioni più bassa), poi quella più vicina in punti. Restituisce
+    (indice nella lista, motivo)."""
     pos = posizioni(u)
+    gare = u[chiave]
     voti = []
-    for i, m in enumerate(u["prossimo_turno"]):
+    for i, m in enumerate(gare):
         (pc, ptc), (po, pto) = pos[m["casa"]], pos[m["ospite"]]
         pr = m.get("prob")
         voti.append((abs(pr[0] - pr[2]) if pr else 0, pc + po, abs(ptc - pto), i))
     d, somma, gap, i = min(voti)
-    m = u["prossimo_turno"][i]
-    if all(x.get("prob") for x in u["prossimo_turno"]):
+    m = gare[i]
+    if all(x.get("prob") for x in gare):
         motivo = f"probabilità più vicine (scarto {d} punti percentuali)"
     else:
         motivo = "senza probabilità: la coppia più in alto in classifica"
@@ -701,26 +706,33 @@ def scegli_partita(u):
 
 
 def rubrica_partita(u, n):
-    """Trafiletto sulla partita della settimana. La gara si sceglie da sola
-    (scegli_partita) salvo indice esplicito; il testo lo scrive la redazione."""
+    """La partita della settimana: la gara più combattuta della giornata
+    appena giocata, più lo spoiler su quella del prossimo turno. Le gare si
+    scelgono da sole (scegli_partita) salvo "indice" e "indice_prossima";
+    i testi li scrive la redazione."""
     ps = u["partita_settimana"]
-    i = ps.get("indice", scegli_partita(u)[0])
-    m = u["prossimo_turno"][i]
+    m = u["risultati"][ps.get("indice", scegli_partita(u)[0])]
     pos = posizioni(u)
     (pc, ptc), (po, pto) = pos[m["casa"]], pos[m["ospite"]]
     voci = [
         (m["casa"], f"{pc}ª", f"{ptc} punti"),
         (m["ospite"], f"{po}ª", f"{pto} punti"),
-        ("Distanza", abs(ptc - pto), "punti in classifica"),
     ]
     if m.get("prob"):
         voci.append(("Pareggio", f"{m['prob'][1]}%", "alla vigilia"))
     testo = "".join(f"<p>{e(p)}</p>" for p in ps["testo"])
+    spoiler = ""
+    if u.get("prossimo_turno") and ps.get("prossima"):
+        q = u["prossimo_turno"][ps.get("indice_prossima", scegli_partita(u, "prossimo_turno")[0])]
+        spoiler = (f'<div class="spoiler"><span class="occhiello">La prossima</span> '
+                   f'<b>{e(q["casa"])} - {e(q["ospite"])}</b>, {e(q.get("data", ""))}. '
+                   f'{e(ps["prossima"])}</div>')
     corpo = f"""<div class="int">
-{testa_int(u, n, "Il prossimo turno", "La partita della settimana", ps["titolo"], ps["sommario"])}
+{testa_int(u, n, "La giornata", "La partita della settimana", ps["titolo"], ps["sommario"])}
 <div class="byline"><span>di Redazione</span><span>{e(u["girone"])}</span></div>
-{blocco_partita(u, m, False)}
+{blocco_partita(u, m, True)}
 <div class="colonne" style="margin-top:22px">{testo}</div>
+{spoiler}
 {cifre(voci)}
 </div>"""
     return pagina(u, "La partita della settimana", corpo, top=TOP_INT)
@@ -802,8 +814,10 @@ def main():
         "prossimo-turno": rubrica_prossimo,
         "partita-settimana": rubrica_partita,
     }
-    if u.get("prossimo_turno") and u.get("classifica"):
+    if u.get("risultati") and u.get("classifica"):
         print("partita della settimana (scelta automatica):", scegli_partita(u)[1])
+    if u.get("prossimo_turno") and u.get("classifica"):
+        print("spoiler prossima (scelta automatica):", scegli_partita(u, "prossimo_turno")[1])
     for nome, _, _, prima, _ in pagine_rubriche(u):
         fatte = fn[nome](u, prima)
         fatte = fatte if isinstance(fatte, list) else [fatte]
