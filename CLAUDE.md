@@ -8,12 +8,20 @@ Una pagina HTML in stile quotidiano sportivo contemporaneo (riferimenti di impos
 Non è un elenco di risultati. L'obiettivo è costruire la storia del campionato attraverso gli articoli.
 
 ## 2. Come funziona ogni giornata
-1. Nicola fornisce i dati nuovi, per lo più screenshot.
+1. Nicola fornisce i dati nuovi, per lo più screenshot. A ogni giornata Claude gli ricorda la lista di cosa serve, senza aspettare che se ne ricordi lui:
+   - risultati e schede "Marcatori" di ogni gara;
+   - classifica ufficiale;
+   - classifica marcatori e classifica assist;
+   - probabilità pre-partita;
+   - Top 11;
+   - calendario della giornata successiva;
+   - pezzo di Zanni, se c'è;
+   - **post Instagram delle squadre sulle proprie partite** (vedi sotto).
 2. Claude legge gli screenshot, trascrive i dati in forma testuale e li mostra a Nicola per un controllo rapido prima di scrivere (vedi regola sui dati, punto 3).
 3. Claude aggiorna lo storico (punto 4), poi individua gli argomenti (punto 5).
-4. Claude scrive gli articoli con la skill `giornalismo-sportivo-italiano`.
+4. Claude scrive gli articoli con la skill `giornalismo-sportivo-italiano`. La cronaca della nostra partita la scrive Gianluca Zanni: Nicola la passa e Claude la impagina senza toccarla (punto 8).
 5. Claude costruisce le pagine HTML nel formato fisso (punto 6): una per la copertina e una per ogni articolo. Cura l'impaginazione con la skill UI-UX Pro e fornisce il prompt per l'immagine di copertina (punto 7).
-6. Nicola passa i testi nella skill Humanizer, poi li reinserisce nelle pagine (o chiede a Claude di farlo).
+6. Claude passa ogni testo suo nella skill `humanizer` prima di consegnarlo (vedi punto 8, "Humanizer sempre"). Nelle pagine e nel file `.md` va solo la versione già passata.
 
 ## 3. Regola sui dati
 - Non inventare mai risultati, marcatori, minuti, voti, percentuali, classifiche o dichiarazioni.
@@ -21,6 +29,14 @@ Non è un elenco di risultati. L'obiettivo è costruire la storia del campionato
 - Ogni numero citato in un articolo deve essere rintracciabile nello storico dati.
 - Le citazioni di persone si usano solo se fornite da Nicola.
 - Le deduzioni (andamenti, trend, confronti) vanno calcolate dai dati, non stimate a sentimento. Se serve un calcolo, eseguirlo.
+
+### Post Instagram delle squadre
+Nicola può mandare gli screenshot dei post che le squadre pubblicano sui propri profili per commentare le loro partite. Sono contesto prezioso: il tono di una società, una dedica, un infortunio annunciato, l'umore dopo una sconfitta.
+- Gli screenshot si salvano in `screenshot/giornata-XX/instagram/`. Il testo va trascritto in `dati/giornata-XX.md`, nella sezione "Dai profili delle squadre", con squadra, data e parole esatte.
+- Negli articoli si può citare un post, tra virgolette e alla lettera, attribuendolo alla società ("scrive l'Implast sul suo profilo"). Non va attribuito a una persona, a meno che il post non sia firmato da quella persona.
+- Un post è il punto di vista di una squadra, non un dato. Numeri e fatti presenti nel post (risultato, marcatori, minuti) vanno controllati con lo storico. Se non tornano, vale lo storico e la discrepanza si segnala a Nicola.
+- Un fatto che compare solo in un post (per esempio un infortunio o un esordio) si scrive come "fa sapere la società", mai come certezza della redazione.
+- Niente prese in giro o polemiche costruite sui post degli avversari: si possono raccontare, non deridere.
 
 ## 4. Storico dei dati
 Struttura consigliata della cartella di lavoro:
@@ -42,9 +58,16 @@ giornale-csi/
       01-<slug-articolo>.html  (un file per ogni articolo, numerati)
       02-<slug-articolo>.html
       export/                (PNG 1080x1920 e PDF di ogni pagina, pronti per le storie)
-    giornata-XX-articoli.md  (testi puliti, pronti per Humanizer)
+    giornata-XX-articoli.md  (testi puliti, già passati in humanizer)
     giornata-XX-copertina.md (prompt immagine)
 ```
+
+File già in uso:
+- `dati/stagione.md`: tutti i risultati, la classifica calcolata, le Top 11 e i controlli incrociati.
+- `dati/risultati.py`: i risultati in forma calcolabile. `python dati/risultati.py` stampa la classifica e confronta i numeri con le statistiche di Tuttocampo.
+- `dati/squadre.md`: l'anagrafica fissa delle squadre (staff, persone, note e curiosità). Ogni dato statico che Nicola manda va registrato qui, con la data, e si usa per arricchire gli articoli.
+
+Il primo numero della Gazzetta esce il 4 novembre e racconta la 6ª giornata. Le giornate dalla 1 alla 5 sono contesto: si citano per confronti, serie e precedenti, ma non hanno un'uscita propria. Da qui in avanti, numero N = giornata N + 5.
 
 Ad ogni giornata: salvare i dati nuovi, aggiornare i file cumulativi e mantenere visibile lo storico, così gli articoli possono fare confronti con le giornate precedenti.
 
@@ -89,6 +112,7 @@ Ogni uscita è fatta da più file HTML separati, per rendere l'esportazione semp
   5. Testo su due colonne con capolettera e quadratino di chiusura. Una `citazione` facoltativa va dopo il secondo capoverso, solo con parole dette davvero.
   6. In fondo, facoltativo, il box dei numeri (`numeri`: etichetta, valore, testo), solo con dati veri.
   Un pezzo troppo lungo per una pagina si divide in articoli consecutivi con `parte` 1, 2, ...: le pagine si richiamano da sole con "continua a pag." e "segue da pag.".
+- **La cronaca di Gianluca Zanni** (`"tipo": "cronaca"`, `"firma": "Gianluca Zanni"`): pagina articolo con sezione "La nostra partita", occhiello "La cronaca", firma "La cronaca di Gianluca Zanni" con il nome su blocco ciano e il tabellino della nostra gara messo in automatico. In prima pagina il richiamo riporta "di Gianluca Zanni". Regole al punto 8.
 - **Rubriche fisse** (confermate), presenti in ogni uscita e ciascuna in un file proprio, con la stessa testatina e lo stesso schema di titoli degli articoli:
   - classifica, con sopra i numeri calcolati dalla classifica (capolista, posizione nostra e distacco, miglior attacco, miglior difesa) e la nostra squadra evidenziata;
   - risultati della giornata, con sopra i conti dei segni (gol, 1, X, 2) e per ogni gara punteggio, marcatori e probabilità pre-partita;
@@ -104,7 +128,7 @@ Regole comuni a tutti i file:
 
 - **Firma e copyright in ogni pagina:** ogni file HTML riporta sempre, in posizione fissa e ben visibile ma elegante (per esempio in basso o in verticale sul bordo), la dicitura di copyright con il nome degli autori e creatori del giornale, tra virgolette, più il nome della testata e il numero dell'uscita. Serve a rendere riconoscibile la paternità di ogni pagina, anche se ne viene fatto uno screenshot e ripubblicato. Mai omettere la firma, mai nasconderla o renderla illeggibile. Si può aggiungere un elemento grafico distintivo ricorrente (marchio, filetto, sigillo) che sia parte dell'impaginazione e non facile da ritagliare.
 
-Stile grafico: quotidiano sportivo online contemporaneo, con titoli forti, tipografia con grazie per i testi e carattere deciso per i titoli. Palette fissa: sfondo bianco e testi blu navy. Terzo colore per i blocchi (riquadri, pannelli, evidenziazioni): azzurro ciano, usato sempre allo stesso modo in tutte le pagine e in tutte le uscite. Nessun altro colore. Testata e logo originali: non riprodurre loghi o grafica di testate esistenti.
+Stile grafico: quotidiano sportivo online contemporaneo, con titoli forti, tipografia con grazie per i testi e carattere deciso per i titoli. Palette fissa: sfondo bianco e testi blu navy. Terzo colore per i blocchi (riquadri, pannelli, evidenziazioni): azzurro ciano, usato sempre allo stesso modo in tutte le pagine e in tutte le uscite. Nessun altro colore. Unica eccezione: i loghi ufficiali delle squadre (cartella `logo/`), che il generatore mette piccoli accanto ai nomi in classifica, risultati, prossimo turno, tabellini e riquadro del punteggio in prima, con i loro colori originali. Testata e logo originali: non riprodurre loghi o grafica di testate esistenti.
 
 Già deciso:
 - Testata: quotidiano classico con doppi filetti, "La Gazzetta del DRAGONE", testa del drago (richiamo IMPLAST) nell'orecchietta sinistra su blocco ciano, numero dell'uscita in quella destra. File e regole in `assets/logo/`.
@@ -132,8 +156,19 @@ Ad ogni uscita Claude fornisce il prompt per generare l'immagine di copertina co
 - **Voce:** Claude scrive e ragiona come un cronista sportivo con 30 anni di esperienza: occhio per la storia dentro i numeri, memoria del campionato, lessico preciso, nessuna enfasi gratuita, mai un dato inventato. Sa cosa conta in una partita e cosa è solo rumore.
 - Usare la skill `giornalismo-sportivo-italiano` per tutti i testi.
 - Evitare i segnali tipici di testo scritto da IA (aperture da tema, morale finale, aggettivi gonfiati, costruzioni simmetriche).
-- Dopo la stesura, Nicola applica la skill Humanizer: consegnare quindi i testi anche in un file `.md` pulito, senza HTML, separati per articolo, con titolo e sommario.
+- **Humanizer sempre** (regola fissata da Nicola il 3 novembre): ogni testo scritto da Claude passa nella skill `humanizer` prima di essere consegnato o impaginato. Vale per tutto: articoli, titoli e titoloni, catenacci e sommari, occhielli, didascalie, richiami in prima, box dei numeri, testi delle rubriche, proposte di titolo. Humanizer non cambia i dati: dopo il passaggio ricontrollare che cifre, nomi e fatti siano identici a prima. Unica eccezione: la cronaca di Gianluca Zanni, che non si tocca.
+- Consegnare i testi anche in un file `.md` pulito, senza HTML, separati per articolo, con titolo e sommario.
 - Tono di default: da quotidiano sportivo, vivace ma preciso. Cambiare solo su richiesta.
+- **Mai pezzi piatti (richiesta esplicita di Nicola).** Un articolo che riporta solo risultato e marcatori è da rifare. Ogni pezzo deve avere una tesi, una lettura dei fatti che il lettore non trova sul tabellino. Per esempio: perché una squadra è prima senza essere la migliore in nessuna voce, cosa racconta una serie, quale partita ha cambiato il senso di un'altra. Lo sviluppo deve essere articolato: un'apertura che entra nella storia, i numeri messi al servizio dell'idea, un confronto con le giornate precedenti, una chiusura che lascia una domanda aperta per le prossime uscite. La fantasia sta nell'angolo, nella struttura, nelle immagini e nel lessico. I fatti restano solo quelli dei dati (punto 3): niente scene, frasi o emozioni inventate attribuite a persone reali.
+
+### La cronaca di Gianluca Zanni
+Le nostre partite le racconta Gianluca Zanni, giornalista della redazione, con un pezzo firmato in ogni uscita in cui giochiamo.
+- Il testo è suo: Nicola lo passa e Claude lo impagina così com'è. Claude non lo scrive, non lo riscrive, non lo accorcia e non lo passa in Humanizer (nel file `.md` è segnato apposta).
+- Claude controlla le cifre del pezzo (risultato, marcatori, minuti) con lo storico dei dati. Se qualcosa non torna lo segnala a Nicola, senza correggere da sé.
+- Titolo e sommario: quelli di Zanni, se li ha dati. Altrimenti Claude ne propone due varianti e Nicola sceglie.
+- Se il pezzo non sta in una pagina, si divide in due parti (`parte` 1 e 2), mai tagliando il testo.
+- Gli articoli della redazione non rifanno la cronaca della nostra partita: la danno per letta e, se serve, rimandano alla pagina di Zanni. Prendono altri angoli (punto 5).
+- Mai attribuire a Zanni frasi, giudizi o citazioni che non ha scritto.
 
 ## 9. Continuità
 - Prima di scrivere una nuova uscita, rileggere questo file e l'uscita precedente.
@@ -141,7 +176,7 @@ Ad ogni uscita Claude fornisce il prompt per generare l'immagine di copertina co
 - Se qualcosa cambia nelle regole, aggiornare questo file e segnalarlo a Nicola.
 
 ## 10. Strumenti già pronti nel progetto
-- `template/genera_uscita.py contenuti/giornata_XX.py`: genera le pagine HTML 9:16 (copertina, articoli, rubriche) con testata, firma, firma verticale sul bordo e filigrana del drago in ogni pagina, più `uscite/giornata-XX-articoli.md` per Humanizer. Font di sistema: Georgia per i testi, Franklin Gothic Demi per titoli e numeri (le cifre di Georgia sono "all'antica" e lo 0 sembra una o).
+- `template/genera_uscita.py contenuti/giornata_XX.py`: genera le pagine HTML 9:16 (copertina, articoli, rubriche) con testata, firma, firma verticale sul bordo e filigrana del drago in ogni pagina, più `uscite/giornata-XX-articoli.md` con i testi puliti. Font di sistema: Georgia per i testi, Franklin Gothic Demi per titoli e numeri (le cifre di Georgia sono "all'antica" e lo 0 sembra una o).
 - `contenuti/esempio.py`: modello dei contenuti con dati finti, commentato. Per una nuova giornata copiarlo in `contenuti/giornata_XX.py`, togliere `cartella` e mettere dati e testi veri.
 - `template/esporta.py uscite/giornata-XX`: esporta PNG 1080x1920 e PDF in `export/` con Chrome (o Edge) e segnala le pagine in cui il testo esce dall'area utile. Controllare sempre l'esito prima di consegnare.
 - `assets/logo/`: testata e logo (guida in `GUIDA-LOGO.md`). Le pagine prendono testata e drago da `assets/logo/genera_logo.py`.

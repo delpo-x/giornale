@@ -10,3 +10,7 @@ Testate/
 # Uscita di prova generata da contenuti/esempio.py
 uscite/esempio/
 uscite/esempio-articoli.md
+
+# Prove con dati finti, solo locali
+uscite/prova-g6/
+uscite/prova-g6-articoli.md

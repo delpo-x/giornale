@@ -13,15 +13,11 @@ SERIF = "Georgia, 'Times New Roman', serif"
 # Georgia ha numeri "all'antica" (lo 0 sembra una o): i numeri vanno in bastoni.
 BASTONI = "'Franklin Gothic Demi', 'Franklin Gothic Medium', Arial, sans-serif"
 
-# Testa del drago in un riquadro 256x256, rivolta a sinistra come nel logo IMPLAST.
-DRAGO = (
-    '<path d="M146 90 C148 70 152 56 160 40 C162 58 162 74 160 92 Z"/>'
-    '<path fill-rule="evenodd" d="M140 92 C156 70 176 46 204 28 C190 50 180 72 176 96 '
-    "L198 106 L178 118 L200 132 L178 142 L198 158 L176 166 L190 188 L170 192 L176 232 "
-    "L112 232 C116 212 118 192 124 176 C110 172 90 168 74 162 L118 152 L88 146 L84 157 "
-    "L79 145 L58 140 C51 136 52 128 60 124 C80 116 100 106 116 96 L132 80 Z "
-    'M104 114 L130 107 L122 119 Z"/>'
-)
+# Testa del drago in un riquadro 256x256, rivolta a sinistra come nel logo IMPLAST:
+# centrata in orizzontale, collo tagliato sul bordo basso. Il tracciato viene da
+# sorgente/drago.jpg tramite traccia_drago.py.
+with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "drago-path.txt"), encoding="utf-8") as _fh:
+    DRAGO = f'<path fill-rule="evenodd" d="{_fh.read().strip()}"/>'
 
 
 def drago(x, y, scala, colore):
@@ -46,7 +42,7 @@ def testata(inchiostro, blocco, drago_col, numero="N° 7"):
     c.append(f'<rect x="24" y="56" width="112" height="144" fill="{blocco}"/>')
     # il collo esce dal fondo del riquadro: lo taglio con un clip
     c.append('<clipPath id="ear"><rect x="24" y="56" width="112" height="144"/></clipPath>')
-    c.append(f'<g clip-path="url(#ear)">{drago(3.5, 60.8, 0.6, drago_col)}</g>')
+    c.append(f'<g clip-path="url(#ear)">{drago(20, 80, 0.47, drago_col)}</g>')
     # orecchietta destra: numero dell'uscita
     c.append(
         f'<path fill="{inchiostro}" fill-rule="evenodd" '
@@ -84,12 +80,12 @@ def compatta(inchiostro, blocco, drago_col, numero="N° 7"):
         f'<rect x="0" y="88" width="768" height="4" fill="{inchiostro}"/>',
         f'<rect x="0" y="16" width="64" height="64" fill="{blocco}"/>',
         '<clipPath id="earc"><rect x="0" y="16" width="64" height="64"/></clipPath>',
-        f'<g clip-path="url(#earc)">{drago(-8, 9, 0.3, drago_col)}</g>',
+        f'<g clip-path="url(#earc)">{drago(3.8, 23.7, 0.22, drago_col)}</g>',
         f'<text x="80" y="62" font-family="{SERIF}" font-size="24" font-style="italic" '
         f'fill="{inchiostro}">La Gazzetta del</text>',
         f'<text x="252" y="64" font-family="{SERIF}" font-size="40" font-weight="700" '
         f'letter-spacing="1" fill="{inchiostro}">DRAGONE</text>',
-        f'<text x="764" y="60" font-family="{BASTONI}" font-size="16" letter-spacing="2" '
+        f'<text x="764" y="60" font-family="{BASTONI}" font-size="19" letter-spacing="1" '
         f'text-anchor="end" fill="{inchiostro}">{numero} · GIRONE CSI</text>',
     ]
     return "".join(c)
@@ -103,7 +99,7 @@ def firma(y, numero):
         f'<rect x="40" y="{y}" width="1000" height="3" fill="{NAVY}"/>'
         f'<rect x="40" y="{y + 16}" width="44" height="44" fill="{CIANO}"/>'
         '<clipPath id="fir"><rect x="40" y="' + str(y + 16) + '" width="44" height="44"/></clipPath>'
-        f'<g clip-path="url(#fir)">{drago(32, y + 15, 0.2, NAVY)}</g>'
+        f'<g clip-path="url(#fir)">{drago(42.8, y + 21.6, 0.15, NAVY)}</g>'
         f'<text x="100" y="{y + 46}" font-family="{SERIF}" font-size="22" fill="{NAVY}">'
         f"{FIRMA} · {numero}</text>"
     )
@@ -149,7 +145,7 @@ def icona(blocco, drago_col):
     return (
         f'<rect width="256" height="256" fill="{blocco}"/>'
         '<clipPath id="ico"><rect width="256" height="256"/></clipPath>'
-        f'<g clip-path="url(#ico)">{drago(10, 47, 0.9, drago_col)}</g>'
+        f'<g clip-path="url(#ico)">{drago(18, 36, 0.86, drago_col)}</g>'
     )
 
 

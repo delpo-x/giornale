@@ -15,8 +15,12 @@ Una testata da quotidiano classico, con doppi filetti, nome con le grazie e due 
 | `drago.svg` | Solo la testa del drago, navy, per usi grafici liberi |
 | `prova-copertina.svg`, `prova-articolo.svg` | Prove di impaginazione 1080x1920 (non da pubblicare) |
 | `png/` | Anteprime raster |
+| `sorgente/drago.jpg` | Immagine originale della testa del drago (silhouette navy su bianco) |
+| `drago-path.txt` | Tracciato vettoriale del drago ricavato dalla sorgente, letto da `genera_logo.py` |
 
 Per rigenerare tutto (per esempio con un altro numero di uscita): `python genera_logo.py <cartella>`.
+
+Per cambiare il drago: sostituire `sorgente/drago.jpg` con una nuova silhouette scura su fondo chiaro, rivolta a sinistra, poi lanciare `python traccia_drago.py` (serve OpenCV) e rigenerare con `genera_logo.py`.
 
 ## Colori
 | Nome | HEX | Uso |
