@@ -86,10 +86,8 @@ Regole comuni a tutti i file:
 
 Stile grafico: quotidiano sportivo online contemporaneo, con titoli forti, tipografia con grazie per i testi e carattere deciso per i titoli. Palette fissa: sfondo bianco e testi blu navy. Terzo colore per i blocchi (riquadri, pannelli, evidenziazioni): azzurro ciano, usato sempre allo stesso modo in tutte le pagine e in tutte le uscite. Nessun altro colore. Testata e logo originali: non riprodurre loghi o grafica di testate esistenti.
 
-Dettagli ancora da fissare con Nicola (non decidere da soli):
-- Eventuale simbolo o logo del dragone per la testata (da proporre, non copiare da loghi esistenti)
-
 Già deciso:
+- Testata: quotidiano classico con doppi filetti, "La Gazzetta del DRAGONE", testa del drago (richiamo IMPLAST) nell'orecchietta sinistra su blocco ciano, numero dell'uscita in quella destra. File e regole in `assets/logo/`.
 - Nome della testata: "La Gazzetta del Dragone"
 - Firma in ogni pagina: "© Redazione La Gazzetta del Dragone, tutti i diritti riservati", con numero dell'uscita
 - Palette: sfondo bianco, scritte blu navy, terzo colore per i blocchi azzurro ciano

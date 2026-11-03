@@ -10,6 +10,8 @@ CIANO = "#00A8E8"
 BIANCO = "#FFFFFF"
 
 SERIF = "Georgia, 'Times New Roman', serif"
+# Georgia ha numeri "all'antica" (lo 0 sembra una o): i numeri vanno in bastoni.
+BASTONI = "'Franklin Gothic Demi', 'Franklin Gothic Medium', Arial, sans-serif"
 
 # Testa del drago in un riquadro 256x256, rivolta a sinistra come nel logo IMPLAST.
 DRAGO = (
@@ -51,7 +53,7 @@ def testata(inchiostro, blocco, drago_col, numero="N° 7"):
         'd="M632 56 H744 V200 H632 Z M638 62 H738 V194 H638 Z"/>'
     )
     c.append(
-        f'<text x="688" y="114" font-family="{SERIF}" font-size="24" font-weight="700" '
+        f'<text x="688" y="114" font-family="{BASTONI}" font-size="26" '
         f'text-anchor="middle" fill="{inchiostro}">{numero}</text>'
     )
     c.append(f'<rect x="656" y="128" width="64" height="2" fill="{inchiostro}"/>')
@@ -87,7 +89,7 @@ def compatta(inchiostro, blocco, drago_col, numero="N° 7"):
         f'fill="{inchiostro}">La Gazzetta del</text>',
         f'<text x="252" y="64" font-family="{SERIF}" font-size="40" font-weight="700" '
         f'letter-spacing="1" fill="{inchiostro}">DRAGONE</text>',
-        f'<text x="764" y="60" font-family="{SERIF}" font-size="16" letter-spacing="2" '
+        f'<text x="764" y="60" font-family="{BASTONI}" font-size="16" letter-spacing="2" '
         f'text-anchor="end" fill="{inchiostro}">{numero} · GIRONE CSI</text>',
     ]
     return "".join(c)
