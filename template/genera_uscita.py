@@ -21,6 +21,8 @@ import genera_logo as logo  # noqa: E402
 NAVY = logo.NAVY
 CIANO = logo.CIANO
 FIRMA = "© Redazione La Gazzetta del Dragone, tutti i diritti riservati"
+COND = "'Franklin Gothic Demi Cond', 'Franklin Gothic Medium Cond', Impact, 'Arial Narrow', sans-serif"
+BAST = "'Franklin Gothic Demi', 'Franklin Gothic Medium', Arial, sans-serif"
 
 CSS = f"""
 @page {{ size: 1080px 1920px; margin: 0; }}
@@ -86,49 +88,103 @@ body {{
 .richiami h4 {{ font-family: 'Franklin Gothic Demi', Arial, sans-serif; font-weight: 700; font-size: 30px; line-height: 1.08; margin: 8px 0 6px; }}
 .richiami p {{ font-size: 20px; line-height: 1.3; margin-bottom: 6px; }}
 .richiami .rimando {{ font-size: 17px; }}
-.occhiello {{ display: inline-block; background: {CIANO}; padding: 8px 18px; font-size: 24px; letter-spacing: 3px; text-transform: uppercase; margin: 36px 0 22px; }}
-.titolo {{ font-size: 76px; line-height: 1.04; margin-bottom: 22px; }}
-.sommario-art {{ font-size: 33px; line-height: 1.35; font-style: italic; padding-bottom: 26px; margin-bottom: 30px; border-bottom: 4px solid {NAVY}; }}
-.testo p {{ font-size: 30px; line-height: 1.5; margin-bottom: 18px; text-align: left; hyphens: auto; }}
-.testo p:first-child::first-letter {{ font-family: 'Franklin Gothic Demi', Arial, sans-serif; float: left; font-size: 104px; line-height: .86; padding: 6px 12px 0 0; }}
-.parte {{ font-size: 22px; letter-spacing: 3px; text-transform: uppercase; margin-top: 10px; }}
+/* Pagine interne: testatina con numero di pagina e sezione, occhiello, titolo
+   in condensato, catenaccio, firma, testo su due colonne, box dei numeri. */
+.int {{ height: 100%; display: flex; flex-direction: column; }}
+.folio {{ display: flex; align-items: stretch; height: 58px; border-bottom: 3px solid {NAVY}; margin-top: 4px; flex: none; }}
+.folio .pg {{ background: {NAVY}; color: #fff; font-family: {COND}; font-size: 46px; width: 100px; display: flex; align-items: center; justify-content: center; }}
+.folio .sez {{ background: {CIANO}; padding: 0 22px; font-size: 24px; letter-spacing: 3px; text-transform: uppercase; display: flex; align-items: center; }}
+.folio .info {{ margin-left: auto; display: flex; align-items: center; font-size: 20px; letter-spacing: 2px; text-transform: uppercase; }}
+.occhiello {{ align-self: flex-start; background: {CIANO}; padding: 6px 16px; font-size: 24px; letter-spacing: 3px; text-transform: uppercase; margin: 32px 0 14px; }}
+.titolo {{ font-family: {COND}; font-weight: 400; font-size: 120px; line-height: 1; letter-spacing: -1px; margin-bottom: 18px; }}
+.titolo .gioco {{ padding: 0 10px; }}
+.cat-int {{ font-size: 32px; line-height: 1.25; font-weight: 700; margin-bottom: 18px; }}
+.byline {{ display: flex; justify-content: space-between; align-items: center; border-top: 1px solid {NAVY}; border-bottom: 4px solid {NAVY}; padding: 10px 0; font-size: 20px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 24px; flex: none; }}
+.foto-int {{ height: 440px; margin-bottom: 24px; flex: none; }}
+.tab-int {{ display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 6px 26px; background: {NAVY}; color: #fff; padding: 12px 22px 14px; margin-bottom: 24px; font-size: 30px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }}
+.tab-int .c {{ text-align: right; }}
+.tab-int b {{ font-family: {COND}; font-weight: 400; font-size: 84px; line-height: 1; letter-spacing: 0; }}
+.tab-int .mar {{ grid-column: 1 / -1; border-top: 1px solid {CIANO}; padding-top: 8px; font-size: 21px; font-weight: 400; font-style: italic; text-transform: none; letter-spacing: 0; }}
+.colonne {{ columns: 2; column-gap: 44px; column-rule: 1px solid {NAVY}; }}
+.colonne p {{ font-size: 27px; line-height: 1.45; margin-bottom: 14px; }}
+.colonne p:first-child::first-letter {{ font-family: {COND}; float: left; font-size: 132px; line-height: .8; padding: 8px 12px 0 0; }}
+.colonne p:last-of-type::after {{ content: " \\25A0"; font-size: .6em; }}
+.cit {{ break-inside: avoid; border-top: 6px solid {CIANO}; border-bottom: 1px solid {NAVY}; padding: 14px 0 16px; margin: 4px 0 20px; font-size: 34px; line-height: 1.2; font-style: italic; font-weight: 700; }}
+.cit cite {{ display: block; font-style: normal; font-weight: 400; font-size: 19px; letter-spacing: 2px; text-transform: uppercase; margin-top: 10px; }}
+.segue {{ text-align: right; margin-top: 6px; font-size: 26px; }}
+.segue.da {{ text-align: left; margin: 0 0 12px; }}
+.cifre {{ margin-top: auto; display: grid; border-top: 6px solid {NAVY}; flex: none; }}
+.cifre.alto {{ margin: 0 0 26px; }}
+.cifre > div {{ padding: 12px 16px 0 0; font-size: 20px; line-height: 1.3; }}
+.cifre > div + div {{ border-left: 1px solid {NAVY}; padding-left: 16px; }}
+.cifre .k {{ display: inline-block; background: {CIANO}; padding: 2px 8px; font-size: 16px; letter-spacing: 2px; text-transform: uppercase; }}
+.cifre .v {{ display: block; font-family: {COND}; font-size: 80px; line-height: 1; margin: 8px 0 2px; }}
 table.dati {{ width: 100%; border-collapse: collapse; font-size: 28px; }}
-table.dati th {{ font-family: 'Franklin Gothic Demi', Arial, sans-serif; font-weight: 700; text-align: center; padding: 10px 6px; border-bottom: 4px solid {NAVY}; font-size: 24px; letter-spacing: 1px; }}
+table.dati th {{ font-family: {BAST}; font-weight: 700; text-align: center; padding: 10px 6px; background: {NAVY}; color: #fff; font-size: 22px; letter-spacing: 1px; }}
 table.dati td {{ text-align: center; padding: 13px 6px; border-bottom: 1px solid {NAVY}; }}
 table.dati td.sq, table.dati th.sq {{ text-align: left; }}
+table.dati td.pos {{ font-family: {COND}; font-size: 34px; }}
+table.dati td.pt {{ font-family: {COND}; font-size: 38px; }}
+table.dati small {{ display: block; font-family: Georgia, serif; font-size: 19px; }}
 /* Georgia ha numeri "all'antica" (lo 0 sembra una o): cifre in bastoni */
-.num, table.dati td:not(.sq), .mini td:last-child, .mini td:first-child::first-line, .prob, .firma, .lato, .dataline, .sommario b {{
-  font-family: 'Franklin Gothic Demi', 'Franklin Gothic Medium', Arial, sans-serif;
+.num, table.dati td:not(.sq), .mini td:last-child, .mini td:first-child::first-line, .prob, .firma, .lato, .dataline, .sommario b,
+.folio .info, .byline, .gara .meta, .cifre .k, .capo .k {{
+  font-family: {BAST};
 }}
 table.dati tr.nostra td {{ background: {CIANO}; font-weight: 700; }}
-.partita {{ border-bottom: 1px solid {NAVY}; padding: 20px 0; }}
-.partita .riga {{ display: grid; grid-template-columns: 1fr 170px 1fr; align-items: center; font-size: 34px; }}
-.partita .riga .c {{ text-align: right; }}
-.partita .ris {{ font-family: 'Franklin Gothic Demi', Arial, sans-serif; font-size: 50px; text-align: center; }}
-.partita .ris.vs {{ font-size: 30px; }}
-.partita .note {{ font-size: 22px; line-height: 1.35; margin-top: 8px; }}
-.partita.nostra {{ background: linear-gradient({CIANO}, {CIANO}) left / 10px 100% no-repeat; padding-left: 22px; }}
+.gara {{ border-bottom: 1px solid {NAVY}; padding: 18px 0 20px; }}
+.gara .meta {{ display: flex; justify-content: space-between; align-items: center; font-size: 19px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; }}
+.gara .meta .noi {{ background: {CIANO}; padding: 3px 10px; }}
+.gara .riga {{ display: grid; grid-template-columns: 1fr 190px 1fr; align-items: center; gap: 20px; font-size: 34px; font-weight: 700; }}
+.gara .riga .c {{ text-align: right; }}
+.gara .ris {{ background: {NAVY}; color: #fff; font-family: {COND}; font-size: 66px; line-height: 1; text-align: center; padding: 6px 0; }}
+.gara .ris.vs {{ background: #fff; color: {NAVY}; border: 3px solid {NAVY}; font-size: 40px; padding: 12px 0; text-transform: uppercase; }}
+.gara .mar {{ font-size: 22px; line-height: 1.35; margin-top: 10px; font-style: italic; }}
+.gara.nostra {{ border-left: 10px solid {CIANO}; padding-left: 20px; }}
 .prob {{ display: flex; height: 34px; margin-top: 12px; border: 2px solid {NAVY}; font-size: 19px; }}
 .prob div {{ display: flex; align-items: center; justify-content: center; overflow: hidden; white-space: nowrap; }}
 .prob .p1 {{ background: {NAVY}; color: #fff; }} .prob .px {{ background: #fff; }} .prob .p2 {{ background: {CIANO}; }}
 .legenda {{ font-size: 20px; margin-top: 18px; }}
-.sezione {{ font-size: 30px; letter-spacing: 2px; text-transform: uppercase; margin: 6px 0 12px; }}
+.due {{ display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }}
+.sezbar {{ background: {NAVY}; color: #fff; font-family: {BAST}; font-weight: 700; font-size: 24px; letter-spacing: 3px; text-transform: uppercase; padding: 8px 14px; }}
+.capo {{ background: {CIANO}; padding: 12px 18px 16px; display: grid; grid-template-columns: auto 1fr; gap: 4px 18px; align-items: center; }}
+.capo .k {{ grid-column: 1 / -1; font-size: 16px; letter-spacing: 2px; text-transform: uppercase; }}
+.capo .v {{ font-family: {COND}; font-size: 120px; line-height: .9; }}
+.capo .chi {{ font-size: 26px; font-weight: 700; line-height: 1.2; }}
+.capo .chi small {{ display: block; font-weight: 400; font-size: 20px; }}
+.due table.dati {{ font-size: 24px; }}
+.due table.dati td {{ padding: 10px 6px; }}
 .firma {{ position: absolute; left: 40px; right: 56px; bottom: 40px; height: 80px; border-top: 3px solid {NAVY}; display: flex; align-items: center; gap: 16px; font-size: 22px; }}
 .firma svg {{ width: 50px; height: 50px; flex: none; }}
 """
 
 CONTROLLO = """<script>
 window.addEventListener('load', function () {
-  // Il titolone si stringe finché sta in larghezza e in al massimo due righe.
   // Il titolone parte grande e si stringe finché sta in larghezza, in al massimo
   // due righe e senza spingere fuori pagina il resto della prima pagina.
   var c = document.querySelector('.contenuto');
   var t = document.querySelector('.titolone');
+  var pieno = function () { return c.scrollHeight > c.clientHeight + 1; };
+  // Pagine interne: una riga sola se ci sta ad almeno 88px, altrimenti due righe
+  // da 120px in giù. Non si stringe per far posto al testo: un pezzo troppo
+  // lungo va tagliato.
+  var h = document.querySelector('.titolo');
+  if (h) {
+    var z = 120;
+    h.style.whiteSpace = 'nowrap';
+    while (z > 88 && h.scrollWidth > h.clientWidth) { z -= 4; h.style.fontSize = z + 'px'; }
+    if (h.scrollWidth > h.clientWidth) {
+      h.style.whiteSpace = 'normal';
+      z = 120;
+      h.style.fontSize = z + 'px';
+      var righe = function () { return Math.round(h.getBoundingClientRect().height / z); };
+      while (z > 64 && (righe() > 2 || h.scrollWidth > h.clientWidth)) { z -= 4; h.style.fontSize = z + 'px'; }
+    }
+  }
   // Come in edicola: se il titolo sta su una riga a corpo pieno, la riempie;
   // altrimenti va su due righe.
   if (t) {
     var s = 300;
-    var pieno = function () { return c.scrollHeight > c.clientHeight + 1; };
     t.style.whiteSpace = 'nowrap';
     t.style.fontSize = s + 'px';
     while (s > 150 && (t.scrollWidth > t.clientWidth || pieno())) { s -= 4; t.style.fontSize = s + 'px'; }
@@ -304,32 +360,101 @@ def copertina(u, base):
     return pagina(u, "Prima pagina", f'<div class="cop">{corpo}</div>', top=400, testata_grande=True)
 
 
-def articolo(u, a):
-    paragrafi = "".join(f"<p>{e(p)}</p>" for p in a["testo"])
-    parte = f'<div class="parte">Parte {a["parte"]}</div>' if a.get("parte") else ""
-    corpo = f"""
-<div class="occhiello titoli">{e(a["occhiello"])}</div>
-<h1 class="titolo titoli">{titolo_html(a["titolo"])}</h1>
-<p class="sommario-art">{e(a["sommario"])}</p>
-<div class="testo">{paragrafi}</div>{parte}"""
+def folio(u, n, sezione):
+    """Testatina delle pagine interne: numero di pagina, sezione, giornata."""
+    return (
+        f'<div class="folio"><span class="pg">{n:02d}</span><span class="sez titoli">{e(sezione)}</span>'
+        f'<span class="info">{e(u["giornata"])}ª giornata · {e(u["data_uscita"])}</span></div>'
+    )
+
+
+def cifre(voci, alto=False):
+    """Box dei numeri: (etichetta, valore, testo). Solo dati veri o calcolati dai dati."""
+    if not voci:
+        return ""
+    celle = "".join(
+        f'<div><span class="k">{e(k)}</span><span class="v">{e(v)}</span>{e(t)}</div>' for k, v, t in voci
+    )
+    return f'<div class="cifre{" alto" if alto else ""}" style="grid-template-columns:repeat({len(voci)},1fr)">{celle}</div>'
+
+
+def testa_int(u, n, sezione, occhiello, titolo, catenaccio):
+    return (
+        f'{folio(u, n, sezione)}<div class="occhiello titoli">{e(occhiello)}</div>'
+        f'<h1 class="titolo">{titolo_html(titolo)}</h1><p class="cat-int">{e(catenaccio)}</p>'
+    )
+
+
+def articolo(u, a, n, base, da=None, segue=None):
+    """Pagina articolo. `da` e `segue` sono le pagine della parte precedente e
+    successiva quando un pezzo lungo è diviso su più pagine."""
+    paragrafi = [f"<p>{e(p)}</p>" for p in a["testo"]]
+    c = a.get("citazione")
+    if c:
+        # dopo il secondo capoverso, mai in apertura
+        cit = f'<blockquote class="cit">«{e(c["testo"])}»<cite>{e(c["autore"])}</cite></blockquote>'
+        paragrafi.insert(max(1, min(2, len(paragrafi) - 1)), cit)
+    testo = "".join(paragrafi)
+
+    tab = ""
+    m = a.get("partita")
+    if m is not None:
+        m = u["risultati"][m] if isinstance(m, int) else m
+        mar = f'<div class="mar">Marcatori: {e(m["marcatori"])}</div>' if m.get("marcatori") else ""
+        tab = (
+            f'<div class="tab-int"><span class="c">{e(m["casa"])}</span><b>{e(m["risultato"])}</b>'
+            f'<span>{e(m["ospite"])}</span>{mar}</div>'
+        )
+    foto = ""
+    if a.get("immagine"):
+        cap = f'<figcaption>{e(a["didascalia"])}</figcaption>' if a.get("didascalia") else ""
+        foto = f'<figure class="foto foto-int">{immagine(a["immagine"], base)}{cap}</figure>'
+
+    corpo = f"""<div class="int">
+{testa_int(u, n, a.get("sezione", "La giornata"), a["occhiello"], a["titolo"], a["sommario"])}
+<div class="byline"><span>di {e(a.get("firma", "Redazione"))}</span><span>{e(u["girone"])}</span></div>
+{foto}{tab}
+{f'<div class="segue da">segue da {pag(da)}</div>' if da else ""}
+<div class="colonne">{testo}</div>
+{f'<div class="segue">continua a {pag(segue)}</div>' if segue else ""}
+{cifre(a.get("numeri", []))}
+</div>"""
     return pagina(u, titolo_testo(a["titolo"]), corpo, top=170)
 
 
-def rubrica_classifica(u):
+def gol(risultato):
+    m = re.match(r"\s*(\d+)\s*-\s*(\d+)", str(risultato))
+    return (int(m.group(1)), int(m.group(2))) if m else None
+
+
+def rubrica_classifica(u, n):
+    cl = u["classifica"]
+    nostra = u.get("squadra_nostra")
     righe = []
-    for r in u["classifica"]:
-        pos, sq, pt, g, v, n, p, gf, gs = r
-        cl = ' class="nostra"' if sq == u.get("squadra_nostra") else ""
+    for r in cl:
+        pos, sq, pt, g, v, nn, p, gf, gs = r
+        c = ' class="nostra"' if sq == nostra else ""
         righe.append(
-            f"<tr{cl}><td>{pos}</td><td class='sq'>{e(sq)}</td><td><b>{pt}</b></td><td>{g}</td>"
-            f"<td>{v}</td><td>{n}</td><td>{p}</td><td>{gf}</td><td>{gs}</td><td>{gf - gs:+d}</td></tr>"
+            f"<tr{c}><td class='pos'>{pos}</td><td class='sq'>{e(sq)}</td><td class='pt'>{pt}</td><td>{g}</td>"
+            f"<td>{v}</td><td>{nn}</td><td>{p}</td><td>{gf}</td><td>{gs}</td><td>{gf - gs:+d}</td></tr>"
         )
-    corpo = f"""
-<div class="occhiello titoli">Rubrica</div>
-<h1 class="titolo titoli">Classifica</h1>
-<p class="sommario-art">Dopo la {e(u["giornata"])}ª giornata · {e(u["girone"])}</p>
+    # numeri calcolati dalla classifica, nessun dato aggiunto
+    voci = [("Capolista", cl[0][2], cl[0][1])]
+    noi = next((r for r in cl if r[1] == nostra), None)
+    if noi:
+        distacco = cl[0][2] - noi[2]
+        voci.append(("Noi", f"{noi[0]}ª", f"{nostra}, " + ("in vetta" if noi[0] == 1 else f"a {distacco} punti dalla vetta")))
+    att = max(cl, key=lambda r: r[7])
+    dif = min(cl, key=lambda r: r[8])
+    voci.append(("Miglior attacco", att[7], att[1]))
+    voci.append(("Miglior difesa", dif[8], dif[1]))
+
+    corpo = f"""<div class="int">
+{testa_int(u, n, "Il girone", "Classifica", "La classifica", f"Dopo la {u['giornata']}ª giornata · {u['girone']}")}
+{cifre(voci, alto=True)}
 <table class="dati"><tr><th>#</th><th class="sq">Squadra</th><th>PT</th><th>G</th><th>V</th><th>N</th><th>P</th><th>GF</th><th>GS</th><th>DR</th></tr>
-{"".join(righe)}</table>"""
+{"".join(righe)}</table>
+</div>"""
     return pagina(u, "Classifica", corpo, top=170)
 
 
@@ -338,57 +463,94 @@ def blocco_partita(u, m, giocata):
     centro = (
         f'<div class="ris">{e(m["risultato"])}</div>' if giocata else '<div class="ris vs">vs</div>'
     )
-    note = []
-    if m.get("data"):
-        note.append(e(m["data"]))
-    if giocata and m.get("marcatori"):
-        note.append("Marcatori: " + e(m["marcatori"]))
+    meta = f'<span>{e(m.get("data", ""))}</span>' + ('<span class="noi">La nostra gara</span>' if nostra else "")
+    mar = f'<div class="mar">Marcatori: {e(m["marcatori"])}</div>' if giocata and m.get("marcatori") else ""
     return (
-        f'<div class="partita{" nostra" if nostra else ""}">'
+        f'<div class="gara{" nostra" if nostra else ""}"><div class="meta">{meta}</div>'
         f'<div class="riga"><div class="c">{e(m["casa"])}</div>{centro}<div>{e(m["ospite"])}</div></div>'
-        f'<div class="note">{" · ".join(note)}</div>'
-        f'{prob_html(m.get("prob"), m["casa"], m["ospite"])}</div>'
+        f'{mar}{prob_html(m.get("prob"), m["casa"], m["ospite"])}</div>'
     )
 
 
-def rubrica_risultati(u):
-    corpo = f"""
-<div class="occhiello titoli">Rubrica</div>
-<h1 class="titolo titoli">Risultati</h1>
-<p class="sommario-art">{e(u["giornata"])}ª giornata · probabilità pre-partita sotto ogni gara</p>
+def rubrica_risultati(u, n):
+    punteggi = [gol(m["risultato"]) for m in u["risultati"]]
+    punteggi = [p for p in punteggi if p]
+    voci = []
+    if punteggi:
+        voci = [
+            ("Gol segnati", sum(a + b for a, b in punteggi), f"in {len(punteggi)} gare"),
+            ("Vittorie in casa", sum(a > b for a, b in punteggi), "segno 1"),
+            ("Pareggi", sum(a == b for a, b in punteggi), "segno X"),
+            ("Vittorie fuori", sum(a < b for a, b in punteggi), "segno 2"),
+        ]
+    corpo = f"""<div class="int">
+{testa_int(u, n, "La giornata", "Risultati", f"Risultati della {u['giornata']}ª", "Tutte le gare con i marcatori e le probabilità della vigilia")}
+{cifre(voci, alto=True)}
 {"".join(blocco_partita(u, m, True) for m in u["risultati"])}
-<p class="legenda">1 vittoria casa · X pareggio · 2 vittoria ospite</p>"""
+<p class="legenda">Probabilità pre-partita: 1 vittoria casa · X pareggio · 2 vittoria ospite</p>
+</div>"""
     return pagina(u, "Risultati", corpo, top=170)
 
 
-def rubrica_marcatori(u):
-    def tab(righe, col):
-        r = "".join(
-            f"<tr><td>{i}</td><td class='sq'>{e(n)} <small>· {e(s)}</small></td><td><b>{v}</b></td></tr>"
-            for i, (n, s, v) in enumerate(righe, 1)
-        )
-        return (
-            "<table class='dati'><tr><th style='width:60px'>#</th><th class='sq'>Giocatore</th>"
-            f"<th style='width:130px'>{col}</th></tr>{r}</table>"
-        )
+def con_posizione(righe):
+    """Posizioni a pari merito: chi ha lo stesso numero ha la stessa posizione."""
+    out, pos, prima = [], 0, None
+    for i, (nome, sq, v) in enumerate(righe, 1):
+        if v != prima:
+            pos, prima = i, v
+        out.append((pos, nome, sq, v))
+    return out
 
+
+def colonna_classifica(titolo, etichetta, righe, col):
+    r = con_posizione(righe)
+    if not r:
+        return f'<div><div class="sezbar">{e(titolo)}</div></div>'
+    primi = [x for x in r if x[0] == 1]
+    # nel box vanno al massimo tre nomi; con più primi a pari merito restano in tabella
+    nel_box = len(primi) <= 3
+    if nel_box:
+        chi = "".join(f"<div>{e(x[1])}<small>{e(x[2])}</small></div>" for x in primi)
+    else:
+        chi = f"<div>{len(primi)} giocatori<small>a pari merito</small></div>"
+    capo = (
+        f'<div class="capo"><span class="k">{e(etichetta)}</span>'
+        f'<span class="v">{e(primi[0][3])}</span><div class="chi">{chi}</div></div>'
+    )
+    resto = "".join(
+        f"<tr><td class='pos'>{p}</td><td class='sq'>{e(nome)}<small>{e(sq)}</small></td><td class='pt'>{v}</td></tr>"
+        for p, nome, sq, v in r
+        if not (nel_box and p == 1)
+    )
+    tabella = (
+        f"<table class='dati'><tr><th style='width:70px'>#</th><th class='sq'>Giocatore</th>"
+        f"<th style='width:100px'>{e(col)}</th></tr>{resto}</table>"
+        if resto
+        else ""
+    )
+    return f'<div><div class="sezbar">{e(titolo)}</div>{capo}{tabella}</div>'
+
+
+def rubrica_marcatori(u, n):
     nota = u.get("nota_marcatori", "")
-    corpo = f"""
-<div class="occhiello titoli">Rubrica</div>
-<h1 class="titolo titoli">Marcatori e assist</h1>
-<p class="sommario-art">Classifiche stagionali dopo la {e(u["giornata"])}ª giornata{(" · " + e(nota)) if nota else ""}</p>
-<div class="sezione titoli">Marcatori</div>{tab(u["marcatori"], "Gol")}
-<div class="sezione titoli" style="margin-top:34px">Assist</div>{tab(u["assist"], "Assist")}"""
+    cat = f"Le classifiche stagionali dopo la {u['giornata']}ª giornata" + (f" · {nota}" if nota else "")
+    corpo = f"""<div class="int">
+{testa_int(u, n, "Statistiche", "Marcatori e assist", "Chi segna e chi serve", cat)}
+<div class="due">
+{colonna_classifica("Marcatori", "Capocannoniere", u["marcatori"], "Gol")}
+{colonna_classifica("Assist", "Re degli assist", u["assist"], "Assist")}
+</div>
+</div>"""
     return pagina(u, "Marcatori e assist", corpo, top=170)
 
 
-def rubrica_prossimo(u):
-    corpo = f"""
-<div class="occhiello titoli">Rubrica</div>
-<h1 class="titolo titoli">Prossimo turno</h1>
-<p class="sommario-art">{e(u["giornata"] + 1)}ª giornata · probabilità pre-partita</p>
+def rubrica_prossimo(u, n):
+    g = u["giornata"] + 1
+    corpo = f"""<div class="int">
+{testa_int(u, n, "Il prossimo turno", "Prossimo turno", f"Verso la {g}ª giornata", "Il calendario della prossima giornata con le probabilità della vigilia")}
 {"".join(blocco_partita(u, m, False) for m in u["prossimo_turno"])}
-<p class="legenda">1 vittoria casa · X pareggio · 2 vittoria ospite</p>"""
+<p class="legenda">Probabilità pre-partita: 1 vittoria casa · X pareggio · 2 vittoria ospite</p>
+</div>"""
     return pagina(u, "Prossimo turno", corpo, top=170)
 
 
@@ -424,10 +586,17 @@ def main():
     out = os.path.join(RADICE, "uscite", cartella)
     os.makedirs(out, exist_ok=True)
 
-    pagine = [("00-copertina.html", copertina(u, os.path.dirname(sorgente)))]
+    base = os.path.dirname(sorgente)
+    pagine = [("00-copertina.html", copertina(u, base))]
+    arts = u["articoli"]
     n = 1
-    for a in u["articoli"]:
-        pagine.append((f"{n:02d}-{a.get('slug') or slug(titolo_testo(a['titolo']))}.html", articolo(u, a)))
+    for i, a in enumerate(arts):
+        # un pezzo diviso: le parti sono articoli consecutivi con "parte" 1, 2, ...
+        da = n - 1 if a.get("parte", 1) > 1 else None
+        dopo = arts[i + 1] if i + 1 < len(arts) else {}
+        segue = n + 1 if a.get("parte") and dopo.get("parte") == a["parte"] + 1 else None
+        nome = a.get("slug") or slug(titolo_testo(a["titolo"]))
+        pagine.append((f"{n:02d}-{nome}.html", articolo(u, a, n, base, da, segue)))
         n += 1
     for nome, fn in (
         ("classifica", rubrica_classifica),
@@ -435,7 +604,7 @@ def main():
         ("marcatori-assist", rubrica_marcatori),
         ("prossimo-turno", rubrica_prossimo),
     ):
-        pagine.append((f"{n:02d}-{nome}.html", fn(u)))
+        pagine.append((f"{n:02d}-{nome}.html", fn(u, n)))
         n += 1
 
     for nome, contenuto in pagine:

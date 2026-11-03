@@ -39,13 +39,23 @@ USCITA = {
             "occhiello": "Analisi",
             "titolo": ["Primo articolo ", ("di prova", True)],
             "sommario": "Sommario di prova dell'articolo analitico, su due righe circa.",
-            "testo": [PROVA, PROVA + " " + PROVA, PROVA, PROVA + " " + PROVA, PROVA],
+            "testo": [PROVA, PROVA + " " + PROVA, PROVA, PROVA],
+            # Facoltativi. "partita" è l'indice in "risultati" (o un dizionario):
+            # mette il tabellino sotto la firma. "numeri": (etichetta, valore, testo).
+            # "citazione" solo con parole dette davvero, mai inventate.
+            "sezione": "La nostra partita",
+            "firma": "Redazione",
+            "partita": 0,
+            "citazione": {"testo": "Citazione di prova, da sostituire con parole vere.", "autore": "Nome di prova"},
+            "numeri": [("Tiri", "00", "Dato di prova"), ("Possesso", "00%", "Dato di prova"), ("Falli", "00", "Dato di prova")],
         },
         {
             "occhiello": "Il racconto",
             "titolo": "Secondo articolo di prova",
             "sommario": "Sommario di prova dell'articolo narrativo.",
             "testo": [PROVA, PROVA, PROVA],
+            # Un pezzo lungo si divide in articoli consecutivi con "parte": 1, 2, ...
+            # (le pagine si richiamano da sole con "continua a" e "segue da").
         },
     ],
     "classifica": [
@@ -64,8 +74,9 @@ USCITA = {
         {"casa": "Squadra E", "ospite": "Squadra F", "risultato": "0-0", "data": "Data di prova", "prob": (20, 30, 50)},
         {"casa": "Squadra G", "ospite": "Squadra H", "risultato": "0-0", "data": "Data di prova", "prob": (34, 33, 33)},
     ],
-    "marcatori": [(f"Giocatore {i}", "Squadra di prova", 0) for i in range(1, 9)],
-    "assist": [(f"Giocatore {i}", "Squadra di prova", 0) for i in range(1, 9)],
+    # Numeri finti, solo per vedere posizioni e pari merito.
+    "marcatori": [(f"Giocatore {i}", "Squadra di prova", n) for i, n in enumerate((9, 7, 6, 6, 5, 4, 4, 3), 1)],
+    "assist": [(f"Giocatore {i}", "Squadra di prova", n) for i, n in enumerate((6, 6, 5, 4, 3, 3, 2, 2), 1)],
     "nota_marcatori": "primi 8",
     "prossimo_turno": [
         {"casa": "Squadra B", "ospite": "Squadra C", "data": "Data di prova", "prob": (40, 30, 30)},

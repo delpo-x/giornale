@@ -81,8 +81,20 @@ Ogni uscita è fatta da più file HTML separati, per rendere l'esportazione semp
   6. Tabellino: tutti i risultati della giornata su fascia navy.
   7. Taglio basso: tre richiami alle pagine interne, ciascuno con occhiello, titolo, una riga e il numero di pagina. Contiene gli articoli dal secondo in poi; se gli articoli sono pochi, completano le rubriche.
   L'apertura della prima pagina è sempre il primo articolo dell'uscita.
-- **Un file HTML per ogni articolo** (`01-...html`, `02-...html`, ...): ogni pagina contiene un solo pezzo, con testata ridotta, occhiello, titolo, sommario e testo. Deve essere leggibile e completa da sola, perché verrà pubblicata come storia.
-- **Rubriche fisse** (confermate), presenti in ogni uscita e ciascuna in un file proprio: classifica, risultati della giornata, marcatori e assist, prossimo turno (con le probabilità pre-partita quando disponibili).
+- **Un file HTML per ogni articolo** (`01-...html`, `02-...html`, ...): ogni pagina contiene un solo pezzo e deve essere leggibile e completa da sola, perché verrà pubblicata come storia. Il numero del file è il numero di pagina richiamato in prima. Dall'alto in basso:
+  1. Testata ridotta, poi la testatina: numero di pagina su navy, sezione su ciano (`sezione`, di base "La giornata"), giornata e data.
+  2. Occhiello ciano, titolo in bastone stretto (una riga se ci sta, altrimenti due), catenaccio in grassetto (`sommario`).
+  3. Firma ("di Redazione", oppure `firma`) e girone tra due filetti.
+  4. Facoltativi: foto con didascalia (`immagine`, `didascalia`) e tabellino della partita su navy (`partita`, indice in `risultati`).
+  5. Testo su due colonne con capolettera e quadratino di chiusura. Una `citazione` facoltativa va dopo il secondo capoverso, solo con parole dette davvero.
+  6. In fondo, facoltativo, il box dei numeri (`numeri`: etichetta, valore, testo), solo con dati veri.
+  Un pezzo troppo lungo per una pagina si divide in articoli consecutivi con `parte` 1, 2, ...: le pagine si richiamano da sole con "continua a pag." e "segue da pag.".
+- **Rubriche fisse** (confermate), presenti in ogni uscita e ciascuna in un file proprio, con la stessa testatina e lo stesso schema di titoli degli articoli:
+  - classifica, con sopra i numeri calcolati dalla classifica (capolista, posizione nostra e distacco, miglior attacco, miglior difesa) e la nostra squadra evidenziata;
+  - risultati della giornata, con sopra i conti dei segni (gol, 1, X, 2) e per ogni gara punteggio, marcatori e probabilità pre-partita;
+  - marcatori e assist, affiancati, con il primo (o i primi a pari merito) nel box ciano e le posizioni a pari merito;
+  - prossimo turno, con le probabilità pre-partita quando disponibili.
+  La nostra gara è segnata con la fascia ciano a sinistra e l'etichetta "La nostra gara".
 
 Regole comuni a tutti i file:
 - Stessa testata, stessi font, stessa palette e stessa griglia in ogni file e in ogni uscita, così le pagine sono riconoscibili come famiglia.
