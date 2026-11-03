@@ -343,6 +343,7 @@ RUBRICHE = [
     ("risultati", "Risultati", "Tutte le gare, con le probabilità della vigilia"),
     ("marcatori-assist", "Marcatori e assist", "Chi segna e chi serve: le classifiche"),
     ("prossimo-turno", "Prossimo turno", "Le partite che vengono, con le probabilità"),
+    ("partita-settimana", "La partita della settimana", "La gara più attesa del prossimo turno"),
 ]
 
 
@@ -367,6 +368,8 @@ def pagine_rubriche(u):
     }
     n, out = len(u["articoli"]) + 1, []
     for slug_, nome, desc in RUBRICHE:
+        if slug_ == "partita-settimana" and not u.get("partita_settimana"):
+            continue  # rubrica senza trafiletto: non esce
         k = quante.get(slug_, 1)
         out.append((slug_, nome, desc, n, k))
         n += k
@@ -672,6 +675,57 @@ def rubrica_prossimo(u, n):
     )
 
 
+def posizioni(u):
+    return {r[1]: (r[0], r[2]) for r in u["classifica"]}
+
+
+def scegli_partita(u):
+    """La partita della settimana: la gara del prossimo turno più equilibrata.
+    Con le probabilità vince la differenza più piccola tra vittoria in casa e
+    in trasferta; a parità, o senza probabilità, la coppia più in alto in
+    classifica (somma delle posizioni più bassa), poi quella più vicina in
+    punti. Restituisce (indice in prossimo_turno, motivo)."""
+    pos = posizioni(u)
+    voti = []
+    for i, m in enumerate(u["prossimo_turno"]):
+        (pc, ptc), (po, pto) = pos[m["casa"]], pos[m["ospite"]]
+        pr = m.get("prob")
+        voti.append((abs(pr[0] - pr[2]) if pr else 0, pc + po, abs(ptc - pto), i))
+    d, somma, gap, i = min(voti)
+    m = u["prossimo_turno"][i]
+    if all(x.get("prob") for x in u["prossimo_turno"]):
+        motivo = f"probabilità più vicine (scarto {d} punti percentuali)"
+    else:
+        motivo = "senza probabilità: la coppia più in alto in classifica"
+    return i, f"{m['casa']} - {m['ospite']}: {motivo}, somma delle posizioni {somma}, {gap} punti di distanza"
+
+
+def rubrica_partita(u, n):
+    """Trafiletto sulla partita della settimana. La gara si sceglie da sola
+    (scegli_partita) salvo indice esplicito; il testo lo scrive la redazione."""
+    ps = u["partita_settimana"]
+    i = ps.get("indice", scegli_partita(u)[0])
+    m = u["prossimo_turno"][i]
+    pos = posizioni(u)
+    (pc, ptc), (po, pto) = pos[m["casa"]], pos[m["ospite"]]
+    voci = [
+        (m["casa"], f"{pc}ª", f"{ptc} punti"),
+        (m["ospite"], f"{po}ª", f"{pto} punti"),
+        ("Distanza", abs(ptc - pto), "punti in classifica"),
+    ]
+    if m.get("prob"):
+        voci.append(("Pareggio", f"{m['prob'][1]}%", "alla vigilia"))
+    testo = "".join(f"<p>{e(p)}</p>" for p in ps["testo"])
+    corpo = f"""<div class="int">
+{testa_int(u, n, "Il prossimo turno", "La partita della settimana", ps["titolo"], ps["sommario"])}
+<div class="byline"><span>di Redazione</span><span>{e(u["girone"])}</span></div>
+{blocco_partita(u, m, False)}
+<div class="colonne" style="margin-top:22px">{testo}</div>
+{cifre(voci)}
+</div>"""
+    return pagina(u, "La partita della settimana", corpo, top=TOP_INT)
+
+
 def slug(testo):
     s = re.sub(r"[^a-z0-9]+", "-", testo.lower().encode("ascii", "ignore").decode())
     return s.strip("-")[:40] or "articolo"
@@ -688,6 +742,11 @@ def testi_md(u):
             righe.append(f"*Testo di {chi}: si pubblica come l'ha scritto, NON passarlo in Humanizer.*\n")
         righe.append(f"**Occhiello:** {a['occhiello']}\n\n**Sommario:** {a['sommario']}\n")
         righe.append("\n\n".join(a["testo"]) + "\n")
+    ps = u.get("partita_settimana")
+    if ps:
+        righe.append(f"## La partita della settimana: {titolo_testo(ps['titolo'])}\n")
+        righe.append(f"**Sommario:** {ps['sommario']}\n")
+        righe.append("\n\n".join(ps["testo"]) + "\n")
     return "\n".join(righe)
 
 
@@ -741,7 +800,10 @@ def main():
         "risultati": rubrica_risultati,
         "marcatori-assist": rubrica_marcatori,
         "prossimo-turno": rubrica_prossimo,
+        "partita-settimana": rubrica_partita,
     }
+    if u.get("prossimo_turno") and u.get("classifica"):
+        print("partita della settimana (scelta automatica):", scegli_partita(u)[1])
     for nome, _, _, prima, _ in pagine_rubriche(u):
         fatte = fn[nome](u, prima)
         fatte = fatte if isinstance(fatte, list) else [fatte]

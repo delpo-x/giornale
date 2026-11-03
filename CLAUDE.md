@@ -118,6 +118,7 @@ Ogni uscita è fatta da più file HTML separati, per rendere l'esportazione semp
   - risultati della giornata, con sopra i conti dei segni (gol, 1, X, 2) e per ogni gara punteggio, marcatori e probabilità pre-partita;
   - marcatori e assist, affiancati, con il primo (o i primi a pari merito) nel box ciano e le posizioni a pari merito;
   - prossimo turno, con le probabilità pre-partita quando disponibili.
+  - **la partita della settimana** (decisa da Nicola il 3 novembre): un trafiletto di due o tre capoversi sulla gara più attesa del prossimo turno, con il blocco della gara e i numeri (posizione e punti delle due squadre, distanza in classifica, probabilità del pareggio se c'è). La gara la sceglie il generatore (`scegli_partita`): con le probabilità vince la più equilibrata (scarto più piccolo tra vittoria in casa e in trasferta); a parità o senza probabilità, la coppia più in alto in classifica, poi la più vicina in punti. La scelta si può forzare con `indice`. Il testo si scrive come gli altri (skill di giornalismo, poi humanizer) e non anticipa risultati: racconta perché la gara conta, con i precedenti e i numeri dello storico.
   La nostra gara è segnata con la fascia ciano a sinistra e l'etichetta "La nostra gara".
 
 Regole comuni a tutti i file:
@@ -135,7 +136,7 @@ Già deciso:
 - Nome della testata: "La Gazzetta del Dragone"
 - Firma in ogni pagina: "© Redazione La Gazzetta del Dragone, tutti i diritti riservati", con numero dell'uscita
 - Palette: sfondo bianco, scritte blu navy, terzo colore per i blocchi azzurro ciano
-- Rubriche fisse: classifica, risultati, marcatori e assist, prossimo turno
+- Rubriche fisse: classifica, risultati, marcatori e assist, prossimo turno, partita della settimana
 - Formato storie: 9:16
 - Esportazione: Claude Code genera da sé le immagini (PNG 1080x1920) e i PDF pronti da pubblicare, in una sottocartella `export/` dentro ogni cartella di giornata. Controllare sempre il risultato esportato prima di consegnarlo.
 
