@@ -150,3 +150,7 @@ Altri cognomi compaiono nelle Top 11, ma con una squadra diversa:
 
 ## Note e curiosità
 Qui vanno i fatti che Nicola fornisce di volta in volta: storia delle squadre, campi, soprannomi, precedenti. Ogni fatto porta la data in cui è stato fornito.
+
+- Implast: il capitano è Notari Mattia (3 novembre).
+- U.s. Pilzone: nelle pagelle social la società usa soprannomi; PUFFO è Bonardi Andrea (deduzione accolta da Nicola, 3 novembre).
+- Regola di lavoro (3 novembre): le deduzioni di Claude con un filo logico chiaro si prendono per buone, segnandole come deduzioni nei dati.

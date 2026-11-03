@@ -58,6 +58,60 @@ Senza minuto l'ordine dell'elenco non dimostra la cronologia (CLAUDE.md §11).
 ### mar 3 nov, 20:30 · Nigoline - Uso Borgonato
 - Da giocare.
 
+## Dai profili delle squadre
+Screenshot in `screenshot/giornata-06/instagram/`, inviati da Nicola il 3 novembre. Si citano alla lettera e si attribuiscono alla società; i fatti che compaiono solo qui si scrivono come "fa sapere la società" (CLAUDE.md §3). I commenti degli utenti sotto i post non si usano.
+
+### U.s. Pilzone (@uspilzone), dopo Pilzone 6-3 Elettcristini
+- Apertura: «Bella vittoria dei #Fichi. Continua la striscia positiva».
+- Pagelle della società, per soprannome: MAX 7, PESOT 8, CAMPLA 7,5, TOLO 7,5, PUFFO 9, QUAGLIA 7,5, ZEZA 7,5, D'AGO 7, CICUS 6, PISE 6, MISTER 7. Sono voti della società, non della redazione.
+- PUFFO 9: «altro poker, il secondo di fila». Il soprannome non dice il nome: è Bonardi Andrea (l'unico con quattro gol in G6): deduzione accolta da Nicola il 3 novembre. Il "secondo di fila" (poker anche in G5 contro la Bombetta) è solo nel post: non abbiamo i marcatori di G5.
+- CAMPLA: «trova il primo goal». Da Tuttocampo il primo gol della gara è di Tolomeo al 2', Camplani segna al 23': "primo goal" va letto come il suo primo gol stagionale, non come il gol d'apertura (lettura accolta da Nicola il 3 novembre). Non va usato come cronologia.
+- Espulsioni: «oggi l'inferiorità numerica» (MISTER), «rosso a caso» (CICUS), «propizia l'espulsione avversaria» (PISE). Il post fa capire che c'è stata un'espulsione per parte, ma Tuttocampo non ha i cartellini: si scrive come racconto della società ("fa sapere la società"), deciso da Nicola il 3 novembre. Vale anche per il rosso dell'Amici nel post del Barco.
+- Chiusura: «Venerdì ore 20 a monterotondo 7° giornata». Torna con il calendario (Gso Monte - Pilzone, ven 6 novembre, 20:00).
+
+### Elettcristini (@elettrotecnica_cristini_f.c), dopo Pilzone 6-3 Elettcristini
+- Grafica a tema Halloween (segnata da Instagram come "Contenuti IA"), marcatori «Passini, Ghitti x2»: torna con Tuttocampo.
+- Testo: «Questa volta lo scherzetto ce lo hanno fatto loro. Possiamo e dobbiamo fare molto meglio.»
+
+### Gv Barco (@gvbarco), dopo Amici Di Renato 1-8 Gv Barco
+- Titolo: «SESTA GIORNATA, DOLCETTO O SCHERZETTO?»; «8 GOL, 3 PUNTI E UNA TRASFERTA DA BRIVIDI».
+- Cronologia secondo la società: «subito partiamo con il piede giusto, trovando il vantaggio». Poi un giocatore dell'Amici prende un «cartellino blu che diventa rosso»; «Un uomo in più per quasi tutta la gara». Tuttocampo non ha minuti né cartellini: vantaggio iniziale ed espulsione si scrivono solo come racconto della società.
+- «ESORDIO DA BOMBER PER BUIZZA: tripletta al debutto!» Buizza era al debutto (fatto riferito dalla società).
+- «ESORDIO DA BRIVIDI PER VEZZOLI: entra, dopo 3 minuti si rompe». Nella rosa del Barco c'è Vezzoli Daniele. Infortunio riferito dalla società, entità non nota.
+- Campo «enorme» a Cortefranca. Chiusura: «A HALLOWEEN GLI ALTRI CERCANO I MOSTRI. NOI LI PORTIAMO IN CAMPO.»
+- Il racconto delle intemperanze dei padroni di casa non si riprende (CLAUDE.md: niente polemiche sui post degli avversari).
+
+### Aston 5 Perle (@aston_cp_), dopo F.c. Cazzaghese 6-2 Aston 5 Perle
+- «Purtroppo un'altra sconfitta contro un'ottima squadra. A tratti siamo riusciti ad esprimere il nostro calcio, continuiamo a spingere!»
+
+### Implast (@implast_csi), dopo Implast 5-1 Gso Monte
+- «Altri 3 pt portati a casa con una prestazione convincente».
+- «Dopo una piccola sbandata nei primi minuti di partita, ci siamo rimboccati le maniche e abbiamo iniziato a macinare goal»: torna con il gol di Negroni al 2'.
+- «siamo lì davanti e ora dobbiamo meritarcelo partita dopo partita».
+- «Ci vediamo tra 10 giorni in quel di Borgonato per il superposticipo della settima giornata»: torna con il calendario (mar 10 novembre, 21:00).
+- Il gol di testa del capitano nel giorno del suo compleanno: «la super incornata del nostro capitano nel giorno del suo compleanno». Il capitano è Notari Mattia (confermato da Nicola il 3 novembre). Notari ha segnato un solo gol in G6 (assist di Iore S.): l'incornata è quella. Che sia di testa lo dice solo il post.
+- Hashtag: #cesoloimplast, «C'è solo IMPLAST».
+
+## Probabilità della vigilia e MVP
+Fonte: scheda "Info partita" di Tuttocampo, in `screenshot/giornata-06/info-partita/`. Il pronostico è calcolato da statistiche e voti degli utenti, con meno di 10 voti per ogni gara: va presentato come indicazione, non come sentenza. L'MVP è calcolato da Tuttocampo sui voti e sulle statistiche della partita.
+
+| Gara | 1 | X | 2 | Esito | Favorita rispettata? | MVP |
+|---|---|---|---|---|---|---|
+| Ieci Passirano 2-2 F.c. Calino | 28% | 30% | 42% | X | no: favorito il Calino, pareggio | Bergoli Mattia (Ieci Passirano)* |
+| U.s. Pilzone 6-3 Elettcristini | 38% | 30% | 32% | 1 | sì, ma la gara era data quasi alla pari | Bonardi Andrea (Pilzone) |
+| F.c. Cazzaghese 6-2 Aston 5 Perle | 58% | 23% | 19% | 1 | sì | Consolati Paolo (Cazzaghese) |
+| Amici Di Renato 1-8 Gv Barco | 30% | 30% | 40% | 2 | sì | Farimbella Simone (Gv Barco) |
+| Giaffa Clusan 7-0 Bombetta | 57% | 23% | 20% | 1 | sì | Franceschini Alessandro (Giaffa Clusan) |
+| Implast 5-1 Gso Monte | 42% | 29% | 29% | 1 | sì | Alvarez Arnaldo (Implast) |
+
+\* Nello screenshot di Ieci-Calino l'intestazione "MVP" è fuori inquadratura, ma la scheda è la stessa delle altre gare.
+
+Letture calcolate:
+- 5 favorite su 6 hanno vinto; l'unica eccezione è Ieci-Calino, finita in pareggio con il Calino favorito al 42%.
+- La gara più equilibrata alla vigilia era Pilzone-Elettcristini (38-30-32): è finita 6-3.
+- Il nome completo di Alvarez A. è Alvarez Arnaldo (dalla scheda MVP).
+- Gli scarti più larghi della giornata sono due, entrambi di 7 gol: Amici-Barco 1-8, con il Barco favorito solo al 40%, e Giaffa-Bombetta 7-0.
+
 ## Controlli
 Per ogni gara il numero di gol in elenco torna con il risultato:
 - Ieci-Calino 2-2: 2 e 2.
