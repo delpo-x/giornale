@@ -41,6 +41,31 @@ Cartella `Foto squadra/`, solo per 6 squadre: Gv Barco (`Barco.png`), Bombetta (
 - Come riferimento per le immagini di copertina su Gemini servono per maglie, colori e campo; i volti vanno resi non riconoscibili o lasciati fuori (CLAUDE.md §7: volti reali solo con consenso).
 - Le altre 8 squadre non hanno ancora una foto.
 
+## Foto dei giocatori (fornite da Nicola il 3 novembre)
+Cartella `Foto/`, 33 foto, una per persona, con il file intitolato "Cognome Nome". La squadra non è indicata: non va dedotta dal cognome.
+
+Abbinamenti sicuri con i marcatori della 6ª giornata (stesso cognome, iniziale del nome uguale e nessun altro candidato):
+- Facchi L. (Implast) = Facchi Lorenzo
+- Notari M. (Implast) = Notari Mattia
+- Santinelli A. (Implast) = Santinelli Alessandro
+- Menassi G. (Implast) = Menassi Giorgio
+- Iore S. (Implast) = Iore Stefano
+- Bonardi A. (Pilzone, 4 gol) = Bonardi Andrea
+- Tolomeo L. (Pilzone) = Tolomeo Luca
+- Piva C. (Giaffa) = Piva Cesare
+
+Abbinamenti con le rose (`dati/rose.md`, 3 novembre):
+- U.s. Pilzone: Archetti Angelo, Belleri Federico, Bonardi Andrea, Carrara Andrea, Fettolini Denis, Pezzotti Kevin, Pezzotti Luca, Pezzotti Michael, Pezzotti Michele, Pisano Giuseppe, Tolomeo Luca.
+- Uso Borgonato: Bonardi Gabriele, Bontempi Cristian, Di Maio Roberto (in rosa come giocatore, nello staff come dirigente), Gatti Davide, Musati Matteo.
+- Giaffa Clusan: Ligama Mattia, Piva Cesare.
+- F.c. Cazzaghese: Paderni Daniele.
+- Aston 5 Perle: Radici Manuel.
+- Non in nessuna rosa del PDF (che non ha Implast e Nigoline): Brescianini Matteo, Facchi Lorenzo, Fra Nicholas, Iore Stefano, Menassi Giorgio, Mingotti Davide, Notari Mattia, Paderno Marco, Santinelli Alessandro, Simoni Nicola, Turla Lorenzo, Vavassori Emilio, Vezzoli Emanuele. Facchi, Notari, Iore, Menassi, Santinelli sono Implast (marcatori e assist G6); Brescianini, Paderno e Vezzoli sono nelle Top 11 con l'Implast. Anche Fra Nicholas, Mingotti Davide, Simoni Nicola, Turla Lorenzo e Vavassori Emilio sono Implast: confermato da Nicola il 3 novembre.
+
+L'assist di Pezzotti M. in G6 (Pilzone) è di Pezzotti Michele, non di Michael: confermato da Nicola il 3 novembre.
+
+Uso: volti reali solo con il consenso della persona (CLAUDE.md §7). Nelle pagine le foto vanno intere, con il nome in didascalia; per Gemini servono solo se il giocatore ha dato il consenso.
+
 ## Staff (schede squadra di Tuttocampo, 3 novembre)
 
 ### Implast (la nostra squadra)

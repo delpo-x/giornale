@@ -17,7 +17,7 @@ Senza minuto l'ordine dell'elenco non dimostra la cronologia (CLAUDE.md §11).
 - Nessun minuto.
 
 ### gio 29 ott · U.s. Pilzone 6-3 Elettcristini
-- U.s. Pilzone: Tolomeo L. 2' (Pezzotti M.), Bonardi A. 7', Bonardi A. 11', Bonardi A. 16', Camplani P. 23', Bonardi A. (senza minuto).
+- U.s. Pilzone: Tolomeo L. 2' (Pezzotti M., cioè Pezzotti Michele: confermato da Nicola il 3 novembre), Bonardi A. 7', Bonardi A. 11', Bonardi A. 16', Camplani P. 23', Bonardi A. (senza minuto).
 - Elettcristini: Passini F., Ghitti A., Ghitti A. Nessun minuto per i loro gol.
 - **Bonardi A. ha segnato quattro gol.** Tre hanno il minuto (7', 11', 16').
 - I cinque gol con il minuto cadono tutti entro il 23'. Non si sa quando abbia segnato l'Elettcristini, quindi non si può scrivere "5-0 al 23'".
