@@ -69,7 +69,7 @@ Screenshot in `screenshot/giornata-06/instagram/`, inviati da Nicola il 3 novemb
 Screenshot `nigoline-borgonato.png`, inviato da Nicola il 4 novembre (post visto alle 11:31, pubblicato «12 ore fa»).
 - Grafica: «FULL TIME», «COME È FINITA ?», 4 vs 3, marcatori Boni, Turelli, Bontempi, Bettoni. Tornano con Tuttocampo.
 - Testo: «E il primo derby della stagione lo portiamo a casa noi. Vittoria che arriva dopo una grande rimonta, dopo essere stati sotto 1-3. Conquistiamo così 3 punti importanti che ci permettono di tenere il treno delle prima.» (sic, «delle prima»).
-- Controllo: torna con quanto detto da Nicola (Borgonato avanti 3-2 a fine tempo regolamentare, due gol del Nigoline nel recupero). Sequenza ricostruita: da 1-3 a 2-3 nei regolamentari, poi 3-3 e 4-3 nel recupero. Il Nigoline ha segnato tre gol di fila. Chi ha segnato quali gol resta ignoto.
+- Controllo: torna con quanto detto da Nicola (Borgonato avanti 3-2 a fine tempo regolamentare, due gol del Nigoline nel recupero). Sequenza ricostruita: da 1-3 a 2-3 nei regolamentari, poi 3-3 e 4-3 nel recupero. Il Nigoline ha segnato tre gol di fila. I gol del Nigoline nel post sono in ordine cronologico (Nicola, 4 novembre): Boni D. segna il primo gol del Nigoline, Turelli A. il 2-3 nei regolamentari, Bontempi A. il 3-3 nel recupero, Bettoni D. il 4-3 nel recupero, che è il gol vittoria. L'ordine dei gol del Borgonato (Valentino 2, Bontempi C.) resta ignoto, quindi non si sa chi ha segnato l'1-0 o quando.
 - «Derby» è la parola della società: si cita tra virgolette, attribuita al Nigoline.
 
 ### U.s. Pilzone (@uspilzone), dopo Pilzone 6-3 Elettcristini
