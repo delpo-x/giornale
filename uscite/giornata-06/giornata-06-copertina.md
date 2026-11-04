@@ -9,7 +9,7 @@ Titolone: «Un punto e A CAPO». L'Implast è prima a 15, Cazzaghese e Giaffa so
 ## Prompt (inglese)
 Use the attached Implast crest as the only logo reference: reproduce it faithfully, without redrawing, restyling or adding details, and do not invent any other logo.
 
-Scene: a night amateur football pitch under floodlights. A single white football rests on the penalty spot in the foreground, sharp and lit like a full stop. Behind it, slightly out of focus, a tall navy flag hangs from a pole planted at the top of a short staircase of three navy steps. The attached Implast crest is printed on the flag. The two lower steps are empty and only one step below. The image should read as "one point ahead, standing at the head".
+Scene: a night amateur football pitch under floodlights. A single white football rests on the penalty spot in the foreground, sharp and lit like a full stop. Behind it, slightly out of focus, a tall navy flag hangs from a pole planted at the top of a short staircase of three navy steps. The attached Implast crest is printed on the flag. The two lower steps are empty, each just one step below the top. The image should read as "one point ahead, standing at the head".
 
 Light and mood: cold floodlight from above, a light mist over the grass, deep shadows, calm and confident rather than celebratory.
 
