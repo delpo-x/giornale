@@ -98,4 +98,15 @@ USCITA = {
         ],
         "prossima": "Quinta contro prima, sei punti di distanza.",
     },
+    "top11": {
+        "titolo": ["Tre ", ("dell'Implast", True)],
+        "catenaccio": "La squadra della 6ª secondo Tuttocampo: Facchi c'è per la terza volta di fila.",
+        "righe": [
+            [("Buizza", "Gv Barco"), ("Farimbella", "Gv Barco"), ("Facchi", "Implast")],
+            [("Bonardi", "U.s. Pilzone"), ("Alvarez", "Implast"), ("Franceschini", "Giaffa Clusan"), ("Ghitti", "Elettcristini")],
+            [("Notari", "Implast"), ("Bergoli", "Ieci Passirano"), ("Martinelli", "Giaffa Clusan")],
+            [("Marini", "Giaffa Clusan")],
+        ],
+        "numeri": [("Implast", "3", "Facchi, Alvarez, Notari"), ("Giaffa", "3", "Franceschini, Martinelli, Marini"), ("Facchi", "4", "volte in stagione, tre di fila")],
+    },
 }

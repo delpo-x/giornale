@@ -346,6 +346,7 @@ RUBRICHE = [
     ("marcatori-assist", "Marcatori e assist", "Chi segna e chi serve: le classifiche"),
     ("prossimo-turno", "Prossimo turno", "Le partite che vengono"),
     ("partita-settimana", "La partita della settimana", "La gara più combattuta della giornata"),
+    ("top-11", "La Top 11", "La formazione ideale di Tuttocampo"),
 ]
 
 
@@ -372,6 +373,8 @@ def pagine_rubriche(u):
     }
     n, out = len(u["articoli"]) + 1, []
     for slug_, nome, desc in RUBRICHE:
+        if slug_ == "top-11" and not u.get("top11"):
+            continue  # Top 11 non ricevuta: la rubrica non esce
         if slug_ == "partita-settimana" and not u.get("partita_settimana"):
             continue  # rubrica senza trafiletto: non esce
         k = quante.get(slug_, 1)
@@ -741,6 +744,37 @@ def rubrica_partita(u, n):
     return pagina(u, "La partita della settimana", corpo, top=TOP_INT)
 
 
+def rubrica_top11(u, n):
+    """La Top 11 di Tuttocampo come sul campo: righe dall'alto in basso, il
+    portiere in fondo. Ruoli non indicati dalla fonte, quindi non scritti.
+    La nostra squadra ha il nome su blocco ciano."""
+    t = u["top11"]
+    righe = ""
+    for riga in t["righe"]:
+        celle = ""
+        for nome, squadra in riga:
+            nostra = " nostra" if squadra == u.get("squadra_nostra") else ""
+            celle += (f'<div class="t11{nostra}"><div class="t11s">{stemma(squadra)}</div>'
+                      f'<div class="t11n titoli">{e(nome)}</div><div class="t11q">{e(squadra)}</div></div>')
+        righe += f'<div class="t11r">{celle}</div>'
+    stile = f"""<style>
+.campo {{ background: {NAVY}; padding: 16px 20px; margin-top: 14px; display: flex; flex-direction: column; gap: 8px; border-top: 8px solid {CIANO}; }}
+.t11r {{ display: flex; justify-content: space-around; }}
+.t11 {{ width: 240px; text-align: center; color: #fff; }}
+.t11s {{ height: 60px; display: flex; align-items: center; justify-content: center; }}
+.t11s img.stemma {{ height: 58px !important; width: auto !important; max-width: 76px; background: #fff; padding: 4px; }}
+.t11n {{ font-size: 30px; margin-top: 4px; display: inline-block; padding: 2px 10px; }}
+.t11.nostra .t11n {{ background: {CIANO}; color: {NAVY}; }}
+.t11q {{ font-size: 21px; margin-top: 4px; opacity: .85; }}
+</style>"""
+    corpo = f"""{stile}<div class="int">
+{testa_int(u, n, "Statistiche", "La Top 11", t["titolo"], t["catenaccio"])}
+<div class="campo">{righe}</div>
+{cifre(t.get("numeri", []))}
+</div>"""
+    return pagina(u, "La Top 11", corpo, top=TOP_INT)
+
+
 def slug(testo):
     s = re.sub(r"[^a-z0-9]+", "-", testo.lower().encode("ascii", "ignore").decode())
     return s.strip("-")[:40] or "articolo"
@@ -816,6 +850,7 @@ def main():
         "marcatori-assist": rubrica_marcatori,
         "prossimo-turno": rubrica_prossimo,
         "partita-settimana": rubrica_partita,
+        "top-11": rubrica_top11,
     }
     if u.get("risultati") and u.get("classifica"):
         print("partita della settimana (scelta automatica):", scegli_partita(u)[1])
