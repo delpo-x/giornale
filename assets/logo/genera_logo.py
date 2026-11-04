@@ -81,12 +81,14 @@ def compatta(inchiostro, blocco, drago_col, numero="N° 7"):
         f'<rect x="0" y="16" width="64" height="64" fill="{blocco}"/>',
         '<clipPath id="earc"><rect x="0" y="16" width="64" height="64"/></clipPath>',
         f'<g clip-path="url(#earc)">{drago(3.8, 23.7, 0.22, drago_col)}</g>',
-        f'<text x="80" y="62" font-family="{SERIF}" font-size="24" font-style="italic" '
-        f'fill="{inchiostro}">La Gazzetta del</text>',
-        f'<text x="252" y="64" font-family="{SERIF}" font-size="40" font-weight="700" '
-        f'letter-spacing="1" fill="{inchiostro}">DRAGONE</text>',
-        f'<text x="764" y="60" font-family="{BASTONI}" font-size="19" letter-spacing="1" '
-        f'text-anchor="end" fill="{inchiostro}">{numero}</text>',
+        f'<text x="384" y="64" text-anchor="middle" fill="{inchiostro}">'
+        f'<tspan font-family="{SERIF}" font-size="24" font-style="italic">La Gazzetta del </tspan>'
+        f'<tspan font-family="{SERIF}" font-size="40" font-weight="700" letter-spacing="1">DRAGONE</tspan></text>',
+        f'<rect x="704" y="16" width="64" height="64" fill="{inchiostro}"/>',
+        f'<text x="736" y="38" font-family="{BASTONI}" font-size="13" letter-spacing="1" '
+        f'text-anchor="middle" fill="#FFFFFF">{numero.split()[0]}</text>',
+        f'<text x="736" y="70" font-family="{BASTONI}" font-size="30" font-weight="700" '
+        f'text-anchor="middle" fill="#FFFFFF">{numero.split()[-1]}</text>',
     ]
     return "".join(c)
 
