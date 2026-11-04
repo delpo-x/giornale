@@ -108,7 +108,7 @@ Ogni voce riporta le righe dello schema dall'alto in basso. La squadra di ciascu
 - **G3:** Bontempi (Borgonato), Corsini (Giaffa), Deliu (Aston) / Micheli (Giaffa), Fieni (Gv Barco), Mandelli (Nigoline), Giannotti (Elettcristini) / Brescianini (Implast), Martinelli (Giaffa), Moujane (Aston) / Marini (stemma piccolo Giaffa).
 - **G4:** Pezzotti (Pilzone), Facchi (Implast), Bessi (Bombetta) / Kandji (Amici), Zibardi (Amici), Tota (Nigoline), Franzoni (Implast) / Gatti (Borgonato), Musati (Borgonato), Bonardi (Amici) / Xhaferi (Aston).
 - **G5:** Facchi (Implast), Iore (Implast), Consolati (Cazzaghese) / Foresti (Giaffa), Bonardi (Pilzone), Micheli (Giaffa), Zibardi (Amici) / Mangraviti (Cazzaghese), Martinelli (Giaffa), Bonardi (Amici) / Paderno (Implast).
-- **G6:** non ancora ricevuta.
+- **G6:** Buizza (Gv Barco), Farimbella (Gv Barco), Facchi (Implast) / Bonardi (Pilzone), Alvarez (Implast), Franceschini (Giaffa, nome troncato "Francesc...", unico in rosa), Ghitti (Elettcristini) / Notari (Implast), Bergoli (Ieci Passirano, stemma dell'oratorio; Bergoli M. è marcatore del Passirano in G6), Martinelli (Giaffa) / Marini (stemma piccolo Giaffa). Screenshot in `screenshot/giornata-06/top11-g6.png`.
 
 Giocatori Implast nelle Top 11:
 
@@ -119,8 +119,9 @@ Giocatori Implast nelle Top 11:
 | G3 | 1 | Brescianini |
 | G4 | 2 | Facchi, Franzoni |
 | G5 | 3 | Facchi, Iore, Paderno |
+| G6 | 3 | Facchi, Alvarez, Notari |
 
-Facchi è entrato nella Top 11 tre volte (G1, G4, G5).
+Facchi è entrato nella Top 11 quattro volte (G1, G4, G5, G6), le ultime tre di fila.
 
 ## Staff e anagrafica
 In `dati/squadre.md`.
@@ -132,4 +133,4 @@ Trascritto per intero (13 giornate di andata, con le date del ritorno) in `dati/
 
 ## Mancano
 (Nota del 4 novembre: le probabilità della 7ª non arriveranno prima dell'uscita, quindi nel N° 1 il prossimo turno esce senza percentuali. Nel N° 1 non c'è il pezzo di Zanni.)
-- Top 11 della 6ª giornata.
+- Top 11 di ottobre: va nel N° 2 (deciso da Nicola il 4 novembre).
