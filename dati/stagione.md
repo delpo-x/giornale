@@ -75,7 +75,7 @@ Campionato: Amatori CSI, Calcio a 7 Serie C Open Brescia, Girone H (Lombardia). 
 | mar 3 nov, 20:30 | Nigoline 4-3 Uso Borgonato |
 
 ## Classifica calcolata (dopo la 6ª giornata)
-Questa classifica è calcolata dai risultati: non viene da uno screenshot di Tuttocampo. A pari punti l'ordine è provvisorio (prima la differenza reti, poi i gol fatti). I criteri CSI vanno verificati con lo screenshot della classifica.
+Calcolata dai risultati e **confermata dalla classifica ufficiale di Tuttocampo** del 4 novembre (`screenshot/giornata-06/classifiche/classifica-1.png` e `-2.png`): posizioni, punti, V/P/S e differenza reti coincidono riga per riga. A pari punti l'ordine ufficiale segue la differenza reti (Borgonato +1, Pilzone 0, Amici -4, Gso Monte -8; Barco +6 davanti a Calino +1; Cazzaghese +25 davanti a Giaffa +20). Il criterio esatto del CSI a pari punti resta da verificare: finora la differenza reti basta a spiegare l'ordine.
 
 | # | Squadra | PT | G | V | N | P | GF | GS | DR |
 |---|---|---|---|---|---|---|---|---|---|
@@ -131,6 +131,5 @@ Fonte ufficiale (link dato da Nicola il 3 novembre): https://www.tuttocampo.it/L
 Trascritto per intero (13 giornate di andata, con le date del ritorno) in `dati/calendario.md` dal PDF ufficiale CSI. Accoppiamenti e campo delle giornate 1-6 controllati con i risultati: coincidono tutti.
 
 ## Mancano
-- Classifica ufficiale, che decide l'ordine a pari punti.
 - Probabilità della 7ª giornata (il calendario c'è, in `calendario.md`).
 - Top 11 della 6ª giornata.
