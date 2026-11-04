@@ -33,3 +33,21 @@ Framing: horizontal 2:1, low camera angle from the ball. The ball sits in the lo
 Palette: dominant deep navy blue (#0A2342) and white, with one cyan accent (#00A8E8) as a thin glow on the top edges of the three blocks and in the floodlight haze. No other colours except the crest's original colours.
 
 Avoid: any text, letters or numbers; flags on the side poles; invented logos or badges; players, people or faces; hands; trophies; extra balls; stairs joined into one piece; distorted geometry.
+
+## Prompt v3 (4 novembre)
+Cambia rispetto alla v2: sui due blocchi laterali ci sono le bandiere di Cazzaghese e Giaffa, le due squadre a 14 punti. Il prato è freddo e il logo deve essere fedele.
+Riferimenti da allegare, in quest'ordine: 1) `logo/Implast.png`, 2) `logo/Cazzaghese.png`, 3) `logo/Giaffa Clusan.png`.
+
+Three crest references are attached: image 1 is the Implast crest, image 2 is the F.C. Cazzaghese crest, image 3 is the Giaffa Clusane crest. Reproduce each crest faithfully on its own flag, exactly as in the reference: same shapes, colours and lettering, with no redrawing, restyling, merging or invented details. Do not add any other logo or badge.
+
+Scene: a night amateur football pitch under floodlights. In the foreground, a single white football rests on the penalty spot, sharp and lit like a full stop. Behind it, slightly out of focus, stand three separate square navy blocks in a row, like a podium. The centre block is exactly one step taller than the two side blocks, which are the same height as each other. Each block has a tall pole with a navy flag. The centre flag carries the Implast crest (image 1) and flies slightly higher than the others. The left flag carries the Cazzaghese crest (image 2) and the right flag carries the Giaffa Clusane crest (image 3). The side flags fly one step lower, so the image reads as "one point ahead, two rivals one step behind".
+
+Grass: desaturated and cold, blue-grey under the floodlights, not green.
+
+Light and mood: cold floodlight from above and behind, a light mist over the pitch, deep shadows, calm and confident rather than celebratory.
+
+Framing: horizontal 2:1, low camera angle from the ball. The ball sits in the lower third, left of centre; the three blocks and flags sit on the right half. Keep the whole upper left half as clean dark sky for the headline. All three crests must be fully visible and readable, not cut off or folded.
+
+Palette: dominant deep navy blue (#0A2342) and white, with one cyan accent (#00A8E8) as a thin glow on the top edges of the blocks and in the floodlight haze. No other colours except the crests' original colours.
+
+Avoid: any text, letters or numbers outside the crests; deformed lettering in the crests; invented logos; green grass; players, people or faces; hands; trophies; extra balls; distorted geometry.
