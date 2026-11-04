@@ -59,7 +59,7 @@ Senza minuto l'ordine dell'elenco non dimostra la cronologia (CLAUDE.md §11).
 - Nigoline: Boni D., Turelli A., Bontempi A., Bettoni D.
 - Uso Borgonato: Valentino M. 2, Bontempi C.
 - Nessun assist e nessun minuto: l'ordine dell'elenco non è la cronologia.
-- Il Nigoline ha segnato 2 gol nel recupero (detto da Nicola il 4 novembre). Non si sa quali dei quattro marcatori né il punteggio prima del recupero. Dato certo: il quarto gol del Nigoline, quello che fissa il 4-3, è arrivato nel recupero, e a fine tempo regolamentare il Nigoline ne aveva segnati 2. Non scrivere "rimonta" finché non si sa se il Borgonato era avanti.
+- Il Nigoline ha segnato 2 gol nel recupero (detto da Nicola il 4 novembre). Non si sa quali dei quattro marcatori né il punteggio prima del recupero. Dato certo: il quarto gol del Nigoline, quello che fissa il 4-3, è arrivato nel recupero, e a fine tempo regolamentare il Nigoline ne aveva segnati 2. A fine tempo regolamentare il Borgonato era avanti 3-2 (Nicola, 4 novembre): il Nigoline ha ribaltato la partita nel recupero, con il pareggio sul 3-3 e il gol del 4-3. Qui "rimonta" si può scrivere. Non si sa chi ha segnato i due gol del recupero.
 - Bontempi A. (Nigoline) e Bontempi C. (Borgonato) hanno lo stesso cognome in squadre diverse: non collegarli.
 
 ## Dai profili delle squadre
