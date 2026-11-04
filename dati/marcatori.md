@@ -2,17 +2,17 @@
 
 Fonte: app Tuttocampo, screenshot di Nicola del 3 novembre alle 21:46 (`screenshot/giornata-06/classifiche/`). Le liste mostrano solo i primi 8: fuori lista non si deduce nulla.
 
-Da verificare: lo screenshot è stato fatto durante o dopo Nigoline-Borgonato (3 novembre, 20:30). I gol di Bontempi (12) e Valentino (8) sono uguali a quelli della rosa PDF, quindi la classifica sembra precedente a quella gara. **Da fare:** quando arriva la scheda Marcatori di Nigoline-Borgonato, aggiungere i suoi gol e assist a queste liste (deciso da Nicola il 3 novembre) e rifare le letture.
+Lo screenshot non contava Nigoline-Borgonato (3 novembre, 4-3): gol e assist di quella gara sono aggiunti a mano qui sotto, il 4 novembre, dalla scheda Marcatori (Valentino M. 2, Bontempi C. 1 per il Borgonato; Boni D., Turelli A., Bontempi A., Bettoni D. per il Nigoline, nessuno nei primi 8; nessun assist).
 
-## Marcatori (dopo la 6ª, Nigoline-Borgonato forse esclusa)
-1. Bontempi Cristian (Uso Borgonato) 12
-1. Consolati Paolo (F.c. Cazzaghese) 12
+## Marcatori (dopo la 6ª completa)
+1. Bontempi Cristian (Uso Borgonato) 13
+2. Consolati Paolo (F.c. Cazzaghese) 12
 3. Rocco Andrea (F.c. Cazzaghese) 10
-4. Facchi Lorenzo (Implast) 9
-4. Bonardi Andrea (U.s. Pilzone) 9
-6. Zibardi Jacopo (Amici Di Renato) 8
-6. Farimbella Simone (Gv Barco) 8, di cui 1 su rigore
-6. Valentino Mattia (Uso Borgonato) 8
+3. Valentino Mattia (Uso Borgonato) 10
+5. Facchi Lorenzo (Implast) 9
+5. Bonardi Andrea (U.s. Pilzone) 9
+7. Zibardi Jacopo (Amici Di Renato) 8
+7. Farimbella Simone (Gv Barco) 8, di cui 1 su rigore
 
 ## Assist
 1. Corsini Marino (Giaffa Clusan) 9
@@ -28,10 +28,11 @@ Da verificare: lo screenshot è stato fatto durante o dopo Nigoline-Borgonato (3
 1. Corsini Marino (Giaffa Clusan) 15
 2. Facchi Lorenzo (Implast) 14
 3. Farimbella Simone (Gv Barco) 13
-4. Consolati Paolo (F.c. Cazzaghese) 12
-4. Bontempi Cristian (Uso Borgonato) 12
+3. Bontempi Cristian (Uso Borgonato) 13
+5. Consolati Paolo (F.c. Cazzaghese) 12
 6. Bonardi Andrea (U.s. Pilzone) 10
 6. Rocco Andrea (F.c. Cazzaghese) 10
-8. Maffi Ivan (F.c. Cazzaghese) 8
+6. Valentino Mattia (Uso Borgonato) 10 (assist non noti: almeno 10)
+9. Maffi Ivan (F.c. Cazzaghese) 8
 
-Letture: Facchi è l'unico tra i primi 5 sia nei gol sia negli assist; Corsini ha 6 gol (15-9) ed è primo nel totale; Bontempi ha 0 assist (12 = 12); Maffi ha 8 tra gol e assist ma non compare in nessuna delle due liste parziali.
+Letture: Bontempi è capocannoniere da solo con 13; il Borgonato ha due giocatori tra i primi tre marcatori (Bontempi 13, Valentino 10). Facchi è l'unico tra i primi 5 sia nei gol sia negli assist; Corsini ha 6 gol (15-9) ed è primo nel totale; Bontempi ha 0 assist (13 = 13); Maffi ha 8 tra gol e assist ma non compare in nessuna delle due liste parziali.

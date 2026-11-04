@@ -72,9 +72,9 @@ Campionato: Amatori CSI, Calcio a 7 Serie C Open Brescia, Girone H (Lombardia). 
 | ven 30 ott | Amici Di Renato 1-8 Gv Barco |
 | sab 31 ott | Giaffa Clusan 7-0 Bombetta |
 | sab 31 ott | **Implast** 5-1 Gso Monte |
-| mar 3 nov, 20:30 | Nigoline - Uso Borgonato (da giocare) |
+| mar 3 nov, 20:30 | Nigoline 4-3 Uso Borgonato |
 
-## Classifica calcolata (6ª giornata, senza Nigoline-Uso Borgonato)
+## Classifica calcolata (dopo la 6ª giornata)
 Questa classifica è calcolata dai risultati: non viene da uno screenshot di Tuttocampo. A pari punti l'ordine è provvisorio (prima la differenza reti, poi i gol fatti). I criteri CSI vanno verificati con lo screenshot della classifica.
 
 | # | Squadra | PT | G | V | N | P | GF | GS | DR |
@@ -82,8 +82,8 @@ Questa classifica è calcolata dai risultati: non viene da uno screenshot di Tut
 | 1 | **Implast** | 15 | 6 | 5 | 0 | 1 | 22 | 15 | +7 |
 | 2 | F.c. Cazzaghese | 14 | 6 | 4 | 2 | 0 | 41 | 16 | +25 |
 | 3 | Giaffa Clusan | 14 | 6 | 4 | 2 | 0 | 28 | 8 | +20 |
-| 4 | Nigoline | 9 | 5 | 3 | 0 | 2 | 19 | 13 | +6 |
-| 5 | Uso Borgonato | 9 | 5 | 3 | 0 | 2 | 23 | 21 | +2 |
+| 4 | Nigoline | 12 | 6 | 4 | 0 | 2 | 23 | 16 | +7 |
+| 5 | Uso Borgonato | 9 | 6 | 3 | 0 | 3 | 26 | 25 | +1 |
 | 6 | U.s. Pilzone | 9 | 6 | 3 | 0 | 3 | 22 | 22 | 0 |
 | 7 | Amici Di Renato | 9 | 6 | 3 | 0 | 3 | 19 | 23 | -4 |
 | 8 | Gso Monte | 9 | 6 | 3 | 0 | 3 | 15 | 23 | -8 |
@@ -94,7 +94,7 @@ Questa classifica è calcolata dai risultati: non viene da uno screenshot di Tut
 | 13 | Aston 5 Perle | 3 | 6 | 1 | 0 | 5 | 16 | 26 | -10 |
 | 14 | Bombetta | 0 | 6 | 0 | 0 | 6 | 12 | 43 | -31 |
 
-Controllo incrociato con le statistiche di Tuttocampo:
+Controllo incrociato con le statistiche di Tuttocampo (viste prima di Nigoline-Borgonato: Borgonato 23 fatti e Nigoline 13 subiti ora sono 26 e 16):
 - miglior attacco: Cazzaghese 41, Giaffa 28, Borgonato 23;
 - miglior difesa (gol subiti): Giaffa 8, Nigoline 13, Implast 15.
 
@@ -132,8 +132,5 @@ Trascritto per intero (13 giornate di andata, con le date del ritorno) in `dati/
 
 ## Mancano
 - Classifica ufficiale, che decide l'ordine a pari punti.
-- Marcatori per partita, classifica marcatori, assist.
-- Probabilità pre-partita.
 - Probabilità della 7ª giornata (il calendario c'è, in `calendario.md`).
 - Top 11 della 6ª giornata.
-- Esito di Nigoline-Uso Borgonato, in programma stasera.

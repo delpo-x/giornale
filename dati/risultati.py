@@ -61,11 +61,12 @@ GIORNATE = {
         ("ven 30 ottobre", "Amici Di Renato", 1, 8, "Gv Barco"),
         ("sab 31 ottobre", "Giaffa Clusan", 7, 0, "Bombetta"),
         ("sab 31 ottobre", "Implast", 5, 1, "Gso Monte"),
-        ("mar 3 novembre, 20:30", "Nigoline", None, None, "Uso Borgonato"),
+        ("mar 3 novembre, 20:30", "Nigoline", 4, 3, "Uso Borgonato"),
     ],
 }
 
 # Statistiche squadra viste su Tuttocampo (prime 3), per il controllo incrociato.
+# Viste prima di Nigoline 4-3 Borgonato: Borgonato gf e Nigoline gs ora differiscono di 3.
 VISTE = {
     "gf": {"F.c. Cazzaghese": 41, "Giaffa Clusan": 28, "Uso Borgonato": 23},
     "gs": {"Giaffa Clusan": 8, "Nigoline": 13, "Implast": 15},

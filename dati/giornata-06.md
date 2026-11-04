@@ -55,8 +55,11 @@ Senza minuto l'ordine dell'elenco non dimostra la cronologia (CLAUDE.md §11).
   - Notari M. (assist di Iore S.).
 - Solo il gol di Negroni ha il minuto. **Confermato da Nicola (3 nov):** Gso Monte in vantaggio al 2', poi la rimonta Implast fino al 5-1. L'ordine dei gol Implast resta ignoto: non scrivere chi ha pareggiato né chi ha segnato il gol del sorpasso.
 
-### mar 3 nov, 20:30 · Nigoline - Uso Borgonato
-- Da giocare.
+### mar 3 nov, 20:30 · Nigoline 4-3 Uso Borgonato
+- Nigoline: Boni D., Turelli A., Bontempi A., Bettoni D.
+- Uso Borgonato: Valentino M. 2, Bontempi C.
+- Nessun assist e nessun minuto: l'ordine dell'elenco non è la cronologia.
+- Bontempi A. (Nigoline) e Bontempi C. (Borgonato) hanno lo stesso cognome in squadre diverse: non collegarli.
 
 ## Dai profili delle squadre
 Screenshot in `screenshot/giornata-06/instagram/`, inviati da Nicola il 3 novembre. Si citano alla lettera e si attribuiscono alla società; i fatti che compaiono solo qui si scrivono come "fa sapere la società" (CLAUDE.md §3). I commenti degli utenti sotto i post non si usano.
@@ -103,12 +106,14 @@ Fonte: scheda "Info partita" di Tuttocampo, in `screenshot/giornata-06/info-part
 | Amici Di Renato 1-8 Gv Barco | 30% | 30% | 40% | 2 | sì | Farimbella Simone (Gv Barco) |
 | Giaffa Clusan 7-0 Bombetta | 57% | 23% | 20% | 1 | sì | Franceschini Alessandro (Giaffa Clusan) |
 | Implast 5-1 Gso Monte | 42% | 29% | 29% | 1 | sì | Alvarez Arnaldo (Implast) |
+| Nigoline 4-3 Uso Borgonato | 38% | 31% | 31% | 1 | sì, di un gol | Turelli Andrea (Nigoline) |
 
 \* Nello screenshot di Ieci-Calino l'intestazione "MVP" è fuori inquadratura, ma la scheda è la stessa delle altre gare.
 
 Letture calcolate:
-- 5 favorite su 6 hanno vinto; l'unica eccezione è Ieci-Calino, finita in pareggio con il Calino favorito al 42%.
-- La gara più equilibrata alla vigilia era Pilzone-Elettcristini (38-30-32): è finita 6-3.
+- 6 favorite su 7 hanno vinto; l'unica eccezione è Ieci-Calino, finita in pareggio con il Calino favorito al 42%.
+- Le gare più equilibrate alla vigilia: Pilzone-Elettcristini (38-30-32, scarto 6 punti tra 1 e 2), finita 6-3, e Nigoline-Borgonato (38-31-31, scarto 7), finita 4-3. Nigoline-Borgonato è l'unica gara della giornata vinta con un gol di scarto.
+- Partita della settimana del N° 1 (scelta automatica): Pilzone-Elettcristini, per un punto di scarto sulle probabilità.
 - Il nome completo di Alvarez A. è Alvarez Arnaldo (dalla scheda MVP).
 - Gli scarti più larghi della giornata sono due, entrambi di 7 gol: Amici-Barco 1-8, con il Barco favorito solo al 40%, e Giaffa-Bombetta 7-0.
 
@@ -121,8 +126,8 @@ Per ogni gara il numero di gol in elenco torna con il risultato:
 - Giaffa-Bombetta 7-0: 7.
 - Implast-Gso Monte 5-1: 5 e 1.
 
-## Numeri della giornata (6 gare su 7)
-- Gol: 43 in 6 gare (4 + 9 + 8 + 9 + 7 + 6). Il totale si chiude dopo Nigoline-Borgonato.
+## Numeri della giornata (7 gare su 7)
+- Gol: 50 in 7 gare (4 + 9 + 8 + 9 + 7 + 6 + 7), media 7,1 a gara.
 - Tre o più gol: Bonardi A. (Pilzone) 4, Buizza N. (Barco) 3, Rocco A. (Cazzaghese) 3.
 - Doppiette:
   - Ghitti A. (Elettcristini);
@@ -131,7 +136,8 @@ Per ogni gara il numero di gol in elenco torna con il risultato:
   - Franceschini A. (Giaffa);
   - Uberti A. (Giaffa, due rigori);
   - Facchi L. (Implast);
-  - Alvarez A. (Implast).
+  - Alvarez A. (Implast);
+  - Valentino M. (Borgonato).
 
 ## Implast
 - Nel N° 1 non c'è la cronaca di Gianluca Zanni (lo ha deciso Nicola il 3 novembre). La nostra gara la racconta quindi la redazione, solo con i dati di questo file: marcatori, assist, il gol di Negroni al 2' e la rimonta confermata.
@@ -148,3 +154,7 @@ Questi giocatori hanno lo stesso cognome di una persona dello staff, ma l'inizia
 - Bonardi A. (Pilzone) e Davide (allenatore del Borgonato).
 
 Anche Xhaferi J. (Aston, gol) è un giocatore diverso dall'allenatore Xhaferi Emiljano: lo ha confermato Nicola il 3 novembre.
+
+## Classifica dopo la 6ª (calcolata, giornata completa)
+Implast 15, Cazzaghese 14, Giaffa 14, Nigoline 12, Borgonato 9, Pilzone 9, Amici 9, Gso Monte 9, Barco 8, Calino 8, Elettcristini 7, Ieci 4, Aston 3, Bombetta 0. Ordine a pari punti provvisorio (differenza reti), da confermare con la classifica ufficiale.
+- Il Nigoline sale da solo al 4° posto, a 3 punti dall'Implast. Il Borgonato resta a 9, a 6 punti dall'Implast, che affronta martedì 10 novembre.
