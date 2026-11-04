@@ -75,7 +75,7 @@ body {{
 .rimando::before {{ content: "▸ "; }}
 .apertura {{ flex: 1 0 auto; min-height: 340px; display: grid; grid-template-columns: 1fr 320px; gap: 22px; border-top: 2px solid {NAVY}; padding-top: 16px; }}
 .foto {{ position: relative; background: {CIANO}; overflow: hidden; display: flex; align-items: center; justify-content: center; }}
-.foto img {{ position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }}
+.foto > img {{ position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }}
 .foto .segnaposto {{ font-size: 24px; letter-spacing: 3px; text-transform: uppercase; }}
 .foto figcaption {{ position: absolute; left: 0; right: 0; bottom: 0; background: rgba(255,255,255,.92); padding: 8px 14px; font-size: 26px; line-height: 1.25; font-style: italic; }}
 .punteggio {{ position: absolute; left: 0; top: 0; background: {NAVY}; color: #fff; padding: 10px 18px; display: flex; gap: 14px; align-items: center; font-size: 26px; text-transform: uppercase; letter-spacing: 1px; }}
@@ -344,7 +344,7 @@ RUBRICHE = [
     ("classifica", "Classifica", "La classifica completa dopo la giornata"),
     ("risultati", "Risultati", "Tutte le gare, con le probabilità della vigilia"),
     ("marcatori-assist", "Marcatori e assist", "Chi segna e chi serve: le classifiche"),
-    ("prossimo-turno", "Prossimo turno", "Le partite che vengono, con le probabilità"),
+    ("prossimo-turno", "Prossimo turno", "Le partite che vengono"),
     ("partita-settimana", "La partita della settimana", "La gara più combattuta della giornata"),
 ]
 
@@ -355,11 +355,13 @@ GARE_PAGINA = 4
 
 
 def a_blocchi(gare):
-    if len(gare) <= GARE_PAGINA:
+    # senza probabilità e marcatori le gare sono basse: ne stanno 8 per pagina
+    per = GARE_PAGINA if any(m.get("prob") or m.get("marcatori") for m in gare) else 8
+    if len(gare) <= per:
         return [gare]
     # la prima pagina ha anche titolo, numeri e rimando: una gara in meno
-    prima = GARE_PAGINA - 1
-    return [gare[:prima]] + [gare[i:i + GARE_PAGINA] for i in range(prima, len(gare), GARE_PAGINA)]
+    prima = per - 1
+    return [gare[:prima]] + [gare[i:i + per] for i in range(prima, len(gare), per)]
 
 
 def pagine_rubriche(u):
@@ -673,7 +675,8 @@ def rubrica_prossimo(u, n):
     g = u["giornata"] + 1
     return rubrica_gare(
         u, n, u["prossimo_turno"], False, "Il prossimo turno", f"Verso la {g}ª giornata",
-        "Le gare con le probabilità della vigilia", "", "Prossimo turno",
+        "Le gare con le probabilità della vigilia" if any(m.get("prob") for m in u["prossimo_turno"]) else "Le gare, i giorni e gli orari",
+        "", "Prossimo turno",
     )
 
 

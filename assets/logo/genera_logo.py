@@ -48,16 +48,15 @@ def testata(inchiostro, blocco, drago_col, numero="N° 7"):
         f'<path fill="{inchiostro}" fill-rule="evenodd" '
         'd="M632 56 H744 V200 H632 Z M638 62 H738 V194 H638 Z"/>'
     )
+    # numero dell'uscita: "N°" piccolo sopra, la cifra grande sotto
     c.append(
-        f'<text x="688" y="114" font-family="{BASTONI}" font-size="26" '
-        f'text-anchor="middle" fill="{inchiostro}">{numero}</text>'
+        f'<text x="688" y="104" font-family="{BASTONI}" font-size="22" letter-spacing="1" '
+        f'text-anchor="middle" fill="{inchiostro}">{numero.split()[0]}</text>'
     )
-    c.append(f'<rect x="656" y="128" width="64" height="2" fill="{inchiostro}"/>')
-    for y, t in ((154, "GIRONE"), (176, "CSI")):
-        c.append(
-            f'<text x="688" y="{y}" font-family="{SERIF}" font-size="15" letter-spacing="1" '
-            f'text-anchor="middle" fill="{inchiostro}">{t}</text>'
-        )
+    c.append(
+        f'<text x="688" y="170" font-family="{BASTONI}" font-size="64" font-weight="700" '
+        f'text-anchor="middle" fill="{inchiostro}">{numero.split()[-1]}</text>'
+    )
     c.append(
         f'<text x="384" y="92" font-family="{SERIF}" font-size="30" font-style="italic" '
         f'text-anchor="middle" fill="{inchiostro}">La Gazzetta del</text>'
