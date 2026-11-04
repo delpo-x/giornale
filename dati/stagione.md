@@ -131,5 +131,5 @@ Fonte ufficiale (link dato da Nicola il 3 novembre): https://www.tuttocampo.it/L
 Trascritto per intero (13 giornate di andata, con le date del ritorno) in `dati/calendario.md` dal PDF ufficiale CSI. Accoppiamenti e campo delle giornate 1-6 controllati con i risultati: coincidono tutti.
 
 ## Mancano
-- Probabilità della 7ª giornata (il calendario c'è, in `calendario.md`).
+(Nota del 4 novembre: le probabilità della 7ª non arriveranno prima dell'uscita, quindi nel N° 1 il prossimo turno esce senza percentuali. Nel N° 1 non c'è il pezzo di Zanni.)
 - Top 11 della 6ª giornata.
