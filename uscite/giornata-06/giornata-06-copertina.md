@@ -1,55 +1,20 @@
-# N° 1 · 6ª giornata · immagine di copertina (Gemini)
+# N° 1 (6ª giornata): immagine di copertina
 
-**La storia:** l'Implast è in testa da sola dopo sei giornate, con 15 punti, e ha appena rimontato il Gso Monte (5-1 dopo essere andata sotto al 2'). L'immagine racconta l'idea di "in vetta" senza mostrare dati: niente punteggi, niente numeri.
+Titolone: «Un punto e A CAPO». L'Implast è prima a 15, Cazzaghese e Giaffa sono a 14.
 
-**Formato:** orizzontale 2:1, foto dell'apertura in prima pagina. Il riquadro navy con il punteggio va sopra la foto, in basso a sinistra: quella zona deve restare scura e sgombra.
+## Riferimento da allegare
+- **Scelto:** `logo/Implast.png`, il logo ufficiale. Non ci sono volti, quindi non serve il consenso di nessuno.
+- Alternativa: `Foto squadra/Implast.png`, solo per le maglie e i colori. I volti vanno resi non riconoscibili.
 
-## Variante A (consigliata): stemma Implast
-**Da allegare:** lo stemma ufficiale dell'Implast in alta risoluzione, se possibile su fondo pulito. Nell'immagine non ci sono volti, quindi non serve il consenso di nessuno.
+## Prompt (inglese)
+Use the attached Implast crest as the only logo reference: reproduce it faithfully, without redrawing, restyling or adding details, and do not invent any other logo.
 
-```
-Generate a photorealistic wide image, aspect ratio 2:1 (if 2:1 is not available, use 16:9 and keep the important elements away from the top and bottom edges).
+Scene: a night amateur football pitch under floodlights. A single white football rests on the penalty spot in the foreground, sharp and lit like a full stop. Behind it, slightly out of focus, a tall navy flag hangs from a pole planted at the top of a short staircase of three navy steps. The attached Implast crest is printed on the flag. The two lower steps are empty and only one step below. The image should read as "one point ahead, standing at the head".
 
-Subject and reference: use the attached image as the exact reference for the club crest. Reproduce it faithfully, including its shape, the dragon, its colours and its lettering, without redrawing, simplifying or inventing details. The crest appears once, printed on a large fabric banner hanging on the fence behind a goal.
+Light and mood: cold floodlight from above, a light mist over the grass, deep shadows, calm and confident rather than celebratory.
 
-Scene and action: a small amateur 7-a-side football pitch at night, with artificial turf, a local sports centre, floodlights on tall poles and a low metal fence. In the foreground, at turf level, a single football rests on the white penalty spot in sharp focus. Behind it, slightly out of focus, are the empty goal and the banner with the crest. The pitch is empty, with no players and no people. The mood is quiet pride, like the moment after a team has climbed to the top.
+Framing: horizontal 2:1, low camera angle from the ball. The ball sits in the lower third and the flag on the right third. Keep the upper left half as clean dark sky for the headline.
 
-Light and atmosphere: cold white floodlights, light mist in the air, wet turf reflecting the lights and a deep navy night sky. A subtle cyan rim light catches the edges of the ball, the net and the banner.
+Palette: dominant deep navy blue (#0A2342) and white, with one cyan accent (#00A8E8) in the floodlight glow and on the edges of the steps. No other colours except the crest's original colours.
 
-Framing: low camera angle at ball height, 35mm lens, shallow depth of field. Place the ball in the left-centre and the crest banner in the right third. Keep the bottom-left area darker and free of detail, because text will be placed over it.
-
-Palette: dominant deep navy blue and white, with small accents of bright cyan (#00A8E8). Desaturate every other colour in the scene. The crest keeps its original colours.
-
-Avoid: any text, letters, numbers or scoreboards outside the crest; any other logo, sponsor or invented crest; people, faces or hands; a professional stadium or crowded stands; watermarks; a cartoon or illustration style.
-```
-
-**Didascalia proposta:** "Lo stemma dell'Implast: dopo sei giornate è in testa al girone H, da sola."
-
-## Variante B: Facchi
-Facchi è il protagonista della giornata: ha segnato 2 gol nella rimonta ed è nella Top 11 di G1, G4 e G5.
-
-**Da allegare:** una foto di Facchi in maglia Implast (va bene lo scatto in azione che c'è su Tuttocampo). Serve **il suo consenso** all'uso del volto (CLAUDE.md §7).
-
-```
-Generate a photorealistic wide image, aspect ratio 2:1 (or 16:9).
-
-Subject and reference: use the attached photo as the subject reference. Keep the player's face, hair, build and the Implast kit faithful to it, without changing his features. He is the only person in the image.
-
-Scene and action: a small amateur 7-a-side artificial turf pitch at night, in a local sports centre. The player runs towards the camera after a goal, one arm raised, with an intense but natural expression. Behind him the empty goal is slightly out of focus and the net is still moving.
-
-Light and atmosphere: cold white floodlights, light mist, wet turf with reflections and a deep navy night sky. A subtle cyan rim light touches his shoulders and kit.
-
-Framing: medium shot from slightly below, 85mm lens, shallow depth of field. Place the player in the right half of the frame and keep the bottom-left area dark and clean for text.
-
-Palette: dominant deep navy and white, with small accents of bright cyan (#00A8E8). Desaturate other colours. The kit keeps its real colours.
-
-Avoid: any text, numbers, scoreboards, extra logos or invented crests; other players or people; deformed hands, fingers or face; any face different from the reference; a professional stadium; watermarks; a cartoon style.
-```
-
-**Didascalia proposta:** "Facchi, due gol nella rimonta sul Gso Monte."
-
-## Controllo prima di impaginare
-- Lo stemma della variante A e il volto della variante B devono essere fedeli all'originale. Se Gemini li altera, rigenera l'immagine: non correggerla a mano.
-- Nell'immagine non devono comparire numeri o scritte inventate.
-- La zona in basso a sinistra deve restare libera per il riquadro del punteggio.
-- Salva l'immagine scelta come `uscite/giornata-06/copertina.jpg`.
+Avoid: any text, letters or numbers; invented logos or badges; players, people or faces; hands; trophies; extra balls; distorted geometry.
