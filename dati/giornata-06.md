@@ -113,7 +113,8 @@ Fonte: scheda "Info partita" di Tuttocampo, in `screenshot/giornata-06/info-part
 Letture calcolate:
 - 6 favorite su 7 hanno vinto; l'unica eccezione è Ieci-Calino, finita in pareggio con il Calino favorito al 42%.
 - Le gare più equilibrate alla vigilia: Pilzone-Elettcristini (38-30-32, scarto 6 punti tra 1 e 2), finita 6-3, e Nigoline-Borgonato (38-31-31, scarto 7), finita 4-3. Nigoline-Borgonato è l'unica gara della giornata vinta con un gol di scarto.
-- Partita della settimana del N° 1 (scelta automatica): Pilzone-Elettcristini, per un punto di scarto sulle probabilità.
+- Partita della settimana del N° 1: **Nigoline 4-3 Borgonato**, scelta da Nicola il 4 novembre (la scelta automatica era Pilzone-Elettcristini, per un punto di scarto sulle probabilità): nei contenuti va forzata con `indice`.
+- Spoiler sulla 7ª, senza probabilità: Borgonato-Implast (5ª contro 1ª, somma delle posizioni 6; le altre coppie partono da 14).
 - Il nome completo di Alvarez A. è Alvarez Arnaldo (dalla scheda MVP).
 - Gli scarti più larghi della giornata sono due, entrambi di 7 gol: Amici-Barco 1-8, con il Barco favorito solo al 40%, e Giaffa-Bombetta 7-0.
 
