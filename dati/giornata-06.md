@@ -75,7 +75,7 @@ Screenshot `nigoline-borgonato.png`, inviato da Nicola il 4 novembre (post visto
 ### U.s. Pilzone (@uspilzone), dopo Pilzone 6-3 Elettcristini
 - Apertura: «Bella vittoria dei #Fichi. Continua la striscia positiva».
 - Pagelle della società, per soprannome: MAX 7, PESOT 8, CAMPLA 7,5, TOLO 7,5, PUFFO 9, QUAGLIA 7,5, ZEZA 7,5, D'AGO 7, CICUS 6, PISE 6, MISTER 7. Sono voti della società, non della redazione.
-- PUFFO 9: «altro poker, il secondo di fila». Il soprannome non dice il nome: è Bonardi Andrea (l'unico con quattro gol in G6): deduzione accolta da Nicola il 3 novembre. Il "secondo di fila" (poker anche in G5 contro la Bombetta) è solo nel post: non abbiamo i marcatori di G5.
+- PUFFO 9: «altro poker, il secondo di fila». Il soprannome non dice il nome: è Bonardi Andrea (l'unico con quattro gol in G6): deduzione accolta da Nicola il 3 novembre. Il "secondo di fila" (poker anche in G5 contro il Bombetta) è solo nel post: non abbiamo i marcatori di G5.
 - CAMPLA: «trova il primo goal». Da Tuttocampo il primo gol della gara è di Tolomeo al 2', Camplani segna al 23': "primo goal" va letto come il suo primo gol stagionale, non come il gol d'apertura (lettura accolta da Nicola il 3 novembre). Non va usato come cronologia.
 - Espulsioni: «oggi l'inferiorità numerica» (MISTER), «rosso a caso» (CICUS), «propizia l'espulsione avversaria» (PISE). Il post fa capire che c'è stata un'espulsione per parte, ma Tuttocampo non ha i cartellini: si scrive come racconto della società ("fa sapere la società"), deciso da Nicola il 3 novembre. Vale anche per il rosso dell'Amici nel post del Barco.
 - Chiusura: «Venerdì ore 20 a monterotondo 7° giornata». Torna con il calendario (Gso Monte - Pilzone, ven 6 novembre, 20:00).
