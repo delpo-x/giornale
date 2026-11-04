@@ -167,3 +167,6 @@ Anche Xhaferi J. (Aston, gol) è un giocatore diverso dall'allenatore Xhaferi Em
 ## Classifica dopo la 6ª (calcolata, giornata completa)
 Implast 15, Cazzaghese 14, Giaffa 14, Nigoline 12, Borgonato 9, Pilzone 9, Amici 9, Gso Monte 9, Barco 8, Calino 8, Elettcristini 7, Ieci 4, Aston 3, Bombetta 0. Ordine a pari punti provvisorio (differenza reti), da confermare con la classifica ufficiale.
 - Il Nigoline sale da solo al 4° posto, a 3 punti dall'Implast. Il Borgonato resta a 9, a 6 punti dall'Implast, che affronta martedì 10 novembre.
+
+## Copertina del N° 1
+Scelta da Nicola il 4 novembre: titolone «Un punto e A CAPO», con «A CAPO» sul blocco ciano (a capo della classifica, un punto di margine). Apertura: l'Implast primo a 15, Cazzaghese e Giaffa a 14, dopo il 5-1 al Gso Monte (sotto al 2'). Riferimento per l'immagine: logo Implast o `Foto squadra/Implast.png`.
