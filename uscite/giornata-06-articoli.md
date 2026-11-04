@@ -10,9 +10,9 @@
 
 **Occhiello:** La capolista
 
-**Sommario:** L'Implast non ha né il miglior attacco né la miglior difesa, ma ha più vittorie di tutti. Il 5-1 al Monte vale la vetta da sola.
+**Sommario:** L'Implast non ha né il miglior attacco né la miglior difesa, ma ha più vittorie di tutti. Il 5-1 al Monte vale la vetta da solo.
 
-Dopo due minuti l'Implast era sotto, gol di Negroni. Poi ne ha segnati cinque: due Lorenzo Facchi, due Arnaldo Alvarez, MVP per Tuttocampo, e uno il capitano Mattia Notari, su assist di Stefano Iore. Il 5-1 al Gso Monte vale il primo posto da sola: 15 punti, uno più di Cazzaghese e Giaffa.
+Dopo due minuti l'Implast era sotto, gol di Negroni. Poi ne ha segnati cinque: due Lorenzo Facchi, due Arnaldo Alvarez, MVP per Tuttocampo, e uno il capitano Mattia Notari, su assist di Stefano Iore. Il 5-1 al Gso Monte vale il primo posto da solo: 15 punti, uno più di Cazzaghese e Giaffa.
 
 Le statistiche raccontano un'altra classifica. Con 22 gol l'Implast ha il sesto attacco del girone, la Cazzaghese ne ha 41. Con 15 subiti ha la seconda difesa, il Giaffa ne ha presi 8.
 
@@ -26,7 +26,7 @@ La classifica la fa la colonna delle vittorie: l'Implast ne ha cinque in sei gar
 
 Nove di quei 22 gol sono di Facchi, che ha anche 5 assist: 14 in tutto, e nel girone solo Marino Corsini del Giaffa fa meglio (15).
 
-Martedì 10 l'Implast va a Borgonato, dalla quinta, che ha il capocannoniere Cristian Bontempi (13 gol) e Mattia Valentino (10). Giocherà per ultima, sapendo già che cosa hanno fatto Cazzaghese e Giaffa.
+Martedì 10 l'Implast va a Borgonato, dal quinto, che ha il capocannoniere Cristian Bontempi (13 gol) e Mattia Valentino (10). Giocherà per ultima, sapendo già che cosa hanno fatto Cazzaghese e Giaffa.
 
 ## 03. Mai battute, ancora dietro
 
@@ -36,7 +36,7 @@ Martedì 10 l'Implast va a Borgonato, dalla quinta, che ha il capocannoniere Cri
 
 Nel girone due squadre non hanno ancora perso e nessuna delle due è prima. La Cazzaghese ha battuto 6-2 l'Aston 5 Perle con tre gol di Andrea Rocco, due di Paolo Consolati e uno di Di Martino. Il Giaffa Clusan ha chiuso 7-0 con il Bombetta: doppietta di Alessandro Franceschini, due rigori di Uberti, poi Corsini, Martinelli e Piva.
 
-La Cazzaghese è l'attacco del campionato: 41 gol in sei gare, 6,8 a partita, tredici più del Giaffa, seconda con 28. Tra i primi tre marcatori ha due uomini, Consolati con 12 e Rocco con 10. Con l'Aston era data favorita al 58% e non ha sbagliato.
+La Cazzaghese è l'attacco del campionato: 41 gol in sei gare, 6,8 a partita, tredici più del Giaffa, secondo con 28. Tra i primi tre marcatori ha due uomini, Consolati con 12 e Rocco con 10. Con l'Aston era data favorita al 58% e non ha sbagliato.
 
 ## 04. Mai battute, ancora dietro
 
@@ -48,7 +48,7 @@ Il Giaffa vince in un altro modo. Ha subito 8 gol in sei partite: la seconda dif
 
 Il punto che manca sta nei pareggi. Quattro vittorie e due pareggi fanno 14, cinque vittorie e una sconfitta fanno 15. Per ora non perdere non è bastato a stare davanti.
 
-Venerdì 6 la Cazzaghese ospita l'Ieci Passirano, dodicesimo. Sabato 7 il Giaffa va a Marone contro l'Elettcristini, undicesimo. Tutte e due giocano prima dell'Implast, che scende in campo martedì 10.
+Venerdì 6 la Cazzaghese ospita l'Ieci Passirano, dodicesimo. Sabato 7 il Giaffa va a Marone contro l'Elettcristini, undicesimo. Tutti e due giocano prima dell'Implast, che scende in campo martedì 10.
 
 ## 05. Bonardi, tre gol in nove minuti
 
