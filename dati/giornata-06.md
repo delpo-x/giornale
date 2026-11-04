@@ -65,6 +65,13 @@ Senza minuto l'ordine dell'elenco non dimostra la cronologia (CLAUDE.md §11).
 ## Dai profili delle squadre
 Screenshot in `screenshot/giornata-06/instagram/`, inviati da Nicola il 3 novembre. Si citano alla lettera e si attribuiscono alla società; i fatti che compaiono solo qui si scrivono come "fa sapere la società" (CLAUDE.md §3). I commenti degli utenti sotto i post non si usano.
 
+### Nigoline (@csinigoline), dopo Nigoline 4-3 Uso Borgonato
+Screenshot `nigoline-borgonato.png`, inviato da Nicola il 4 novembre (post visto alle 11:31, pubblicato «12 ore fa»).
+- Grafica: «FULL TIME», «COME È FINITA ?», 4 vs 3, marcatori Boni, Turelli, Bontempi, Bettoni. Tornano con Tuttocampo.
+- Testo: «E il primo derby della stagione lo portiamo a casa noi. Vittoria che arriva dopo una grande rimonta, dopo essere stati sotto 1-3. Conquistiamo così 3 punti importanti che ci permettono di tenere il treno delle prima.» (sic, «delle prima»).
+- Controllo: torna con quanto detto da Nicola (Borgonato avanti 3-2 a fine tempo regolamentare, due gol del Nigoline nel recupero). Sequenza ricostruita: da 1-3 a 2-3 nei regolamentari, poi 3-3 e 4-3 nel recupero. Il Nigoline ha segnato tre gol di fila. Chi ha segnato quali gol resta ignoto.
+- «Derby» è la parola della società: si cita tra virgolette, attribuita al Nigoline.
+
 ### U.s. Pilzone (@uspilzone), dopo Pilzone 6-3 Elettcristini
 - Apertura: «Bella vittoria dei #Fichi. Continua la striscia positiva».
 - Pagelle della società, per soprannome: MAX 7, PESOT 8, CAMPLA 7,5, TOLO 7,5, PUFFO 9, QUAGLIA 7,5, ZEZA 7,5, D'AGO 7, CICUS 6, PISE 6, MISTER 7. Sono voti della società, non della redazione.
