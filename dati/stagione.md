@@ -110,6 +110,8 @@ Ogni voce riporta le righe dello schema dall'alto in basso. La squadra di ciascu
 - **G5:** Facchi (Implast), Iore (Implast), Consolati (Cazzaghese) / Foresti (Giaffa), Bonardi (Pilzone), Micheli (Giaffa), Zibardi (Amici) / Mangraviti (Cazzaghese), Martinelli (Giaffa), Bonardi (Amici) / Paderno (Implast).
 - **G6:** Buizza (Gv Barco), Farimbella (Gv Barco), Facchi (Implast) / Bonardi (Pilzone), Alvarez (Implast), Franceschini (Giaffa, nome troncato "Francesc...", unico in rosa), Ghitti (Elettcristini) / Notari (Implast), Bergoli (Ieci Passirano, stemma dell'oratorio; Bergoli M. è marcatore del Passirano in G6), Martinelli (Giaffa) / Marini (stemma piccolo Giaffa). Screenshot in `screenshot/giornata-06/top11-g6.png`.
 
+- **Ottobre (Top 11 del mese):** Bontempi (Borgonato), Corsini (Giaffa), Facchi (Implast) / Foresti (Giaffa), Bonardi (Pilzone), Zibardi (Amici Di Renato), Maffi (Cazzaghese) / Bettoni (Nigoline), Martinelli (Giaffa), Bonardi (Amici Di Renato) / Marini (stemma piccolo Giaffa). Quattro del Giaffa, uno dell'Implast. Screenshot in `screenshot/ottobre/top11-ottobre.png`; esce nel N° 2.
+
 Giocatori Implast nelle Top 11:
 
 | Giornata | Quanti | Chi |
@@ -133,4 +135,4 @@ Trascritto per intero (13 giornate di andata, con le date del ritorno) in `dati/
 
 ## Mancano
 (Nota del 4 novembre: le probabilità della 7ª non arriveranno prima dell'uscita, quindi nel N° 1 il prossimo turno esce senza percentuali. Nel N° 1 non c'è il pezzo di Zanni.)
-- Top 11 di ottobre: va nel N° 2 (deciso da Nicola il 4 novembre).
+- Top 11 di ottobre: ricevuta il 6 novembre, va nel N° 2.
