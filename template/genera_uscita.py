@@ -79,7 +79,7 @@ body {{
 .foto .segnaposto {{ font-size: 24px; letter-spacing: 3px; text-transform: uppercase; }}
 .foto figcaption {{ position: absolute; left: 0; right: 0; bottom: 0; background: rgba(255,255,255,.92); padding: 8px 14px; font-size: 26px; line-height: 1.25; font-style: italic; }}
 .punteggio {{ position: absolute; left: 0; top: 0; background: {NAVY}; color: #fff; padding: 10px 18px; display: flex; gap: 14px; align-items: center; font-size: 26px; text-transform: uppercase; letter-spacing: 1px; }}
-.punteggio b {{ font-family: 'Franklin Gothic Demi Cond', Impact, sans-serif; font-weight: 400; font-size: 64px; line-height: 1; letter-spacing: 0; }}
+.punteggio b {{ font-family: 'Franklin Gothic Demi Cond', Impact, sans-serif; font-weight: 400; font-size: 64px; line-height: 1; letter-spacing: 0; white-space: nowrap; }}
 .spalla {{ display: flex; flex-direction: column; gap: 14px; }}
 .blocco {{ border-top: 6px solid {CIANO}; font-size: 26px; line-height: 1.25; }}
 .blocco h3 {{ font-family: 'Franklin Gothic Demi', Arial, sans-serif; font-weight: 700; font-size: 24px; letter-spacing: 2px; text-transform: uppercase; padding: 6px 0 4px; }}
@@ -88,7 +88,15 @@ body {{
 .mini td {{ padding: 4px 0; border-bottom: 1px solid {NAVY}; }}
 .mini td:last-child {{ text-align: right; }}
 .mini tr.nostra td {{ background: {CIANO}; }}
-.richiami {{ display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 16px; border-top: 6px solid {NAVY}; }}
+/* Titolone su due righe: la prima pagina si compatta per non schiacciare il taglio basso. */
+.stretta .titolone {{ margin: 10px 0 14px; }}
+.stretta .catenaccio {{ font-size: 28px; margin-bottom: 8px; }}
+.stretta .spalla {{ gap: 6px; }}
+.stretta .blocco {{ font-size: 23px; line-height: 1.2; }}
+.stretta .blocco .grande {{ font-size: 56px; }}
+.stretta .mini {{ font-size: 23px; }}
+.stretta .mini td {{ padding: 2px 0; }}
+.richiami {{ flex-shrink: 0; display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 16px; border-top: 6px solid {NAVY}; }}
 .richiami > div {{ padding: 12px 18px 0 0; }}
 .richiami > div + div {{ border-left: 1px solid {NAVY}; padding-left: 18px; }}
 .richiami .occ {{ display: inline-block; background: {CIANO}; padding: 3px 10px; font-size: 24px; letter-spacing: 2px; text-transform: uppercase; }}
@@ -216,6 +224,7 @@ window.addEventListener('load', function () {
     while (s > 150 && (t.scrollWidth > t.clientWidth || pieno())) { s -= 4; t.style.fontSize = s + 'px'; }
     if (t.scrollWidth > t.clientWidth || pieno()) {
       t.style.whiteSpace = 'normal';
+      document.querySelector('.cop').classList.add('stretta');
       s = 230;
       var troppo = function () {
         var righe = Math.round(t.getBoundingClientRect().height / s);
@@ -223,6 +232,11 @@ window.addEventListener('load', function () {
       };
       t.style.fontSize = s + 'px';
       while (s > 80 && troppo()) { s -= 4; t.style.fontSize = s + 'px'; }
+      // Su una riga sola la pagina compatta non serve: si torna a quella normale.
+      if (Math.round(t.getBoundingClientRect().height / s) < 2) {
+        document.querySelector('.cop').classList.remove('stretta');
+        while (s > 80 && troppo()) { s -= 4; t.style.fontSize = s + 'px'; }
+      }
     }
   }
   var fuori = c && c.scrollHeight > c.clientHeight + 1;
@@ -370,6 +384,7 @@ def pagine_rubriche(u):
     quante = {
         "risultati": len(a_blocchi(u["risultati"])),
         "prossimo-turno": len(a_blocchi(u["prossimo_turno"])),
+        "top-11": len(top11_lista(u)) or 1,
     }
     n, out = len(u["articoli"]) + 1, []
     for slug_, nome, desc in RUBRICHE:
@@ -541,14 +556,14 @@ def rubrica_classifica(u, n):
         c = ' class="nostra"' if sq == nostra else ""
         righe.append(
             f"<tr{c}><td class='pos'>{pos}</td><td class='sq'>{stemma(sq)}{e(sq)}</td><td class='pt'>{pt}</td><td>{g}</td>"
-            f"<td>{v}</td><td>{nn}</td><td>{p}</td><td>{gf}</td><td>{gs}</td><td>{gf - gs:+d}</td></tr>"
+            f"<td>{v}</td><td>{nn}</td><td>{p}</td><td>{gf}</td><td>{gs}</td><td>{(gf - gs) and f'{gf - gs:+d}' or 0}</td></tr>"
         )
     # numeri calcolati dalla classifica, nessun dato aggiunto
     voci = [("Capolista", cl[0][2], cl[0][1])]
     noi = next((r for r in cl if r[1] == nostra), None)
     if noi:
         distacco = cl[0][2] - noi[2]
-        voci.append(("Noi", f"{noi[0]}ª", f"{nostra}, " + ("in vetta" if noi[0] == 1 else f"a {distacco} punti dalla vetta")))
+        voci.append(("Noi", f"{noi[0]}ª", f"{nostra}, " + ("in vetta" if noi[0] == 1 else f"a {distacco} {'punto' if distacco == 1 else 'punti'} dalla vetta")))
     att = max(cl, key=lambda r: r[7])
     dif = min(cl, key=lambda r: r[8])
     voci.append(("Attacco", att[7], att[1]))
@@ -663,7 +678,8 @@ def colonna_classifica(titolo, etichetta, righe, col):
 
 def rubrica_marcatori(u, n):
     nota = u.get("nota_marcatori", "")
-    cat = f"Le classifiche stagionali dopo la {u['giornata']}ª giornata" + (f" · {nota}" if nota else "")
+    cat = (f"I {nota} dopo la {u['giornata']}ª" if nota
+           else f"Le classifiche stagionali dopo la {u['giornata']}ª giornata")
     corpo = f"""<div class="int">
 {testa_int(u, n, "Statistiche", None, "Chi segna e chi serve", cat)}
 <div class="due">
@@ -744,11 +760,20 @@ def rubrica_partita(u, n):
     return pagina(u, "La partita della settimana", corpo, top=TOP_INT)
 
 
+def top11_lista(u):
+    """La Top 11 può essere una sola (dict) o più d'una (lista): una pagina ciascuna."""
+    t = u.get("top11")
+    return t if isinstance(t, list) else ([t] if t else [])
+
+
 def rubrica_top11(u, n):
+    return [top11_pagina(u, n + k, t) for k, t in enumerate(top11_lista(u))]
+
+
+def top11_pagina(u, n, t):
     """La Top 11 di Tuttocampo come sul campo: righe dall'alto in basso, il
     portiere in fondo. Ruoli non indicati dalla fonte, quindi non scritti.
     La nostra squadra ha il nome su blocco ciano."""
-    t = u["top11"]
     righe = ""
     for riga in t["righe"]:
         celle = ""

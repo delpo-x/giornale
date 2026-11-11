@@ -63,6 +63,26 @@ GIORNATE = {
         ("sab 31 ottobre", "Implast", 5, 1, "Gso Monte"),
         ("mar 3 novembre, 20:30", "Nigoline", 4, 3, "Uso Borgonato"),
     ],
+    7: [
+        ("ven 6 novembre, 20:00", "Gso Monte", 3, 1, "U.s. Pilzone"),
+        ("ven 6 novembre, 20:45", "F.c. Cazzaghese", 7, 0, "Ieci Passirano"),
+        ("ven 6 novembre, 21:00", "Bombetta", 2, 6, "Amici Di Renato"),
+        ("ven 6 novembre, 21:00", "Gv Barco", 1, 0, "F.c. Calino"),
+        ("sab 7 novembre, 15:00", "Aston 5 Perle", 2, 4, "Nigoline"),
+        ("sab 7 novembre, 17:30", "Elettcristini", 3, 4, "Giaffa Clusan"),
+        ("mar 10 novembre, 21:00", "Uso Borgonato", 4, 4, "Implast"),
+    ],
+}
+
+# Classifica ufficiale Tuttocampo dopo la 7ª (vista l'11 novembre): pt, v, n, p, dr.
+UFFICIALE_G7 = {
+    "F.c. Cazzaghese": (17, 5, 2, 0, 32), "Giaffa Clusan": (17, 5, 2, 0, 21),
+    "Implast": (16, 5, 1, 1, 7), "Nigoline": (15, 5, 0, 2, 9),
+    "Amici Di Renato": (12, 4, 0, 3, 0), "Gso Monte": (12, 4, 0, 3, -6),
+    "Gv Barco": (11, 3, 2, 2, 7), "Uso Borgonato": (10, 3, 1, 3, 1),
+    "U.s. Pilzone": (9, 3, 0, 4, -2), "F.c. Calino": (8, 2, 2, 3, 0),
+    "Elettcristini": (7, 2, 1, 4, -5), "Ieci Passirano": (4, 1, 1, 5, -17),
+    "Aston 5 Perle": (3, 1, 0, 6, -12), "Bombetta": (0, 0, 0, 7, -35),
 }
 
 # Statistiche squadra viste su Tuttocampo (prime 3), per il controllo incrociato.
@@ -107,7 +127,14 @@ if __name__ == "__main__":
         pt, g, v, n, p, gf, gs = r
         print(f"{i:>2} {s:18} {pt:>2} {g:>2} {v:>2} {n:>2} {p:>2} {gf:>3} {gs:>2} {gf - gs:+4d}")
     d = dict(cl)
+    d6 = dict(classifica(6))  # VISTE risale alla 6ª giornata
     for k, idx in (("gf", 5), ("gs", 6)):
         for s, val in VISTE[k].items():
-            stato = "ok" if d[s][idx] == val else f"DIVERSO (calcolato {d[s][idx]})"
+            stato = "ok" if d6[s][idx] == val else f"DIVERSO (calcolato {d6[s][idx]})"
             print(f"controllo {k} {s}: {val} {stato}")
+    for s, (pt, v, n, p, dr) in UFFICIALE_G7.items():
+        r = d[s]
+        mio = (r[0], r[2], r[3], r[4], r[5] - r[6])
+        if mio != (pt, v, n, p, dr):
+            print(f"G7 DIVERSO {s}: ufficiale {(pt, v, n, p, dr)} calcolato {mio}")
+    print("controllo classifica G7 finito")

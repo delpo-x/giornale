@@ -22,6 +22,12 @@ Non è un elenco di risultati. L'obiettivo è costruire la storia del campionato
 4. Claude scrive gli articoli con la skill `giornalismo-sportivo-italiano`. La cronaca della nostra partita la scrive Gianluca Zanni: Nicola la passa e Claude la impagina senza toccarla (punto 8).
 5. Claude costruisce le pagine HTML nel formato fisso (punto 6): una per la copertina e una per ogni articolo. Cura l'impaginazione con la skill UI-UX Pro e fornisce il prompt per l'immagine di copertina (punto 7).
 6. Claude passa ogni testo suo nella skill `humanizer` prima di consegnarlo (vedi punto 8, "Humanizer sempre"). Nelle pagine e nel file `.md` va solo la versione già passata.
+7. **Revisione grafica prima della chiusura definitiva** (regola fissata da Nicola l'11 novembre, sempre): prima di consegnare l'uscita e di fare il commit, Claude passa le pagine esportate in queste skill:
+   - `impeccable`: critica e rifinitura dell'impaginazione su copertina, articoli e rubriche (gerarchia, spazi, contrasti, leggibilità su telefono);
+   - `emil-design-eng`: dettagli fini, cioè allineamenti, ritmo verticale, coerenza di filetti e etichette;
+   - `break-ui`: prova del generatore con i casi peggiori (nomi di squadra lunghi, titoli lunghi, cinque marcatori in una gara, pari punti in classifica), per evitare sorprese come il 4-4 che andava a capo;
+   - `apple-design`, solo per la tipografia: interlinea e spaziatura tra le lettere dei titoli.
+   Il filo grafico resta fisso (punto 6): le modifiche al generatore che cambiano l'aspetto delle pagine si propongono a Nicola e si applicano solo con il suo sì. Le correzioni di difetti (testo che esce, righe che vanno a capo male) si fanno subito.
 
 ## 3. Regola sui dati
 - Non inventare mai risultati, marcatori, minuti, voti, percentuali, classifiche o dichiarazioni.

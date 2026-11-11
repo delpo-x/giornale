@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="it"><head><meta charset="utf-8">
+<meta name="viewport" content="width=1080">
+<title>Prime in coppia · La Gazzetta del Dragone N° 2</title>
+<style>
+@page { size: 1080px 1920px; margin: 0; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1080px; height: 1920px; background: #fff; }
+body {
+  color: #0A2342;
+  font-family: Georgia, 'Times New Roman', serif;
+  -webkit-print-color-adjust: exact; print-color-adjust: exact;
+}
+.pagina { position: relative; width: 1080px; height: 1920px; overflow: hidden; padding: 250px 56px 0 40px; }
+.filigrana { position: absolute; right: -120px; bottom: 120px; width: 760px; opacity: .045; pointer-events: none; }
+.lato {
+  position: absolute; right: 10px; top: 50%; transform: translateY(-50%) rotate(90deg);
+  transform-origin: center; white-space: nowrap; font-size: 24px; letter-spacing: 2px;
+  text-transform: uppercase; opacity: .7; width: 0; display: flex; justify-content: center;
+}
+.testata svg { display: block; width: 1000px; height: auto; }
+.dataline {
+  display: flex; justify-content: space-between; font-size: 26px; letter-spacing: 2px;
+  text-transform: uppercase; padding: 10px 0 0;
+}
+.contenuto { position: absolute; left: 40px; right: 56px; top: var(--top); bottom: 350px; overflow: hidden; }
+.titoli { font-family: 'Franklin Gothic Demi', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; }
+.gioco { background: #00A8E8; color: #0A2342; padding: 0 14px; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+/* Prima pagina: sopratitolo, titolone, catenaccio, apertura con foto e spalla,
+   taglio basso con i richiami alle pagine interne. */
+.cop { height: 100%; display: flex; flex-direction: column; }
+.sopra { display: flex; align-items: stretch; border-top: 6px solid #0A2342; border-bottom: 2px solid #0A2342; margin-top: 14px; }
+.sopra .kicker { background: #00A8E8; padding: 8px 16px; font-size: 26px; letter-spacing: 2px; text-transform: uppercase; white-space: nowrap; display: flex; align-items: center; }
+.sopra .testo-sopra { padding: 8px 16px; font-size: 28px; line-height: 1.2; font-weight: 700; display: flex; align-items: center; }
+.titolone {
+  font-family: 'Franklin Gothic Demi Cond', 'Franklin Gothic Medium Cond', Impact, 'Arial Narrow', sans-serif;
+  font-weight: 400; font-size: 220px; line-height: 1; letter-spacing: -1px; text-transform: uppercase;
+  margin: 28px 0 20px; white-space: normal; overflow-wrap: normal;
+}
+.titolone .gioco { padding: 0 12px; line-height: 1; }
+.catenaccio { font-size: 32px; line-height: 1.22; font-weight: 700; margin-bottom: 12px; }
+.rimando { font-family: 'Franklin Gothic Demi', Arial, sans-serif; font-weight: 700; font-size: .7em; letter-spacing: 1px; text-transform: uppercase; white-space: nowrap; }
+.rimando::before { content: "▸ "; }
+.apertura { flex: 1 0 auto; min-height: 340px; display: grid; grid-template-columns: 1fr 320px; gap: 22px; border-top: 2px solid #0A2342; padding-top: 16px; }
+.foto { position: relative; background: #00A8E8; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+.foto > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.foto .segnaposto { font-size: 24px; letter-spacing: 3px; text-transform: uppercase; }
+.foto figcaption { position: absolute; left: 0; right: 0; bottom: 0; background: rgba(255,255,255,.92); padding: 8px 14px; font-size: 26px; line-height: 1.25; font-style: italic; }
+.punteggio { position: absolute; left: 0; top: 0; background: #0A2342; color: #fff; padding: 10px 18px; display: flex; gap: 14px; align-items: center; font-size: 26px; text-transform: uppercase; letter-spacing: 1px; }
+.punteggio b { font-family: 'Franklin Gothic Demi Cond', Impact, sans-serif; font-weight: 400; font-size: 64px; line-height: 1; letter-spacing: 0; white-space: nowrap; }
+.spalla { display: flex; flex-direction: column; gap: 14px; }
+.blocco { border-top: 6px solid #00A8E8; font-size: 26px; line-height: 1.25; }
+.blocco h3 { font-family: 'Franklin Gothic Demi', Arial, sans-serif; font-weight: 700; font-size: 24px; letter-spacing: 2px; text-transform: uppercase; padding: 6px 0 4px; }
+.blocco .grande { font-family: 'Franklin Gothic Demi Cond', Impact, sans-serif; font-size: 76px; line-height: .95; display: block; }
+.mini { width: 100%; border-collapse: collapse; font-size: 26px; }
+.mini td { padding: 4px 0; border-bottom: 1px solid #0A2342; }
+.mini td:last-child { text-align: right; }
+.mini tr.nostra td { background: #00A8E8; }
+/* Titolone su due righe: la prima pagina si compatta per non schiacciare il taglio basso. */
+.stretta .titolone { margin: 10px 0 14px; }
+.stretta .catenaccio { font-size: 28px; margin-bottom: 8px; }
+.stretta .spalla { gap: 6px; }
+.stretta .blocco { font-size: 23px; line-height: 1.2; }
+.stretta .blocco .grande { font-size: 56px; }
+.stretta .mini { font-size: 23px; }
+.stretta .mini td { padding: 2px 0; }
+.richiami { flex-shrink: 0; display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 16px; border-top: 6px solid #0A2342; }
+.richiami > div { padding: 12px 18px 0 0; }
+.richiami > div + div { border-left: 1px solid #0A2342; padding-left: 18px; }
+.richiami .occ { display: inline-block; background: #00A8E8; padding: 3px 10px; font-size: 24px; letter-spacing: 2px; text-transform: uppercase; }
+.richiami h4 { font-family: 'Franklin Gothic Demi', Arial, sans-serif; font-weight: 700; font-size: 34px; line-height: 1.08; margin: 8px 0 6px; }
+.richiami .di { display: block; font-family: 'Franklin Gothic Demi', 'Franklin Gothic Medium', Arial, sans-serif; font-weight: 700; font-size: 24px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 6px; }
+.richiami .rimando { font-size: 24px; }
+/* Pagine interne: testatina con numero di pagina e sezione, occhiello, titolo
+   in condensato, catenaccio, firma, testo a una colonna, box dei numeri. */
+.int { height: 100%; display: flex; flex-direction: column; }
+.folio { display: flex; align-items: stretch; height: 58px; border-bottom: 3px solid #0A2342; margin-top: 4px; flex: none; }
+.folio .pg { background: #0A2342; color: #fff; font-family: 'Franklin Gothic Demi Cond', 'Franklin Gothic Medium Cond', Impact, 'Arial Narrow', sans-serif; font-size: 46px; width: 100px; display: flex; align-items: center; justify-content: center; }
+.folio .sez { background: #00A8E8; padding: 0 22px; font-size: 24px; letter-spacing: 3px; text-transform: uppercase; display: flex; align-items: center; }
+.folio .info { margin-left: auto; display: flex; align-items: center; font-size: 24px; letter-spacing: 1px; text-transform: uppercase; }
+.occhiello { align-self: flex-start; background: #00A8E8; padding: 6px 16px; font-size: 24px; letter-spacing: 3px; text-transform: uppercase; margin: 24px 0 12px; }
+.titolo { font-family: 'Franklin Gothic Demi Cond', 'Franklin Gothic Medium Cond', Impact, 'Arial Narrow', sans-serif; font-weight: 400; font-size: 104px; line-height: 1; letter-spacing: -1px; margin-bottom: 14px; }
+.titolo .gioco { padding: 0 10px; }
+.cat-int { font-size: 34px; line-height: 1.22; font-weight: 700; margin-bottom: 14px; }
+.byline { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #0A2342; border-bottom: 4px solid #0A2342; padding: 10px 0; font-size: 24px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 20px; flex: none; }
+.byline.autore { padding: 6px 0 8px; }
+.byline .nome { font-family: 'Franklin Gothic Demi Cond', 'Franklin Gothic Medium Cond', Impact, 'Arial Narrow', sans-serif; font-weight: 400; font-size: 42px; letter-spacing: 0; text-transform: none; background: #00A8E8; padding: 0 10px; margin-left: 6px; }
+.foto-int { height: 380px; margin-bottom: 24px; flex: none; }
+.tab-int { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 6px 26px; background: #0A2342; color: #fff; padding: 10px 22px 12px; margin-bottom: 20px; font-size: 30px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
+.tab-int .c { text-align: right; }
+.tab-int b { font-family: 'Franklin Gothic Demi Cond', 'Franklin Gothic Medium Cond', Impact, 'Arial Narrow', sans-serif; font-weight: 400; font-size: 72px; line-height: 1; letter-spacing: 0; }
+.tab-int .mar { grid-column: 1 / -1; border-top: 1px solid #00A8E8; padding-top: 8px; font-size: 26px; font-weight: 400; font-style: italic; text-transform: none; letter-spacing: 0; }
+.colonne p { font-size: 34px; line-height: 1.45; margin-bottom: 16px; }
+.colonne p:first-child::first-letter { font-family: 'Franklin Gothic Demi Cond', 'Franklin Gothic Medium Cond', Impact, 'Arial Narrow', sans-serif; float: left; font-size: 150px; line-height: .8; padding: 8px 14px 0 0; }
+.colonne p:last-of-type::after { content: " \25A0"; font-size: .6em; }
+.cit { break-inside: avoid; border-top: 6px solid #00A8E8; border-bottom: 1px solid #0A2342; padding: 14px 0 16px; margin: 4px 0 20px; font-size: 40px; line-height: 1.2; font-style: italic; font-weight: 700; }
+.cit cite { display: block; font-style: normal; font-weight: 400; font-size: 24px; letter-spacing: 2px; text-transform: uppercase; margin-top: 10px; }
+.segue { text-align: right; margin-top: 6px; font-size: 26px; }
+.seguito { display: flex; justify-content: space-between; align-items: baseline; gap: 20px; border-bottom: 4px solid #0A2342; padding: 18px 0 10px; margin-bottom: 20px; }
+.titolo-seguito { font-family: 'Franklin Gothic Demi Cond', 'Franklin Gothic Medium Cond', Impact, 'Arial Narrow', sans-serif; font-size: 48px; line-height: 1.05; }
+.seguito .segue { margin: 0; white-space: nowrap; }
+.cifre { margin-top: auto; display: grid; border-top: 6px solid #0A2342; flex: none; }
+.cifre.alto { margin: 0 0 18px; }
+.cifre.alto .v { font-size: 52px; }
+.folio + .titolo { margin-top: 18px; }
+.gara:last-child { border-bottom: 0; padding-bottom: 0; }
+.cifre > div { padding: 12px 16px 0 0; font-size: 24px; line-height: 1.25; }
+.cifre > div + div { border-left: 1px solid #0A2342; padding-left: 16px; }
+.cifre .k { display: inline-block; background: #00A8E8; padding: 2px 8px; font-size: 24px; letter-spacing: 1px; text-transform: uppercase; }
+.cifre .v { display: block; font-family: 'Franklin Gothic Demi Cond', 'Franklin Gothic Medium Cond', Impact, 'Arial Narrow', sans-serif; font-size: 76px; line-height: 1; margin: 6px 0 2px; }
+table.dati { width: 100%; border-collapse: collapse; font-size: 28px; }
+table.dati th { font-family: 'Franklin Gothic Demi', 'Franklin Gothic Medium', Arial, sans-serif; font-weight: 700; text-align: center; padding: 10px 6px; background: #0A2342; color: #fff; font-size: 24px; letter-spacing: 1px; }
+table.dati td { text-align: center; padding: 3px 6px; border-bottom: 1px solid #0A2342; }
+table.dati td.sq, table.dati th.sq { text-align: left; }
+table.dati td.pos { font-family: 'Franklin Gothic Demi Cond', 'Franklin Gothic Medium Cond', Impact, 'Arial Narrow', sans-serif; font-size: 32px; }
+table.dati td.pt { font-family: 'Franklin Gothic Demi Cond', 'Franklin Gothic Medium Cond', Impact, 'Arial Narrow', sans-serif; font-size: 34px; }
+table.dati small { display: block; font-family: Georgia, serif; font-size: 24px; }
+/* Georgia ha numeri "all'antica" (lo 0 sembra una o): cifre in bastoni */
+.num, table.dati td:not(.sq), .mini td:last-child, .mini td:first-child::first-line, .prob, .firma, .lato, .dataline, .sommario b,
+.folio .info, .byline, .gara .meta, .cifre .k, .capo .k {
+  font-family: 'Franklin Gothic Demi', 'Franklin Gothic Medium', Arial, sans-serif;
+}
+table.dati tr.nostra td { background: #00A8E8; font-weight: 700; }
+.gara { border-bottom: 1px solid #0A2342; padding: 10px 0 12px; }
+.gara .meta { display: flex; justify-content: space-between; align-items: center; font-size: 24px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 4px; }
+.gara .meta .noi { background: #00A8E8; padding: 3px 10px; }
+.gara .riga { display: grid; grid-template-columns: 1fr 190px 1fr; align-items: center; gap: 20px; font-size: 32px; font-weight: 700; }
+.gara .riga .c { text-align: right; }
+.gara .ris { background: #0A2342; color: #fff; font-family: 'Franklin Gothic Demi Cond', 'Franklin Gothic Medium Cond', Impact, 'Arial Narrow', sans-serif; font-size: 52px; line-height: 1; text-align: center; padding: 2px 0; }
+.gara .ris.vs { background: #fff; color: #0A2342; border: 3px solid #0A2342; font-size: 36px; padding: 8px 0; text-transform: uppercase; }
+.gara .mar { font-size: 24px; line-height: 1.3; margin-top: 6px; font-style: italic; }
+.gara.nostra { border-left: 10px solid #00A8E8; padding-left: 20px; }
+.spoiler { margin-top: 22px; padding-top: 16px; border-top: 2px solid #0A2342; font-size: 30px; line-height: 1.4; }
+.spoiler .occhiello { margin-right: 10px; font-family: 'Franklin Gothic Demi', 'Franklin Gothic Medium', Arial, sans-serif; font-size: 24px; font-weight: 700; padding: 4px 12px; }
+.prob { display: flex; height: 38px; margin-top: 8px; border: 2px solid #0A2342; font-size: 24px; }
+.prob div { display: flex; align-items: center; justify-content: center; overflow: hidden; white-space: nowrap; }
+.prob .p1 { background: #0A2342; color: #fff; } .prob .px { background: #fff; } .prob .p2 { background: #00A8E8; }
+.legenda { font-size: 24px; margin-top: 14px; }
+.due { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+.sezbar { background: #0A2342; color: #fff; font-family: 'Franklin Gothic Demi', 'Franklin Gothic Medium', Arial, sans-serif; font-weight: 700; font-size: 24px; letter-spacing: 3px; text-transform: uppercase; padding: 8px 14px; }
+.capo { background: #00A8E8; padding: 12px 18px 16px; display: grid; grid-template-columns: auto 1fr; gap: 4px 18px; align-items: center; }
+.capo .k { grid-column: 1 / -1; font-size: 24px; letter-spacing: 1px; text-transform: uppercase; }
+.capo .v { font-family: 'Franklin Gothic Demi Cond', 'Franklin Gothic Medium Cond', Impact, 'Arial Narrow', sans-serif; font-size: 110px; line-height: .9; }
+.capo .chi { font-size: 26px; font-weight: 700; line-height: 1.2; }
+.capo .chi small { display: block; font-weight: 400; font-size: 24px; }
+.due table.dati { font-size: 24px; }
+.due table.dati td { padding: 10px 6px; }
+/* Pagina di Zanni: i blocchi ciano diventano rosa (testatina, occhiello,
+   gioco di parole, nome della firma); testata e firma restano quelle di sempre */
+.zanni .folio .sez, .zanni .occhiello, .zanni .titolo .gioco, .zanni .byline .nome, .zanni .cit { background: #EC78C0; }
+.zanni .cit { background: none; border-top-color: #EC78C0; }
+.zanni .tab-int .mar { border-top-color: #EC78C0; }
+.richiami .occ.zanni { background: #EC78C0; }
+/* Loghi ufficiali delle squadre: piccoli, accanto al nome, mai al posto del nome */
+.stemma { display: inline-block; vertical-align: middle; object-fit: contain; width: 1.25em; height: 1.25em; margin: 0 .35em; }
+table.dati td.sq .stemma, .mini .stemma { margin-left: 0; }
+.punteggio .stemma { width: 56px; height: 56px; margin: 0; background: #fff; border-radius: 50%; padding: 4px; }
+.tab-int .stemma { width: 54px; height: 54px; background: #fff; border-radius: 50%; padding: 4px; }
+.firma { position: absolute; left: 40px; right: 56px; bottom: 250px; height: 80px; border-top: 3px solid #0A2342; display: flex; align-items: center; gap: 16px; font-size: 24px; }
+.firma svg { width: 50px; height: 50px; flex: none; }
+</style></head>
+<body><div class="pagina ">
+<svg class="filigrana" viewBox="0 0 256 256"><g fill="#0A2342"><path fill-rule="evenodd" d="M155.1 14.4 L154.8 14.7 L154.8 15.0 L152.3 20.3 L147.9 27.3 L143.6 32.7 L139.2 36.9 L135.5 39.9 L132.3 42.0 L127.9 44.5 L120.9 47.6 L115.0 49.6 L111.2 51.2 L107.4 53.1 L102.5 56.2 L97.2 60.2 L91.6 65.5 L88.5 68.9 L85.9 72.1 L82.6 76.8 L82.6 77.1 L118.5 63.9 L123.7 59.0 L129.9 54.1 L134.1 51.4 L139.7 48.1 L144.8 45.5 L148.4 43.9 L150.7 40.6 L152.7 36.8 L154.6 31.2 L155.1 28.9 L155.2 26.8 L155.4 26.7 L155.5 23.0 L155.7 22.8 L155.5 17.4 L155.4 17.2ZM226.4 0.0 L220.5 8.5 L216.7 13.3 L212.6 17.8 L207.8 22.5 L204.7 25.1 L200.2 28.5 L195.3 31.8 L189.2 35.1 L184.1 37.2 L172.8 41.0 L161.3 43.9 L155.4 45.8 L150.0 47.9 L142.5 51.7 L138.6 54.0 L133.0 57.7 L126.1 63.3 L121.1 67.8 L114.0 75.1 L109.5 80.4 L109.3 79.7 L113.2 70.6 L104.6 73.5 L103.4 74.2 L100.5 75.1 L98.8 75.9 L95.8 76.8 L94.1 77.6 L89.9 79.0 L88.7 79.6 L87.4 79.9 L76.1 84.2 L69.4 86.6 L63.7 92.9 L61.8 94.6 L59.2 96.7 L54.7 99.3 L48.8 101.9 L49.0 104.6 L49.9 106.7 L50.5 107.7 L53.0 110.0 L53.0 110.3 L48.3 114.0 L43.1 117.6 L35.0 122.3 L31.3 124.1 L26.9 126.0 L23.2 127.2 L22.7 127.5 L16.7 129.4 L16.2 131.4 L16.1 133.3 L15.9 133.4 L15.9 134.8 L15.7 135.0 L15.7 139.3 L15.9 139.5 L16.1 142.3 L16.8 146.3 L17.9 149.6 L17.9 150.0 L19.5 153.9 L21.5 157.8 L24.0 161.7 L24.3 161.7 L26.1 159.8 L28.8 157.6 L32.3 155.2 L35.0 153.8 L39.5 152.0 L45.1 150.8 L48.8 150.7 L49.0 150.5 L52.8 150.7 L53.0 150.8 L54.2 150.8 L54.4 151.0 L57.2 151.3 L58.1 151.6 L59.0 151.6 L67.1 144.8 L72.1 141.2 L78.6 137.6 L84.2 135.3 L91.3 133.3 L94.6 132.8 L94.7 132.7 L96.7 132.5 L96.9 132.3 L98.0 132.3 L98.1 132.2 L101.4 132.0 L101.5 131.9 L110.1 131.9 L110.2 132.0 L111.9 132.0 L112.1 132.2 L111.9 132.5 L111.3 132.7 L110.2 132.7 L110.1 132.8 L106.5 133.3 L102.6 134.2 L101.2 134.4 L93.6 136.4 L89.9 137.6 L83.7 140.1 L76.4 143.8 L70.8 147.5 L65.9 151.7 L68.7 158.4 L68.5 158.9 L64.6 158.1 L63.2 157.6 L62.6 157.6 L59.7 156.7 L53.9 155.5 L51.3 155.3 L51.1 155.2 L46.0 155.3 L40.7 156.4 L37.8 157.5 L33.7 159.5 L31.0 161.4 L29.2 162.8 L29.2 163.1 L30.3 165.1 L32.7 168.5 L34.4 170.5 L37.8 173.9 L41.7 176.9 L43.7 178.1 L46.6 179.7 L51.0 181.5 L57.9 183.5 L62.8 184.3 L62.8 183.9 L61.4 179.7 L61.2 176.3 L61.5 174.9 L62.1 173.5 L63.4 172.1 L64.9 171.0 L68.8 168.8 L74.7 166.2 L80.9 164.2 L86.3 162.9 L90.2 162.4 L90.4 162.3 L93.6 162.1 L93.8 162.0 L96.1 162.0 L96.3 161.8 L102.2 161.8 L102.3 162.0 L106.7 162.1 L106.8 162.3 L111.6 162.8 L116.6 163.7 L117.4 164.0 L121.3 164.8 L126.1 166.3 L128.1 166.8 L126.8 161.7 L125.0 155.8 L125.1 155.2 L125.6 155.5 L127.9 158.6 L130.1 162.1 L132.0 165.9 L133.7 170.2 L133.8 171.1 L134.9 174.2 L134.6 174.5 L129.9 172.4 L125.9 171.0 L125.4 170.7 L120.6 169.1 L115.7 167.9 L111.6 167.1 L107.0 166.6 L106.8 166.5 L105.3 166.5 L105.1 166.3 L102.5 166.3 L102.3 166.2 L94.4 166.3 L94.7 166.8 L97.2 168.6 L98.4 169.9 L100.2 172.1 L102.2 175.8 L103.1 178.7 L103.6 181.2 L103.6 182.3 L103.7 182.5 L103.7 187.6 L103.6 187.7 L103.6 189.1 L103.4 189.3 L103.4 190.2 L102.3 195.2 L101.9 196.3 L102.5 196.6 L103.3 196.6 L103.4 196.7 L104.2 196.7 L104.3 196.9 L105.1 196.9 L110.9 198.0 L111.8 198.0 L117.5 199.1 L122.3 199.7 L122.6 200.0 L121.9 200.3 L116.8 200.8 L116.6 200.9 L115.5 200.9 L114.1 201.2 L112.7 201.2 L112.6 201.4 L107.4 201.9 L107.3 202.0 L103.6 202.3 L103.4 202.5 L100.6 202.6 L99.2 202.9 L96.6 208.4 L93.6 213.2 L90.4 217.7 L86.5 222.5 L87.3 222.8 L93.0 223.9 L100.2 225.6 L107.8 227.0 L110.1 227.6 L112.4 227.9 L113.6 228.4 L113.2 228.7 L80.9 228.7 L80.3 229.0 L73.9 235.7 L68.8 242.2 L66.3 245.9 L64.5 249.2 L62.0 254.3 L61.4 255.8 L61.5 256.0 L208.9 256.0 L209.4 254.6 L210.0 249.9 L210.3 248.9 L210.3 247.9 L210.5 247.8 L210.5 246.8 L210.6 246.7 L211.4 238.9 L211.5 238.8 L211.9 233.5 L212.0 233.3 L212.2 228.2 L212.3 228.1 L212.3 223.4 L212.5 223.3 L212.5 217.8 L212.3 217.7 L212.3 214.4 L212.2 214.3 L212.0 211.3 L212.3 211.0 L216.2 211.9 L222.3 214.3 L226.9 216.9 L232.2 220.8 L232.2 219.7 L232.0 219.5 L232.0 218.8 L231.1 213.8 L229.4 207.3 L227.4 201.7 L224.0 195.0 L221.3 191.0 L217.0 185.7 L211.5 180.4 L206.1 176.1 L205.8 175.6 L206.1 175.3 L207.8 175.2 L208.0 175.0 L209.5 175.0 L209.7 174.9 L216.2 174.9 L216.4 175.0 L217.8 175.0 L217.9 175.2 L218.8 175.2 L222.9 175.9 L226.4 176.9 L230.3 178.3 L236.1 181.1 L240.3 183.5 L240.3 183.2 L237.1 177.2 L232.3 169.9 L227.4 164.0 L222.7 159.5 L217.9 155.8 L214.8 153.8 L210.9 151.6 L203.8 148.3 L200.2 146.9 L195.9 145.5 L195.7 145.1 L200.4 142.7 L206.0 140.7 L208.9 139.9 L212.9 139.3 L213.1 139.2 L214.2 139.2 L214.3 139.0 L218.4 138.9 L218.5 138.7 L224.4 138.9 L224.6 139.0 L227.4 139.2 L234.7 140.6 L230.2 135.6 L224.9 130.9 L217.8 126.1 L211.9 123.2 L204.7 120.7 L198.1 119.3 L194.3 119.0 L194.2 118.8 L192.5 118.8 L192.3 118.7 L189.2 118.7 L189.1 118.5 L185.6 118.5 L185.5 118.7 L181.6 118.7 L181.4 118.5 L182.7 117.3 L185.6 115.4 L190.8 113.0 L195.3 111.4 L198.2 110.6 L201.5 110.0 L202.6 110.0 L202.7 109.8 L204.3 109.8 L204.4 109.7 L211.7 109.7 L210.2 108.1 L205.8 104.9 L202.4 102.7 L198.5 100.7 L191.5 98.1 L191.1 98.1 L187.7 97.0 L186.9 97.0 L172.1 107.1 L167.6 110.3 L167.3 110.5 L167.2 110.3 L185.3 91.2 L203.3 72.8 L202.6 72.8 L196.3 74.2 L195.6 74.2 L190.0 75.4 L186.9 75.9 L185.3 76.3 L182.2 76.8 L181.4 77.1 L179.1 77.4 L178.3 77.7 L177.6 77.7 L176.8 78.0 L162.2 80.8 L161.4 81.1 L159.3 81.5 L158.5 81.8 L155.5 82.2 L154.8 82.5 L151.0 83.2 L148.7 83.8 L147.9 83.8 L147.8 83.6 L149.3 81.0 L153.4 75.6 L157.7 71.1 L161.4 68.0 L165.8 65.0 L169.3 63.0 L176.2 59.7 L177.6 59.3 L183.8 56.3 L185.5 55.7 L190.1 53.4 L195.3 50.4 L197.9 48.7 L202.2 45.5 L205.8 42.4 L209.5 38.6 L212.9 34.6 L216.8 29.0 L218.7 25.8 L221.5 19.9 L224.1 12.3 L225.7 5.7 L226.3 1.1 L226.4 0.9ZM41.7 130.6 L41.8 131.1 L41.5 132.2 L40.3 134.5 L38.9 135.9 L37.6 136.5 L35.3 137.0 L34.5 137.5 L32.7 139.5 L31.1 142.4 L30.8 142.6 L30.6 142.4 L30.8 138.4 L31.4 136.1 L32.3 134.5 L33.4 133.4 L35.0 132.5 L36.7 131.9 L39.5 131.3 L40.6 130.8ZM107.3 95.1 L107.0 95.4 L103.9 96.8 L98.8 99.8 L98.4 100.1 L98.3 100.7 L98.3 102.1 L97.7 104.9 L96.4 107.5 L95.5 108.9 L93.3 111.1 L92.2 111.9 L90.1 113.0 L88.7 113.4 L87.1 113.7 L84.3 113.9 L84.2 113.7 L81.7 113.6 L78.4 112.6 L77.8 112.6 L75.0 113.9 L73.5 114.3 L72.7 114.3 L72.5 114.5 L70.8 114.3 L69.0 113.6 L67.9 112.8 L65.2 110.0 L63.8 107.5 L64.0 107.4 L64.5 107.5 L65.2 108.3 L66.6 109.2 L69.4 110.5 L72.2 110.8 L72.4 110.6 L73.6 110.6 L75.0 110.3 L77.2 109.5 L78.6 108.8 L86.3 103.0 L89.6 100.8 L94.6 98.1 L98.0 96.7 L101.9 95.6 L104.3 95.3 L104.5 95.1 L105.6 95.1 L105.7 95.0 L107.1 95.0Z"/></g></svg>
+<div class="lato">© Redazione La Gazzetta del Dragone, tutti i diritti riservati · N° 2</div>
+<div class="testata"><svg viewBox="0 0 768 96"><rect x="0" y="4" width="768" height="4" fill="#0A2342"/><rect x="0" y="88" width="768" height="4" fill="#0A2342"/><rect x="0" y="16" width="64" height="64" fill="#00A8E8"/><clipPath id="earc"><rect x="0" y="16" width="64" height="64"/></clipPath><g clip-path="url(#earc)"><g transform="translate(3.8 23.7) scale(0.22)" fill="#0A2342"><path fill-rule="evenodd" d="M155.1 14.4 L154.8 14.7 L154.8 15.0 L152.3 20.3 L147.9 27.3 L143.6 32.7 L139.2 36.9 L135.5 39.9 L132.3 42.0 L127.9 44.5 L120.9 47.6 L115.0 49.6 L111.2 51.2 L107.4 53.1 L102.5 56.2 L97.2 60.2 L91.6 65.5 L88.5 68.9 L85.9 72.1 L82.6 76.8 L82.6 77.1 L118.5 63.9 L123.7 59.0 L129.9 54.1 L134.1 51.4 L139.7 48.1 L144.8 45.5 L148.4 43.9 L150.7 40.6 L152.7 36.8 L154.6 31.2 L155.1 28.9 L155.2 26.8 L155.4 26.7 L155.5 23.0 L155.7 22.8 L155.5 17.4 L155.4 17.2ZM226.4 0.0 L220.5 8.5 L216.7 13.3 L212.6 17.8 L207.8 22.5 L204.7 25.1 L200.2 28.5 L195.3 31.8 L189.2 35.1 L184.1 37.2 L172.8 41.0 L161.3 43.9 L155.4 45.8 L150.0 47.9 L142.5 51.7 L138.6 54.0 L133.0 57.7 L126.1 63.3 L121.1 67.8 L114.0 75.1 L109.5 80.4 L109.3 79.7 L113.2 70.6 L104.6 73.5 L103.4 74.2 L100.5 75.1 L98.8 75.9 L95.8 76.8 L94.1 77.6 L89.9 79.0 L88.7 79.6 L87.4 79.9 L76.1 84.2 L69.4 86.6 L63.7 92.9 L61.8 94.6 L59.2 96.7 L54.7 99.3 L48.8 101.9 L49.0 104.6 L49.9 106.7 L50.5 107.7 L53.0 110.0 L53.0 110.3 L48.3 114.0 L43.1 117.6 L35.0 122.3 L31.3 124.1 L26.9 126.0 L23.2 127.2 L22.7 127.5 L16.7 129.4 L16.2 131.4 L16.1 133.3 L15.9 133.4 L15.9 134.8 L15.7 135.0 L15.7 139.3 L15.9 139.5 L16.1 142.3 L16.8 146.3 L17.9 149.6 L17.9 150.0 L19.5 153.9 L21.5 157.8 L24.0 161.7 L24.3 161.7 L26.1 159.8 L28.8 157.6 L32.3 155.2 L35.0 153.8 L39.5 152.0 L45.1 150.8 L48.8 150.7 L49.0 150.5 L52.8 150.7 L53.0 150.8 L54.2 150.8 L54.4 151.0 L57.2 151.3 L58.1 151.6 L59.0 151.6 L67.1 144.8 L72.1 141.2 L78.6 137.6 L84.2 135.3 L91.3 133.3 L94.6 132.8 L94.7 132.7 L96.7 132.5 L96.9 132.3 L98.0 132.3 L98.1 132.2 L101.4 132.0 L101.5 131.9 L110.1 131.9 L110.2 132.0 L111.9 132.0 L112.1 132.2 L111.9 132.5 L111.3 132.7 L110.2 132.7 L110.1 132.8 L106.5 133.3 L102.6 134.2 L101.2 134.4 L93.6 136.4 L89.9 137.6 L83.7 140.1 L76.4 143.8 L70.8 147.5 L65.9 151.7 L68.7 158.4 L68.5 158.9 L64.6 158.1 L63.2 157.6 L62.6 157.6 L59.7 156.7 L53.9 155.5 L51.3 155.3 L51.1 155.2 L46.0 155.3 L40.7 156.4 L37.8 157.5 L33.7 159.5 L31.0 161.4 L29.2 162.8 L29.2 163.1 L30.3 165.1 L32.7 168.5 L34.4 170.5 L37.8 173.9 L41.7 176.9 L43.7 178.1 L46.6 179.7 L51.0 181.5 L57.9 183.5 L62.8 184.3 L62.8 183.9 L61.4 179.7 L61.2 176.3 L61.5 174.9 L62.1 173.5 L63.4 172.1 L64.9 171.0 L68.8 168.8 L74.7 166.2 L80.9 164.2 L86.3 162.9 L90.2 162.4 L90.4 162.3 L93.6 162.1 L93.8 162.0 L96.1 162.0 L96.3 161.8 L102.2 161.8 L102.3 162.0 L106.7 162.1 L106.8 162.3 L111.6 162.8 L116.6 163.7 L117.4 164.0 L121.3 164.8 L126.1 166.3 L128.1 166.8 L126.8 161.7 L125.0 155.8 L125.1 155.2 L125.6 155.5 L127.9 158.6 L130.1 162.1 L132.0 165.9 L133.7 170.2 L133.8 171.1 L134.9 174.2 L134.6 174.5 L129.9 172.4 L125.9 171.0 L125.4 170.7 L120.6 169.1 L115.7 167.9 L111.6 167.1 L107.0 166.6 L106.8 166.5 L105.3 166.5 L105.1 166.3 L102.5 166.3 L102.3 166.2 L94.4 166.3 L94.7 166.8 L97.2 168.6 L98.4 169.9 L100.2 172.1 L102.2 175.8 L103.1 178.7 L103.6 181.2 L103.6 182.3 L103.7 182.5 L103.7 187.6 L103.6 187.7 L103.6 189.1 L103.4 189.3 L103.4 190.2 L102.3 195.2 L101.9 196.3 L102.5 196.6 L103.3 196.6 L103.4 196.7 L104.2 196.7 L104.3 196.9 L105.1 196.9 L110.9 198.0 L111.8 198.0 L117.5 199.1 L122.3 199.7 L122.6 200.0 L121.9 200.3 L116.8 200.8 L116.6 200.9 L115.5 200.9 L114.1 201.2 L112.7 201.2 L112.6 201.4 L107.4 201.9 L107.3 202.0 L103.6 202.3 L103.4 202.5 L100.6 202.6 L99.2 202.9 L96.6 208.4 L93.6 213.2 L90.4 217.7 L86.5 222.5 L87.3 222.8 L93.0 223.9 L100.2 225.6 L107.8 227.0 L110.1 227.6 L112.4 227.9 L113.6 228.4 L113.2 228.7 L80.9 228.7 L80.3 229.0 L73.9 235.7 L68.8 242.2 L66.3 245.9 L64.5 249.2 L62.0 254.3 L61.4 255.8 L61.5 256.0 L208.9 256.0 L209.4 254.6 L210.0 249.9 L210.3 248.9 L210.3 247.9 L210.5 247.8 L210.5 246.8 L210.6 246.7 L211.4 238.9 L211.5 238.8 L211.9 233.5 L212.0 233.3 L212.2 228.2 L212.3 228.1 L212.3 223.4 L212.5 223.3 L212.5 217.8 L212.3 217.7 L212.3 214.4 L212.2 214.3 L212.0 211.3 L212.3 211.0 L216.2 211.9 L222.3 214.3 L226.9 216.9 L232.2 220.8 L232.2 219.7 L232.0 219.5 L232.0 218.8 L231.1 213.8 L229.4 207.3 L227.4 201.7 L224.0 195.0 L221.3 191.0 L217.0 185.7 L211.5 180.4 L206.1 176.1 L205.8 175.6 L206.1 175.3 L207.8 175.2 L208.0 175.0 L209.5 175.0 L209.7 174.9 L216.2 174.9 L216.4 175.0 L217.8 175.0 L217.9 175.2 L218.8 175.2 L222.9 175.9 L226.4 176.9 L230.3 178.3 L236.1 181.1 L240.3 183.5 L240.3 183.2 L237.1 177.2 L232.3 169.9 L227.4 164.0 L222.7 159.5 L217.9 155.8 L214.8 153.8 L210.9 151.6 L203.8 148.3 L200.2 146.9 L195.9 145.5 L195.7 145.1 L200.4 142.7 L206.0 140.7 L208.9 139.9 L212.9 139.3 L213.1 139.2 L214.2 139.2 L214.3 139.0 L218.4 138.9 L218.5 138.7 L224.4 138.9 L224.6 139.0 L227.4 139.2 L234.7 140.6 L230.2 135.6 L224.9 130.9 L217.8 126.1 L211.9 123.2 L204.7 120.7 L198.1 119.3 L194.3 119.0 L194.2 118.8 L192.5 118.8 L192.3 118.7 L189.2 118.7 L189.1 118.5 L185.6 118.5 L185.5 118.7 L181.6 118.7 L181.4 118.5 L182.7 117.3 L185.6 115.4 L190.8 113.0 L195.3 111.4 L198.2 110.6 L201.5 110.0 L202.6 110.0 L202.7 109.8 L204.3 109.8 L204.4 109.7 L211.7 109.7 L210.2 108.1 L205.8 104.9 L202.4 102.7 L198.5 100.7 L191.5 98.1 L191.1 98.1 L187.7 97.0 L186.9 97.0 L172.1 107.1 L167.6 110.3 L167.3 110.5 L167.2 110.3 L185.3 91.2 L203.3 72.8 L202.6 72.8 L196.3 74.2 L195.6 74.2 L190.0 75.4 L186.9 75.9 L185.3 76.3 L182.2 76.8 L181.4 77.1 L179.1 77.4 L178.3 77.7 L177.6 77.7 L176.8 78.0 L162.2 80.8 L161.4 81.1 L159.3 81.5 L158.5 81.8 L155.5 82.2 L154.8 82.5 L151.0 83.2 L148.7 83.8 L147.9 83.8 L147.8 83.6 L149.3 81.0 L153.4 75.6 L157.7 71.1 L161.4 68.0 L165.8 65.0 L169.3 63.0 L176.2 59.7 L177.6 59.3 L183.8 56.3 L185.5 55.7 L190.1 53.4 L195.3 50.4 L197.9 48.7 L202.2 45.5 L205.8 42.4 L209.5 38.6 L212.9 34.6 L216.8 29.0 L218.7 25.8 L221.5 19.9 L224.1 12.3 L225.7 5.7 L226.3 1.1 L226.4 0.9ZM41.7 130.6 L41.8 131.1 L41.5 132.2 L40.3 134.5 L38.9 135.9 L37.6 136.5 L35.3 137.0 L34.5 137.5 L32.7 139.5 L31.1 142.4 L30.8 142.6 L30.6 142.4 L30.8 138.4 L31.4 136.1 L32.3 134.5 L33.4 133.4 L35.0 132.5 L36.7 131.9 L39.5 131.3 L40.6 130.8ZM107.3 95.1 L107.0 95.4 L103.9 96.8 L98.8 99.8 L98.4 100.1 L98.3 100.7 L98.3 102.1 L97.7 104.9 L96.4 107.5 L95.5 108.9 L93.3 111.1 L92.2 111.9 L90.1 113.0 L88.7 113.4 L87.1 113.7 L84.3 113.9 L84.2 113.7 L81.7 113.6 L78.4 112.6 L77.8 112.6 L75.0 113.9 L73.5 114.3 L72.7 114.3 L72.5 114.5 L70.8 114.3 L69.0 113.6 L67.9 112.8 L65.2 110.0 L63.8 107.5 L64.0 107.4 L64.5 107.5 L65.2 108.3 L66.6 109.2 L69.4 110.5 L72.2 110.8 L72.4 110.6 L73.6 110.6 L75.0 110.3 L77.2 109.5 L78.6 108.8 L86.3 103.0 L89.6 100.8 L94.6 98.1 L98.0 96.7 L101.9 95.6 L104.3 95.3 L104.5 95.1 L105.6 95.1 L105.7 95.0 L107.1 95.0Z"/></g></g><text x="384" y="64" text-anchor="middle" fill="#0A2342"><tspan font-family="Georgia, 'Times New Roman', serif" font-size="24" font-style="italic">La Gazzetta del </tspan><tspan font-family="Georgia, 'Times New Roman', serif" font-size="40" font-weight="700" letter-spacing="1">DRAGONE</tspan></text><rect x="704" y="16" width="64" height="64" fill="#0A2342"/><text x="736" y="38" font-family="'Franklin Gothic Demi', 'Franklin Gothic Medium', Arial, sans-serif" font-size="13" letter-spacing="1" text-anchor="middle" fill="#FFFFFF">N°</text><text x="736" y="70" font-family="'Franklin Gothic Demi', 'Franklin Gothic Medium', Arial, sans-serif" font-size="30" font-weight="700" text-anchor="middle" fill="#FFFFFF">2</text></svg></div>
+<div class="contenuto" style="--top:380px">
+<div class="int">
+<div class="folio"><span class="pg">04</span><span class="sez titoli">La giornata</span><span class="info">7ª giornata · Mercoledì 11 novembre 2026</span></div><div class="seguito"><span class="titolo-seguito">Prime in coppia</span><span class="segue">segue da <span class="rimando">pag. 03</span></span></div>
+<div class="colonne"><p>Il Giaffa ha vinto 4-3 a Marone dopo aver chiuso il primo tempo sotto 2-1. La partita è nella rubrica della settimana, a pag. 12. Il gol del primo tempo è di Marino Corsini, che arriva a 7 reti e 10 assist: primo negli assist, secondo nella somma a un punto da Facchi.</p><p>Venerdì 13 la Cazzaghese va a Colombaro contro il Nigoline, quarto a 15, due punti sotto. Sabato 14 il Giaffa ospita il Gso Monte, sesto a 12. Per la capolista è la trasferta più scomoda del turno, e l&#x27;Implast giocherà sapendo già come è andata.</p></div>
+
+<div class="cifre" style="grid-template-columns:repeat(3,1fr)"><div><span class="k">Punti</span><span class="v">17</span>Cazzaghese e Giaffa, mai sconfitte</div><div><span class="k">Harizi</span><span class="v">4</span>gol al Passirano</div><div><span class="k">Scarto</span><span class="v">11</span>gol di differenza reti tra le due</div></div>
+</div>
+</div>
+<div class="firma"><svg viewBox="0 0 256 256" width="50" height="50"><rect width="256" height="256" fill="#00A8E8"/><clipPath id="ic"><rect width="256" height="256"/></clipPath><g clip-path="url(#ic)"><g transform="translate(18 36) scale(0.86)" fill="#0A2342"><path fill-rule="evenodd" d="M155.1 14.4 L154.8 14.7 L154.8 15.0 L152.3 20.3 L147.9 27.3 L143.6 32.7 L139.2 36.9 L135.5 39.9 L132.3 42.0 L127.9 44.5 L120.9 47.6 L115.0 49.6 L111.2 51.2 L107.4 53.1 L102.5 56.2 L97.2 60.2 L91.6 65.5 L88.5 68.9 L85.9 72.1 L82.6 76.8 L82.6 77.1 L118.5 63.9 L123.7 59.0 L129.9 54.1 L134.1 51.4 L139.7 48.1 L144.8 45.5 L148.4 43.9 L150.7 40.6 L152.7 36.8 L154.6 31.2 L155.1 28.9 L155.2 26.8 L155.4 26.7 L155.5 23.0 L155.7 22.8 L155.5 17.4 L155.4 17.2ZM226.4 0.0 L220.5 8.5 L216.7 13.3 L212.6 17.8 L207.8 22.5 L204.7 25.1 L200.2 28.5 L195.3 31.8 L189.2 35.1 L184.1 37.2 L172.8 41.0 L161.3 43.9 L155.4 45.8 L150.0 47.9 L142.5 51.7 L138.6 54.0 L133.0 57.7 L126.1 63.3 L121.1 67.8 L114.0 75.1 L109.5 80.4 L109.3 79.7 L113.2 70.6 L104.6 73.5 L103.4 74.2 L100.5 75.1 L98.8 75.9 L95.8 76.8 L94.1 77.6 L89.9 79.0 L88.7 79.6 L87.4 79.9 L76.1 84.2 L69.4 86.6 L63.7 92.9 L61.8 94.6 L59.2 96.7 L54.7 99.3 L48.8 101.9 L49.0 104.6 L49.9 106.7 L50.5 107.7 L53.0 110.0 L53.0 110.3 L48.3 114.0 L43.1 117.6 L35.0 122.3 L31.3 124.1 L26.9 126.0 L23.2 127.2 L22.7 127.5 L16.7 129.4 L16.2 131.4 L16.1 133.3 L15.9 133.4 L15.9 134.8 L15.7 135.0 L15.7 139.3 L15.9 139.5 L16.1 142.3 L16.8 146.3 L17.9 149.6 L17.9 150.0 L19.5 153.9 L21.5 157.8 L24.0 161.7 L24.3 161.7 L26.1 159.8 L28.8 157.6 L32.3 155.2 L35.0 153.8 L39.5 152.0 L45.1 150.8 L48.8 150.7 L49.0 150.5 L52.8 150.7 L53.0 150.8 L54.2 150.8 L54.4 151.0 L57.2 151.3 L58.1 151.6 L59.0 151.6 L67.1 144.8 L72.1 141.2 L78.6 137.6 L84.2 135.3 L91.3 133.3 L94.6 132.8 L94.7 132.7 L96.7 132.5 L96.9 132.3 L98.0 132.3 L98.1 132.2 L101.4 132.0 L101.5 131.9 L110.1 131.9 L110.2 132.0 L111.9 132.0 L112.1 132.2 L111.9 132.5 L111.3 132.7 L110.2 132.7 L110.1 132.8 L106.5 133.3 L102.6 134.2 L101.2 134.4 L93.6 136.4 L89.9 137.6 L83.7 140.1 L76.4 143.8 L70.8 147.5 L65.9 151.7 L68.7 158.4 L68.5 158.9 L64.6 158.1 L63.2 157.6 L62.6 157.6 L59.7 156.7 L53.9 155.5 L51.3 155.3 L51.1 155.2 L46.0 155.3 L40.7 156.4 L37.8 157.5 L33.7 159.5 L31.0 161.4 L29.2 162.8 L29.2 163.1 L30.3 165.1 L32.7 168.5 L34.4 170.5 L37.8 173.9 L41.7 176.9 L43.7 178.1 L46.6 179.7 L51.0 181.5 L57.9 183.5 L62.8 184.3 L62.8 183.9 L61.4 179.7 L61.2 176.3 L61.5 174.9 L62.1 173.5 L63.4 172.1 L64.9 171.0 L68.8 168.8 L74.7 166.2 L80.9 164.2 L86.3 162.9 L90.2 162.4 L90.4 162.3 L93.6 162.1 L93.8 162.0 L96.1 162.0 L96.3 161.8 L102.2 161.8 L102.3 162.0 L106.7 162.1 L106.8 162.3 L111.6 162.8 L116.6 163.7 L117.4 164.0 L121.3 164.8 L126.1 166.3 L128.1 166.8 L126.8 161.7 L125.0 155.8 L125.1 155.2 L125.6 155.5 L127.9 158.6 L130.1 162.1 L132.0 165.9 L133.7 170.2 L133.8 171.1 L134.9 174.2 L134.6 174.5 L129.9 172.4 L125.9 171.0 L125.4 170.7 L120.6 169.1 L115.7 167.9 L111.6 167.1 L107.0 166.6 L106.8 166.5 L105.3 166.5 L105.1 166.3 L102.5 166.3 L102.3 166.2 L94.4 166.3 L94.7 166.8 L97.2 168.6 L98.4 169.9 L100.2 172.1 L102.2 175.8 L103.1 178.7 L103.6 181.2 L103.6 182.3 L103.7 182.5 L103.7 187.6 L103.6 187.7 L103.6 189.1 L103.4 189.3 L103.4 190.2 L102.3 195.2 L101.9 196.3 L102.5 196.6 L103.3 196.6 L103.4 196.7 L104.2 196.7 L104.3 196.9 L105.1 196.9 L110.9 198.0 L111.8 198.0 L117.5 199.1 L122.3 199.7 L122.6 200.0 L121.9 200.3 L116.8 200.8 L116.6 200.9 L115.5 200.9 L114.1 201.2 L112.7 201.2 L112.6 201.4 L107.4 201.9 L107.3 202.0 L103.6 202.3 L103.4 202.5 L100.6 202.6 L99.2 202.9 L96.6 208.4 L93.6 213.2 L90.4 217.7 L86.5 222.5 L87.3 222.8 L93.0 223.9 L100.2 225.6 L107.8 227.0 L110.1 227.6 L112.4 227.9 L113.6 228.4 L113.2 228.7 L80.9 228.7 L80.3 229.0 L73.9 235.7 L68.8 242.2 L66.3 245.9 L64.5 249.2 L62.0 254.3 L61.4 255.8 L61.5 256.0 L208.9 256.0 L209.4 254.6 L210.0 249.9 L210.3 248.9 L210.3 247.9 L210.5 247.8 L210.5 246.8 L210.6 246.7 L211.4 238.9 L211.5 238.8 L211.9 233.5 L212.0 233.3 L212.2 228.2 L212.3 228.1 L212.3 223.4 L212.5 223.3 L212.5 217.8 L212.3 217.7 L212.3 214.4 L212.2 214.3 L212.0 211.3 L212.3 211.0 L216.2 211.9 L222.3 214.3 L226.9 216.9 L232.2 220.8 L232.2 219.7 L232.0 219.5 L232.0 218.8 L231.1 213.8 L229.4 207.3 L227.4 201.7 L224.0 195.0 L221.3 191.0 L217.0 185.7 L211.5 180.4 L206.1 176.1 L205.8 175.6 L206.1 175.3 L207.8 175.2 L208.0 175.0 L209.5 175.0 L209.7 174.9 L216.2 174.9 L216.4 175.0 L217.8 175.0 L217.9 175.2 L218.8 175.2 L222.9 175.9 L226.4 176.9 L230.3 178.3 L236.1 181.1 L240.3 183.5 L240.3 183.2 L237.1 177.2 L232.3 169.9 L227.4 164.0 L222.7 159.5 L217.9 155.8 L214.8 153.8 L210.9 151.6 L203.8 148.3 L200.2 146.9 L195.9 145.5 L195.7 145.1 L200.4 142.7 L206.0 140.7 L208.9 139.9 L212.9 139.3 L213.1 139.2 L214.2 139.2 L214.3 139.0 L218.4 138.9 L218.5 138.7 L224.4 138.9 L224.6 139.0 L227.4 139.2 L234.7 140.6 L230.2 135.6 L224.9 130.9 L217.8 126.1 L211.9 123.2 L204.7 120.7 L198.1 119.3 L194.3 119.0 L194.2 118.8 L192.5 118.8 L192.3 118.7 L189.2 118.7 L189.1 118.5 L185.6 118.5 L185.5 118.7 L181.6 118.7 L181.4 118.5 L182.7 117.3 L185.6 115.4 L190.8 113.0 L195.3 111.4 L198.2 110.6 L201.5 110.0 L202.6 110.0 L202.7 109.8 L204.3 109.8 L204.4 109.7 L211.7 109.7 L210.2 108.1 L205.8 104.9 L202.4 102.7 L198.5 100.7 L191.5 98.1 L191.1 98.1 L187.7 97.0 L186.9 97.0 L172.1 107.1 L167.6 110.3 L167.3 110.5 L167.2 110.3 L185.3 91.2 L203.3 72.8 L202.6 72.8 L196.3 74.2 L195.6 74.2 L190.0 75.4 L186.9 75.9 L185.3 76.3 L182.2 76.8 L181.4 77.1 L179.1 77.4 L178.3 77.7 L177.6 77.7 L176.8 78.0 L162.2 80.8 L161.4 81.1 L159.3 81.5 L158.5 81.8 L155.5 82.2 L154.8 82.5 L151.0 83.2 L148.7 83.8 L147.9 83.8 L147.8 83.6 L149.3 81.0 L153.4 75.6 L157.7 71.1 L161.4 68.0 L165.8 65.0 L169.3 63.0 L176.2 59.7 L177.6 59.3 L183.8 56.3 L185.5 55.7 L190.1 53.4 L195.3 50.4 L197.9 48.7 L202.2 45.5 L205.8 42.4 L209.5 38.6 L212.9 34.6 L216.8 29.0 L218.7 25.8 L221.5 19.9 L224.1 12.3 L225.7 5.7 L226.3 1.1 L226.4 0.9ZM41.7 130.6 L41.8 131.1 L41.5 132.2 L40.3 134.5 L38.9 135.9 L37.6 136.5 L35.3 137.0 L34.5 137.5 L32.7 139.5 L31.1 142.4 L30.8 142.6 L30.6 142.4 L30.8 138.4 L31.4 136.1 L32.3 134.5 L33.4 133.4 L35.0 132.5 L36.7 131.9 L39.5 131.3 L40.6 130.8ZM107.3 95.1 L107.0 95.4 L103.9 96.8 L98.8 99.8 L98.4 100.1 L98.3 100.7 L98.3 102.1 L97.7 104.9 L96.4 107.5 L95.5 108.9 L93.3 111.1 L92.2 111.9 L90.1 113.0 L88.7 113.4 L87.1 113.7 L84.3 113.9 L84.2 113.7 L81.7 113.6 L78.4 112.6 L77.8 112.6 L75.0 113.9 L73.5 114.3 L72.7 114.3 L72.5 114.5 L70.8 114.3 L69.0 113.6 L67.9 112.8 L65.2 110.0 L63.8 107.5 L64.0 107.4 L64.5 107.5 L65.2 108.3 L66.6 109.2 L69.4 110.5 L72.2 110.8 L72.4 110.6 L73.6 110.6 L75.0 110.3 L77.2 109.5 L78.6 108.8 L86.3 103.0 L89.6 100.8 L94.6 98.1 L98.0 96.7 L101.9 95.6 L104.3 95.3 L104.5 95.1 L105.6 95.1 L105.7 95.0 L107.1 95.0Z"/></g></g></svg><span>© Redazione La Gazzetta del Dragone, tutti i diritti riservati · N° 2</span></div>
+</div>
+<script>
+window.addEventListener('load', function () {
+  // Il titolone parte grande e si stringe finché sta in larghezza, in al massimo
+  // due righe e senza spingere fuori pagina il resto della prima pagina.
+  var c = document.querySelector('.contenuto');
+  var t = document.querySelector('.titolone');
+  var pieno = function () { return c.scrollHeight > c.clientHeight + 1; };
+  // Pagine interne: una riga sola se ci sta ad almeno 88px, altrimenti due righe
+  // da 120px in giù. Non si stringe per far posto al testo: un pezzo troppo
+  // lungo va tagliato.
+  var h = document.querySelector('.titolo');
+  if (h) {
+    var z = 120;
+    h.style.whiteSpace = 'nowrap';
+    while (z > 88 && h.scrollWidth > h.clientWidth) { z -= 4; h.style.fontSize = z + 'px'; }
+    if (h.scrollWidth > h.clientWidth) {
+      h.style.whiteSpace = 'normal';
+      z = 120;
+      h.style.fontSize = z + 'px';
+      var righe = function () { return Math.round(h.getBoundingClientRect().height / z); };
+      while (z > 64 && (righe() > 2 || h.scrollWidth > h.clientWidth)) { z -= 4; h.style.fontSize = z + 'px'; }
+    }
+  }
+  // Come in edicola: se il titolo sta su una riga a corpo pieno, la riempie;
+  // altrimenti va su due righe.
+  if (t) {
+    var s = 300;
+    t.style.whiteSpace = 'nowrap';
+    t.style.fontSize = s + 'px';
+    while (s > 150 && (t.scrollWidth > t.clientWidth || pieno())) { s -= 4; t.style.fontSize = s + 'px'; }
+    if (t.scrollWidth > t.clientWidth || pieno()) {
+      t.style.whiteSpace = 'normal';
+      document.querySelector('.cop').classList.add('stretta');
+      s = 230;
+      var troppo = function () {
+        var righe = Math.round(t.getBoundingClientRect().height / s);
+        return t.scrollWidth > t.clientWidth || righe > 2 || pieno();
+      };
+      t.style.fontSize = s + 'px';
+      while (s > 80 && troppo()) { s -= 4; t.style.fontSize = s + 'px'; }
+      // Su una riga sola la pagina compatta non serve: si torna a quella normale.
+      if (Math.round(t.getBoundingClientRect().height / s) < 2) {
+        document.querySelector('.cop').classList.remove('stretta');
+        while (s > 80 && troppo()) { s -= 4; t.style.fontSize = s + 'px'; }
+      }
+    }
+  }
+  var fuori = c && c.scrollHeight > c.clientHeight + 1;
+  document.body.setAttribute('data-overflow', fuori ? 'si' : 'no');
+});
+</script>
+</body></html>
