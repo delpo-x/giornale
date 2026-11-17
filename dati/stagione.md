@@ -110,6 +110,7 @@ Ogni voce riporta le righe dello schema dall'alto in basso. La squadra di ciascu
 - **G5:** Facchi (Implast), Iore (Implast), Consolati (Cazzaghese) / Foresti (Giaffa), Bonardi (Pilzone), Micheli (Giaffa), Zibardi (Amici) / Mangraviti (Cazzaghese), Martinelli (Giaffa), Bonardi (Amici) / Paderno (Implast).
 - **G6:** Buizza (Gv Barco), Farimbella (Gv Barco), Facchi (Implast) / Bonardi (Pilzone), Alvarez (Implast), Franceschini (Giaffa, nome troncato "Francesc...", unico in rosa), Ghitti (Elettcristini) / Notari (Implast), Bergoli (Ieci Passirano, stemma dell'oratorio; Bergoli M. è marcatore del Passirano in G6), Martinelli (Giaffa) / Marini (stemma piccolo Giaffa). Screenshot in `screenshot/giornata-06/top11-g6.png`.
 - **G7:** Ligama (Giaffa), Facchi (Implast), Harizi (Cazzaghese) / Micheli (Giaffa), Guerini (stemma Amici Di Renato), Ghitti (Elettcristini), Passini (Elettcristini) / Bettoni (Nigoline), Uberti (Amici Di Renato), Oussama (Aston) / Marini (stemma piccolo Giaffa). Screenshot in `screenshot/giornata-07/top11-g7.jpg`, ricevuto l'11 novembre. Esce nel N° 2 insieme a quella di ottobre.
+- **G8:** Piva (Giaffa), Corsini (Giaffa), Stefano (Calino) / Bonardi (Pilzone), Vezzoli (Implast), Guerini (Elettcristini), Passini (Elettcristini) / Archetti (Pilzone), Brescianini (Implast), Allex (Calino) / Dolce (stemma Pilzone). Screenshot in `screenshot/giornata-08/top11-g8.png`. Esce nel N° 3.
 
 - **Ottobre (Top 11 del mese):** Bontempi (Borgonato), Corsini (Giaffa), Facchi (Implast) / Foresti (Giaffa), Bonardi (Pilzone), Zibardi (Amici Di Renato), Maffi (Cazzaghese) / Bettoni (Nigoline), Martinelli (Giaffa), Bonardi (Amici Di Renato) / Marini (stemma piccolo Giaffa). Quattro del Giaffa, uno dell'Implast. Screenshot in `screenshot/ottobre/top11-ottobre.png`; esce nel N° 2.
 
@@ -124,8 +125,9 @@ Giocatori Implast nelle Top 11:
 | G5 | 3 | Facchi, Iore, Paderno |
 | G6 | 3 | Facchi, Alvarez, Notari |
 | G7 | 1 | Facchi |
+| G8 | 2 | Vezzoli, Brescianini |
 
-Facchi è entrato nella Top 11 cinque volte (G1, G4, G5, G6, G7), le ultime quattro di fila.
+Facchi è entrato nella Top 11 cinque volte (G1, G4, G5, G6, G7), quattro di fila; fuori nella G8.
 
 ## Staff e anagrafica
 In `dati/squadre.md`.

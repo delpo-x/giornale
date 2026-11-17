@@ -72,6 +72,15 @@ GIORNATE = {
         ("sab 7 novembre, 17:30", "Elettcristini", 3, 4, "Giaffa Clusan"),
         ("mar 10 novembre, 21:00", "Uso Borgonato", 4, 4, "Implast"),
     ],
+    8: [
+        ("mer 11 novembre, 20:30", "F.c. Calino", 9, 2, "Bombetta"),
+        ("gio 12 novembre, 20:30", "Ieci Passirano", 0, 2, "Gv Barco"),
+        ("gio 12 novembre, 20:45", "U.s. Pilzone", 7, 2, "Uso Borgonato"),
+        ("ven 13 novembre, 20:30", "Nigoline", 1, 2, "F.c. Cazzaghese"),
+        ("ven 13 novembre, 21:00", "Amici Di Renato", 5, 3, "Elettcristini"),
+        ("sab 14 novembre, 15:00", "Giaffa Clusan", 7, 2, "Gso Monte"),
+        ("sab 14 novembre, 15:30", "Implast", 2, 2, "Aston 5 Perle"),
+    ],
 }
 
 # Classifica ufficiale Tuttocampo dopo la 7ª (vista l'11 novembre): pt, v, n, p, dr.
@@ -132,8 +141,9 @@ if __name__ == "__main__":
         for s, val in VISTE[k].items():
             stato = "ok" if d6[s][idx] == val else f"DIVERSO (calcolato {d6[s][idx]})"
             print(f"controllo {k} {s}: {val} {stato}")
+    d7 = dict(classifica(7))
     for s, (pt, v, n, p, dr) in UFFICIALE_G7.items():
-        r = d[s]
+        r = d7[s]
         mio = (r[0], r[2], r[3], r[4], r[5] - r[6])
         if mio != (pt, v, n, p, dr):
             print(f"G7 DIVERSO {s}: ufficiale {(pt, v, n, p, dr)} calcolato {mio}")
